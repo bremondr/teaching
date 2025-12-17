@@ -6,7 +6,7 @@ portable.
 
 ## Features
 - Curated intro explaining how to navigate the repository.
-- Filterable grid of lecture/workshop cards (search, format, track).
+- Filterable grid of lecture/workshop/template cards (search, type, tags) with expandable content sections.
 - Color palette inspired by grafit.games: anthracite base, light greys, blueberry
   accents, and cloudberry highlights.
 - Future-facing section outlining the planned Markdown → HTML/PDF builder so each

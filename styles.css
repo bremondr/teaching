@@ -138,6 +138,28 @@ header p {
   font-size: 1.3rem;
 }
 
+.topic-type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(28, 28, 28, 0.6);
+  margin-bottom: 0.35rem;
+}
+
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.topic-tags span {
+  background: rgba(58, 95, 199, 0.1);
+  color: var(--blueberry);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+}
+
 .material-meta {
   display: flex;
   flex-wrap: wrap;
@@ -151,14 +173,42 @@ header p {
   font-size: 0.85rem;
 }
 
-.material-meta .format {
-  background: rgba(58, 95, 199, 0.1);
-  color: var(--blueberry);
-}
-
 .material-meta .status {
   background: rgba(255, 200, 87, 0.15);
   color: #996b00;
+}
+
+details {
+  margin-top: 1rem;
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  background: var(--light-grey);
+  padding: 0.75rem 1rem;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--anthracite);
+  outline: none;
+}
+
+details[open] {
+  background: rgba(255, 200, 87, 0.15);
+  border-color: rgba(255, 200, 87, 0.4);
+}
+
+.material-links {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.material-links a[aria-disabled="true"] {
+  color: rgba(28, 28, 28, 0.4);
+  pointer-events: none;
 }
 
 .material-actions {

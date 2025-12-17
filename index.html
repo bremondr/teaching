@@ -22,35 +22,40 @@
         </p>
       </header>
 
-      <!-- Search and filtering controls feed the JS filtering logic -->
+      <!-- Filters now focus on search, type, and topic tags -->
       <section class="filters" aria-label="Filters">
         <label>
           Search
           <input
             type="search"
             id="searchInput"
-            placeholder="Search title, tags, tools..."
+            placeholder="Search by topic name..."
             aria-label="Search across materials"
           />
         </label>
         <label>
-          Format
-          <select id="formatFilter" aria-label="Filter by format">
-            <option value="all" selected>Any format</option>
-            <option value="slides">Slides</option>
-            <option value="md">Markdown</option>
-            <option value="pdf">PDF</option>
-            <option value="workshop-kit">Workshop kit</option>
+          Type
+          <select id="typeFilter" aria-label="Filter by material type">
+            <option value="all" selected>All types</option>
+            <option value="lecture">Lecture</option>
+            <option value="workshop">Workshop</option>
+            <option value="template">Template</option>
           </select>
         </label>
         <label>
-          Track
-          <select id="trackFilter" aria-label="Filter by track">
-            <option value="all" selected>Any track</option>
+          Tag
+          <select id="tagFilter" aria-label="Filter by topic tag">
+            <option value="all" selected>All tags</option>
             <option value="ux">UX</option>
-            <option value="product">Product</option>
+            <option value="research">Research</option>
+            <option value="prototyping">Prototyping</option>
+            <option value="accessibility">Accessibility</option>
             <option value="strategy">Strategy</option>
-            <option value="future">Future build</option>
+            <option value="ai">AI</option>
+            <option value="workshop-kit">Workshop kit</option>
+            <option value="systems">Systems</option>
+            <option value="prioritization">Prioritization</option>
+            <option value="creative-tech">Creative tech</option>
           </select>
         </label>
       </section>
@@ -60,89 +65,124 @@
         <article
           class="material-card"
           data-title="UX Foundations"
-          data-track="ux"
-          data-format="slides,pdf"
+          data-type="lecture"
+          data-tags="research,ux,prototyping"
         >
+          <p class="topic-type">Lecture · UX</p>
           <h3>UX Foundations Sprint</h3>
           <p>
             Core lecture and workshop slides covering research framing, personas,
             and prototyping. Stored under <code>/ux</code>.
           </p>
+          <div class="topic-tags">
+            <span>#research</span>
+            <span>#ux</span>
+            <span>#prototyping</span>
+          </div>
           <div class="material-meta">
-            <span class="format">Slides + PDF</span>
             <span>Level: Intro</span>
             <span class="status">Updated Dec 2025</span>
           </div>
-          <div class="material-actions">
-            <a href="./ux" target="_blank" rel="noopener">Browse folder</a>
-            <a href="#" class="secondary" aria-disabled="true">MD builder pending</a>
-          </div>
+          <details>
+            <summary>Open materials</summary>
+            <ul class="material-links">
+              <li><a href="./ux" target="_blank" rel="noopener">Web slides</a></li>
+              <li><a href="./ux" target="_blank" rel="noopener">PDF export</a></li>
+              <li><a href="#" aria-disabled="true">Markdown source (soon)</a></li>
+            </ul>
+          </details>
         </article>
 
         <article
           class="material-card"
           data-title="Ethical Design Systems"
-          data-track="ux"
-          data-format="slides,md"
+          data-type="lecture"
+          data-tags="accessibility,ux,systems"
         >
+          <p class="topic-type">Lecture · Accessibility</p>
           <h3>Ethical Design Systems</h3>
           <p>
             Deep dive on inclusive systems thinking and accessibility checklists.
             Markdown slides to be compiled into web + PDF once builder lands.
           </p>
+          <div class="topic-tags">
+            <span>#accessibility</span>
+            <span>#ux</span>
+            <span>#systems</span>
+          </div>
           <div class="material-meta">
-            <span class="format">Slides + MD</span>
             <span>Level: Intermediate</span>
             <span class="status">Drafting</span>
           </div>
-          <div class="material-actions">
-            <a href="#" aria-disabled="true">Slides (soon)</a>
-            <a href="#" class="secondary" aria-disabled="true">PDF (auto-build)</a>
-          </div>
+          <details>
+            <summary>Open materials</summary>
+            <ul class="material-links">
+              <li><a href="#" aria-disabled="true">Slides (soon)</a></li>
+              <li><a href="#" aria-disabled="true">PDF (auto-build)</a></li>
+              <li><a href="#" aria-disabled="true">Markdown source</a></li>
+            </ul>
+          </details>
         </article>
 
         <article
           class="material-card"
           data-title="Product Strategy Primer"
-          data-track="product"
-          data-format="slides,pdf,workshop-kit"
+          data-type="workshop"
+          data-tags="strategy,workshop-kit,prioritization"
         >
+          <p class="topic-type">Workshop · Product</p>
           <h3>Product Strategy Primer</h3>
           <p>
             Workshop kit for prioritization games and lecture slides for outcome
             mapping exercises.
           </p>
+          <div class="topic-tags">
+            <span>#strategy</span>
+            <span>#workshop-kit</span>
+            <span>#prioritization</span>
+          </div>
           <div class="material-meta">
-            <span class="format">Slides + Kit</span>
             <span>Level: Mixed</span>
             <span class="status">Ready</span>
           </div>
-          <div class="material-actions">
-            <a href="#" aria-disabled="true">Slides</a>
-            <a href="#" class="secondary" aria-disabled="true">Workshop kit</a>
-          </div>
+          <details>
+            <summary>Open materials</summary>
+            <ul class="material-links">
+              <li><a href="#" aria-disabled="true">Slides</a></li>
+              <li><a href="#" aria-disabled="true">Facilitator notes</a></li>
+              <li><a href="#" aria-disabled="true">Workshop kit download</a></li>
+            </ul>
+          </details>
         </article>
 
         <article
           class="material-card"
           data-title="Creative Tech Playground"
-          data-track="future"
-          data-format="md"
+          data-type="template"
+          data-tags="ai,creative-tech"
         >
+          <p class="topic-type">Template · Future build</p>
           <h3>Creative Tech Playground</h3>
           <p>
             Future series combining live-coding demos and AI-assisted ideation.
             Planned as Markdown-first decks with optional recorded sessions.
           </p>
+          <div class="topic-tags">
+            <span>#ai</span>
+            <span>#creative-tech</span>
+          </div>
           <div class="material-meta">
-            <span class="format">Markdown pipeline</span>
             <span>Level: Advanced</span>
             <span class="status">Roadmap</span>
           </div>
-          <div class="material-actions">
-            <a href="#" aria-disabled="true">MD source</a>
-            <a href="#" class="secondary" aria-disabled="true">Generated slides</a>
-          </div>
+          <details>
+            <summary>Open materials</summary>
+            <ul class="material-links">
+              <li><a href="#" aria-disabled="true">MD source</a></li>
+              <li><a href="#" aria-disabled="true">Generated slides</a></li>
+              <li><a href="#" aria-disabled="true">Recorded session</a></li>
+            </ul>
+          </details>
         </article>
       </section>
 
