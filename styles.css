@@ -1,0 +1,244 @@
+/* Palette: anthracite #1c1c1c, blueberry #3a5fc7, cloudberry #ffc857 */
+:root {
+  --anthracite: #1c1c1c;
+  --light-grey: #f2f2f2;
+  --white: #ffffff;
+  --blueberry: #3a5fc7;
+  --cloudberry: #ffc857;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--light-grey);
+  color: var(--anthracite);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+header {
+  padding: 3rem 0 2rem;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  max-width: 50ch;
+  font-size: 1.05rem;
+  color: rgba(28, 28, 28, 0.85);
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--anthracite);
+  color: var(--white);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.tagline span {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--cloudberry);
+}
+
+.intro {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.intro p {
+  margin: 0.5rem 0;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background: var(--anthracite);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filters label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.filters input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.material-card {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.material-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+}
+
+.material-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.material-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.material-meta span {
+  background: var(--light-grey);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.material-meta .format {
+  background: rgba(58, 95, 199, 0.1);
+  color: var(--blueberry);
+}
+
+.material-meta .status {
+  background: rgba(255, 200, 87, 0.15);
+  color: #996b00;
+}
+
+.material-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.material-actions a {
+  flex: 1 1 45%;
+  text-align: center;
+  padding: 0.65rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--anthracite);
+  color: var(--white);
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.material-actions a.secondary {
+  background: rgba(58, 95, 199, 0.08);
+  color: var(--anthracite);
+}
+
+.material-actions a:hover {
+  background: var(--blueberry);
+  color: var(--white);
+}
+
+.future-block {
+  background: var(--anthracite);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.future-block h2 {
+  margin-top: 0;
+}
+
+.future-pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.pipeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: rgba(28, 28, 28, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Honor OS preference by darkening surfaces while respecting palette */
+  body {
+    background: #111;
+    color: var(--white);
+  }
+
+  .intro,
+  .material-card {
+    background: #1f1f1f;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .material-meta span {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  footer {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

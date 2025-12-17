@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teaching Hub</title>
+    <!-- Core palette documentation lives inside styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="tagline">
+          <span></span>
+          curated teaching stack
+        </div>
+        <h1>Lectures, Workshops & Live Materials</h1>
+        <p>
+          Everything I use to teach UX, product thinking, and creative technology,
+          organized in one searchable overview with ready-to-share slide decks,
+          workshop kits, and notes.
+        </p>
+      </header>
+
+      <!-- Intro module outlines the goal of the hub -->
+      <section class="intro">
+        <h2>The hub in short</h2>
+        <p>
+          Navigate the folders below to find the right session. Each card shows what
+          formats are available (Keynote, Markdown-generated web slides, PDFs), the
+          intended audience level, and quick status metadata.
+        </p>
+        <p>
+          Future lectures will live as Markdown files built via a lightweight
+          generator (think Reveal.js or Marp) so every deck can ship as both HTML and
+          PDF. The placeholders highlighted below already anticipate that pipeline.
+        </p>
+      </section>
+
+      <!-- Search and filtering controls feed the JS filtering logic -->
+      <section class="filters" aria-label="Filters">
+        <label>
+          Search
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search title, tags, tools..."
+            aria-label="Search across materials"
+          />
+        </label>
+        <label>
+          Format
+          <select id="formatFilter" aria-label="Filter by format">
+            <option value="all" selected>Any format</option>
+            <option value="slides">Slides</option>
+            <option value="md">Markdown</option>
+            <option value="pdf">PDF</option>
+            <option value="workshop-kit">Workshop kit</option>
+          </select>
+        </label>
+        <label>
+          Track
+          <select id="trackFilter" aria-label="Filter by track">
+            <option value="all" selected>Any track</option>
+            <option value="ux">UX</option>
+            <option value="product">Product</option>
+            <option value="strategy">Strategy</option>
+            <option value="future">Future build</option>
+          </select>
+        </label>
+      </section>
+
+      <!-- Grid below hosts current and future decks -->
+      <section class="materials-grid" id="materialsGrid">
+        <article
+          class="material-card"
+          data-title="UX Foundations"
+          data-track="ux"
+          data-format="slides,pdf"
+        >
+          <h3>UX Foundations Sprint</h3>
+          <p>
+            Core lecture and workshop slides covering research framing, personas,
+            and prototyping. Stored under <code>/ux</code>.
+          </p>
+          <div class="material-meta">
+            <span class="format">Slides + PDF</span>
+            <span>Level: Intro</span>
+            <span class="status">Updated Dec 2025</span>
+          </div>
+          <div class="material-actions">
+            <a href="./ux" target="_blank" rel="noopener">Browse folder</a>
+            <a href="#" class="secondary" aria-disabled="true">MD builder pending</a>
+          </div>
+        </article>
+
+        <article
+          class="material-card"
+          data-title="Ethical Design Systems"
+          data-track="ux"
+          data-format="slides,md"
+        >
+          <h3>Ethical Design Systems</h3>
+          <p>
+            Deep dive on inclusive systems thinking and accessibility checklists.
+            Markdown slides to be compiled into web + PDF once builder lands.
+          </p>
+          <div class="material-meta">
+            <span class="format">Slides + MD</span>
+            <span>Level: Intermediate</span>
+            <span class="status">Drafting</span>
+          </div>
+          <div class="material-actions">
+            <a href="#" aria-disabled="true">Slides (soon)</a>
+            <a href="#" class="secondary" aria-disabled="true">PDF (auto-build)</a>
+          </div>
+        </article>
+
+        <article
+          class="material-card"
+          data-title="Product Strategy Primer"
+          data-track="product"
+          data-format="slides,pdf,workshop-kit"
+        >
+          <h3>Product Strategy Primer</h3>
+          <p>
+            Workshop kit for prioritization games and lecture slides for outcome
+            mapping exercises.
+          </p>
+          <div class="material-meta">
+            <span class="format">Slides + Kit</span>
+            <span>Level: Mixed</span>
+            <span class="status">Ready</span>
+          </div>
+          <div class="material-actions">
+            <a href="#" aria-disabled="true">Slides</a>
+            <a href="#" class="secondary" aria-disabled="true">Workshop kit</a>
+          </div>
+        </article>
+
+        <article
+          class="material-card"
+          data-title="Creative Tech Playground"
+          data-track="future"
+          data-format="md"
+        >
+          <h3>Creative Tech Playground</h3>
+          <p>
+            Future series combining live-coding demos and AI-assisted ideation.
+            Planned as Markdown-first decks with optional recorded sessions.
+          </p>
+          <div class="material-meta">
+            <span class="format">Markdown pipeline</span>
+            <span>Level: Advanced</span>
+            <span class="status">Roadmap</span>
+          </div>
+          <div class="material-actions">
+            <a href="#" aria-disabled="true">MD source</a>
+            <a href="#" class="secondary" aria-disabled="true">Generated slides</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Block describes the forthcoming Markdown builder and deployment story -->
+      <section class="future-block">
+        <h2>Upcoming Markdown → Slides workflow</h2>
+        <p>
+          I plan to keep all lectures as Markdown sources located next to their
+          assets. A tiny script (Marp, Slidev, or custom Eleventy pipeline) will
+          compile MD to standalone HTML slides for live presenting and to PDFs for
+          distribution. This section tracks that integration.
+        </p>
+        <div class="future-pipeline">
+          <div class="pipeline-card">
+            <h3>Builder</h3>
+            <p>
+              Evaluate Reveal.js vs Marp CLI for GitHub Pages friendly builds.
+              Target: Q1.
+            </p>
+          </div>
+          <div class="pipeline-card">
+            <h3>Metadata</h3>
+            <p>
+              Each folder ships a <code>meta.json</code> storing speakers, length,
+              prerequisites for richer filters.
+            </p>
+          </div>
+          <div class="pipeline-card">
+            <h3>Automation</h3>
+            <p>
+              GitHub Actions job will convert Markdown on push and publish slide +
+              PDF artifacts.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Teaching materials © 2025 by Ondrej Brem
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
