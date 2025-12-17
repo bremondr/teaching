@@ -14,7 +14,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--light-grey);
+  background: #f9f9f9;
   color: var(--anthracite);
   line-height: 1.6;
 }
@@ -44,8 +44,8 @@ header p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--anthracite);
-  color: var(--white);
+  background: rgba(58, 95, 199, 0.12);
+  color: var(--blueberry);
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -79,33 +79,35 @@ header p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  background: var(--anthracite);
-  color: var(--white);
-  padding: 1rem;
+  background: var(--white);
+  color: var(--anthracite);
+  padding: 1.25rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
 }
 
 .filters label {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(28, 28, 28, 0.6);
 }
 
 .filters input,
 .filters select {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--light-grey);
+  color: var(--anthracite);
   border-radius: 0.5rem;
   font-size: 1rem;
 }
 
 .filters input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(28, 28, 28, 0.5);
 }
 
 .materials-grid {
@@ -173,27 +175,31 @@ header p {
   border-radius: 0.6rem;
   text-decoration: none;
   font-weight: 600;
-  background: var(--anthracite);
+  background: var(--blueberry);
   color: var(--white);
-  transition: background 150ms ease, color 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 10px 20px rgba(58, 95, 199, 0.2);
 }
 
 .material-actions a.secondary {
-  background: rgba(58, 95, 199, 0.08);
+  background: rgba(255, 200, 87, 0.3);
   color: var(--anthracite);
+  box-shadow: none;
 }
 
 .material-actions a:hover {
-  background: var(--blueberry);
-  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(58, 95, 199, 0.25);
 }
 
 .future-block {
-  background: var(--anthracite);
-  color: var(--white);
+  background: var(--white);
+  color: var(--anthracite);
   padding: 2rem;
   border-radius: 1.25rem;
   margin-bottom: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
 }
 
 .future-block h2 {
@@ -207,10 +213,10 @@ header p {
 }
 
 .pipeline-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--light-grey);
   padding: 1rem;
   border-radius: 0.8rem;
-  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border: 1px dashed rgba(0, 0, 0, 0.08);
 }
 
 footer {
@@ -218,27 +224,4 @@ footer {
   padding: 2rem 0;
   font-size: 0.9rem;
   color: rgba(28, 28, 28, 0.7);
-}
-
-@media (prefers-color-scheme: dark) {
-  /* Honor OS preference by darkening surfaces while respecting palette */
-  body {
-    background: #111;
-    color: var(--white);
-  }
-
-  .intro,
-  .material-card {
-    background: #1f1f1f;
-    color: var(--white);
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .material-meta span {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  footer {
-    color: rgba(255, 255, 255, 0.5);
-  }
 }
