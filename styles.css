@@ -160,6 +160,33 @@ header p {
   font-size: 0.8rem;
 }
 
+.language-flags {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.language-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(28, 28, 28, 0.5);
+}
+
+.flag-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.flag-list {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .material-meta {
   display: flex;
   flex-wrap: wrap;
@@ -209,6 +236,12 @@ details[open] {
 .material-links a[aria-disabled="true"] {
   color: rgba(28, 28, 28, 0.4);
   pointer-events: none;
+}
+
+.loading-copy,
+.empty-state {
+  font-size: 1rem;
+  color: rgba(28, 28, 28, 0.6);
 }
 
 .material-actions {

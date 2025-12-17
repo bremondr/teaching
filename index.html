@@ -61,130 +61,37 @@
       </section>
 
       <!-- Grid below hosts current and future decks -->
+      <!-- materialsGrid is populated from /topics/topics.json via app.js -->
       <section class="materials-grid" id="materialsGrid">
-        <article
-          class="material-card"
-          data-title="UX Foundations"
-          data-type="lecture"
-          data-tags="research,ux,prototyping"
-        >
-          <p class="topic-type">Lecture · UX</p>
-          <h3>UX Foundations Sprint</h3>
-          <p>
-            Core lecture and workshop slides covering research framing, personas,
-            and prototyping. Stored under <code>/ux</code>.
-          </p>
-          <div class="topic-tags">
-            <span>#research</span>
-            <span>#ux</span>
-            <span>#prototyping</span>
-          </div>
-          <div class="material-meta">
-            <span>Level: Intro</span>
-            <span class="status">Updated Dec 2025</span>
-          </div>
-          <details>
-            <summary>Open materials</summary>
-            <ul class="material-links">
-              <li><a href="./ux" target="_blank" rel="noopener">Web slides</a></li>
-              <li><a href="./ux" target="_blank" rel="noopener">PDF export</a></li>
-              <li><a href="#" aria-disabled="true">Markdown source (soon)</a></li>
-            </ul>
-          </details>
-        </article>
-
-        <article
-          class="material-card"
-          data-title="Ethical Design Systems"
-          data-type="lecture"
-          data-tags="accessibility,ux,systems"
-        >
-          <p class="topic-type">Lecture · Accessibility</p>
-          <h3>Ethical Design Systems</h3>
-          <p>
-            Deep dive on inclusive systems thinking and accessibility checklists.
-            Markdown slides to be compiled into web + PDF once builder lands.
-          </p>
-          <div class="topic-tags">
-            <span>#accessibility</span>
-            <span>#ux</span>
-            <span>#systems</span>
-          </div>
-          <div class="material-meta">
-            <span>Level: Intermediate</span>
-            <span class="status">Drafting</span>
-          </div>
-          <details>
-            <summary>Open materials</summary>
-            <ul class="material-links">
-              <li><a href="#" aria-disabled="true">Slides (soon)</a></li>
-              <li><a href="#" aria-disabled="true">PDF (auto-build)</a></li>
-              <li><a href="#" aria-disabled="true">Markdown source</a></li>
-            </ul>
-          </details>
-        </article>
-
-        <article
-          class="material-card"
-          data-title="Product Strategy Primer"
-          data-type="workshop"
-          data-tags="strategy,workshop-kit,prioritization"
-        >
-          <p class="topic-type">Workshop · Product</p>
-          <h3>Product Strategy Primer</h3>
-          <p>
-            Workshop kit for prioritization games and lecture slides for outcome
-            mapping exercises.
-          </p>
-          <div class="topic-tags">
-            <span>#strategy</span>
-            <span>#workshop-kit</span>
-            <span>#prioritization</span>
-          </div>
-          <div class="material-meta">
-            <span>Level: Mixed</span>
-            <span class="status">Ready</span>
-          </div>
-          <details>
-            <summary>Open materials</summary>
-            <ul class="material-links">
-              <li><a href="#" aria-disabled="true">Slides</a></li>
-              <li><a href="#" aria-disabled="true">Facilitator notes</a></li>
-              <li><a href="#" aria-disabled="true">Workshop kit download</a></li>
-            </ul>
-          </details>
-        </article>
-
-        <article
-          class="material-card"
-          data-title="Creative Tech Playground"
-          data-type="template"
-          data-tags="ai,creative-tech"
-        >
-          <p class="topic-type">Template · Future build</p>
-          <h3>Creative Tech Playground</h3>
-          <p>
-            Future series combining live-coding demos and AI-assisted ideation.
-            Planned as Markdown-first decks with optional recorded sessions.
-          </p>
-          <div class="topic-tags">
-            <span>#ai</span>
-            <span>#creative-tech</span>
-          </div>
-          <div class="material-meta">
-            <span>Level: Advanced</span>
-            <span class="status">Roadmap</span>
-          </div>
-          <details>
-            <summary>Open materials</summary>
-            <ul class="material-links">
-              <li><a href="#" aria-disabled="true">MD source</a></li>
-              <li><a href="#" aria-disabled="true">Generated slides</a></li>
-              <li><a href="#" aria-disabled="true">Recorded session</a></li>
-            </ul>
-          </details>
-        </article>
+        <p class="loading-copy">Loading topics...</p>
+        <noscript>You need JavaScript enabled to load the topic library.</noscript>
       </section>
+
+      <!-- Template keeps card structure editable without touching JS -->
+      <template id="topic-template">
+        <article class="material-card" data-title="" data-type="" data-tags="">
+          <p class="topic-type" data-topic-type></p>
+          <h3 data-topic-title></h3>
+          <p data-topic-description></p>
+
+          <div class="topic-tags" data-topic-tags></div>
+
+          <div class="language-flags" data-language-flags>
+            <span class="language-label">Languages:</span>
+            <div class="flag-list" data-flag-list></div>
+          </div>
+
+          <div class="material-meta">
+            <span data-topic-level></span>
+            <span class="status" data-topic-status></span>
+          </div>
+
+          <details>
+            <summary>Open materials</summary>
+            <ul class="material-links" data-topic-resources></ul>
+          </details>
+        </article>
+      </template>
 
       <!-- Block describes the forthcoming Markdown builder and deployment story -->
       <section class="future-block">
@@ -225,6 +132,11 @@
       Teaching materials © 2025 by Ondrej Brem
     </footer>
 
-    <script src="app.js"></script>
+    <!-- <script
+      src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script> -->
+    <script src="app.js" defer></script>
   </body>
 </html>

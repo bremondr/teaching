@@ -1,0 +1,112 @@
+{
+  "topics": [
+    {
+      "title": "Introduction to UX",
+      "type": "lecture",
+      "category": "UX",
+      "tags": ["ux", "research", "prototyping"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Updated Dec 2025",
+      "description": "Introductory lecture into what UX is and why it matters. Covers basic principles of user research, wireframing, and prototyping.",
+      "resources": [
+        {
+          "label": "Web slides",
+          "href": "./ux",
+          "available": true
+        },
+        {
+          "label": "PDF export",
+          "href": "./ux",
+          "available": true
+        },
+        {
+          "label": "Markdown source (soon)",
+          "href": "#",
+          "available": false
+        }
+      ]
+    },
+    {
+      "title": "Ethical Design Systems",
+      "type": "lecture",
+      "category": "Accessibility",
+      "tags": ["accessibility", "ux", "systems"],
+      "languages": ["en", "cs"],
+      "level": "Intermediate",
+      "status": "Drafting",
+      "description": "Deep dive on inclusive systems thinking and accessibility checklists. Markdown slides to be compiled into web + PDF once builder lands.",
+      "resources": [
+        {
+          "label": "Slides (soon)",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "PDF (auto-build)",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "Markdown source",
+          "href": "#",
+          "available": false
+        }
+      ]
+    },
+    {
+      "title": "Product Strategy Primer",
+      "type": "workshop",
+      "category": "Product",
+      "tags": ["strategy", "workshop-kit", "prioritization"],
+      "languages": ["en", "sk"],
+      "level": "Mixed",
+      "status": "Ready",
+      "description": "Workshop kit for prioritization games and lecture slides for outcome mapping exercises.",
+      "resources": [
+        {
+          "label": "Slides",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "Facilitator notes",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "Workshop kit download",
+          "href": "#",
+          "available": false
+        }
+      ]
+    },
+    {
+      "title": "Creative Tech Playground",
+      "type": "template",
+      "category": "Future build",
+      "tags": ["ai", "creative-tech"],
+      "languages": ["en"],
+      "level": "Advanced",
+      "status": "Roadmap",
+      "description": "Future series combining live-coding demos and AI-assisted ideation. Planned as Markdown-first decks with optional recorded sessions.",
+      "resources": [
+        {
+          "label": "MD source",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "Generated slides",
+          "href": "#",
+          "available": false
+        },
+        {
+          "label": "Recorded session",
+          "href": "#",
+          "available": false
+        }
+      ]
+    }
+  ]
+}
