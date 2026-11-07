@@ -57,8 +57,26 @@ function renderTopics(topics) {
   materialsGrid.innerHTML = "";
   materialsGrid.appendChild(fragment);
   materials = Array.from(materialsGrid.querySelectorAll(".material-card"));
+  syncTagOptions(topics);
   filterMaterials();
   applyTwemoji(materialsGrid);
+}
+
+// Adds a filter option for every tag used in topics.json that the dropdown does not list yet,
+// so index.html never has to be edited when a new item brings a new tag.
+function syncTagOptions(topics) {
+  const known = new Set(Array.from(tagFilter.options).map((option) => option.value));
+  const labels = (tag) => capitalize(tag.replace(/-/g, " "));
+  topics.forEach((topic) => {
+    toArray(topic.tags).forEach((tag) => {
+      if (known.has(tag)) return;
+      const option = document.createElement("option");
+      option.value = tag;
+      option.textContent = labels(tag);
+      tagFilter.appendChild(option);
+      known.add(tag);
+    });
+  });
 }
 
 function buildTopicCard(topic) {

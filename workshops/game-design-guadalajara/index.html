@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cook a game, facilitator app</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+  <div class="nav"><a class="btn cur" id="navPlan" href="#plan">Script plan</a><a class="btn" id="navPres" href="#presenter">Presenter view</a></div>
+
+  <div id="planView">
+    <h1>Facilitator script for the game design workshop</h1>
+    <p class="lede">Switch parts on or off, change their length and move them up or down. The start times add up as you go. Open a part to read the script and leave a note. The slides are built from this plan.</p>
+    <div class="row" id="presets">
+      <button class="btn" data-p="180" type="button">Load the 180 min plan</button>
+      <button class="btn" data-p="90" type="button">Load the 90 min plan</button>
+    </div>
+    <div id="root"></div>
+    <div id="supplies"></div>
+  </div>
+
+  <div id="presentView" hidden>
+    <div class="pgrid">
+      <div class="pleft">
+        <div class="stage" id="stage"><div class="slide" id="slide"></div><div class="tchip" id="tchip" hidden></div><div class="by" id="by" hidden><div class="byr"><span>by</span><input id="byn" type="text" aria-label="Presenter name"></div><input id="bya" type="text" aria-label="University"></div><div class="pbar"><div class="pbg" id="pbg"></div><div class="pfill" id="pfill"></div><div class="pmark" id="pmark" hidden></div></div></div>
+        <div class="ctlbar">
+          <div class="cr">
+            <button class="btn" id="prev" type="button" aria-label="Previous slide">◀ Back</button>
+            <button class="btn" id="next" type="button" aria-label="Next slide">Next ▶</button>
+            <button class="btn" id="openWin" type="button">Open slide window</button>
+            <button class="btn" id="fs" type="button">Fullscreen preview</button>
+            <span class="cnt" id="cnt"></span>
+          </div>
+          <div class="cr" id="trow">
+            <span class="clock" id="clock">0:00</span>
+            <button class="btn" id="tgo" type="button">Start</button>
+            <button class="mini" id="tm1" type="button">−1 min</button>
+            <button class="mini" id="tp1" type="button">+1 min</button>
+            <button class="mini" id="trs" type="button">Reset</button>
+            <span class="late" id="late"></span>
+          </div>
+          <div class="cr">
+            <button class="btn" id="snd" type="button" aria-pressed="false">Sound at zero: off</button>
+          </div>
+          <div class="cr">
+            <span class="sm">Tools</span>
+            <button class="btn" id="pickBtn" type="button">Pick a team</button>
+            <span id="pickOut"></span>
+            <button class="btn" id="twBtn" type="button">Deal twists (private)</button>
+          </div>
+          <div id="toolout" hidden></div>
+          <div class="cue" id="cue" hidden></div>
+          <div class="cue" id="skipbar" hidden><span id="skiptxt"></span> <button class="mini" id="skipbtn" type="button">Skip it</button></div>
+          <div class="sm" id="skipped"></div>
+        </div>
+      </div>
+      <div class="pright">
+        <div class="sm" id="winstat"></div>
+        <div class="sm" id="winhint"></div>
+        <div class="wsp">
+          <div class="wsh">
+            <div><div class="sm">Workshop clock</div><div class="wsbig" id="wsbig">0:00:00</div><div class="sm" id="wsClock"></div></div>
+            <div><button class="btn" id="wsGo" type="button">Start the workshop clock</button></div>
+          </div>
+          <div class="meter" id="wsmeter"><i></i></div>
+          <div class="late" id="wslate"></div>
+        </div>
+        <div class="npv"><div class="sm" id="nextinfo"></div><div class="stage" id="nstage"><div class="slide" id="nslide"></div></div></div>
+        <div class="dr" id="drawer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bar" id="planBar">
+  <div class="bar-in">
+    <div class="tot"><span id="tot"></span><span id="free"></span></div>
+    <div class="meter" id="meter"><i></i></div>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
