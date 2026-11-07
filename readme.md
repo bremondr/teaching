@@ -76,7 +76,7 @@ a nicely rendered page follow.
    from the front matter and links the README. Add extra links (slides, PDFs) to the card
    by hand; the script keeps them.
 4. Run `python3 scripts/check.py`. Fix every error; read the warnings.
-5. Commit on a branch (`agent/<topic>` when Claude works on it), then merge.
+5. Commit on a branch (`claude/<topic>` when Claude works on it), then merge.
 
 ## How READMEs are shown
 

@@ -16,7 +16,7 @@ the steps for adding an item and the tidy rules; read it first.
 
 ## Rules
 
-- Work on a branch `agent/<topic>` and open a pull request. Never push to `main`. Merge or delete
+- Work on a branch `claude/<topic>` (every branch a Claude session creates starts with `claude/`) and open a pull request. Never push to `main`. Merge or delete
   branches only when asked in that moment.
 - Before every commit run `python3 scripts/check.py` (no errors) and
   `python3 scripts/sync_topics.py --check`. A README with front matter is the description of an
