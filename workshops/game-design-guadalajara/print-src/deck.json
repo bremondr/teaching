@@ -1,0 +1,373 @@
+{
+ "_about": "Source of the ingredient deck. Order here is the numbering on the cards (M1, M2, ...). collisions lists pairs of card names that do not go well together; build_print.py turns them into the small notes on the cards.",
+ "kinds": {
+  "M": {
+   "en": "MECHANIC",
+   "es": "MECÁNICA"
+  },
+  "G": {
+   "en": "GOAL",
+   "es": "META"
+  },
+  "L": {
+   "en": "LIMIT",
+   "es": "LÍMITE"
+  },
+  "T": {
+   "en": "TWIST",
+   "es": "GIRO"
+  }
+ },
+ "mechanics": [
+  {
+   "en": "Collect a set",
+   "es": "Completar una colección",
+   "example_en": "Gather matching cards before the others do.",
+   "example_es": "Reunir cartas iguales antes que los demás."
+  },
+  {
+   "en": "Push your luck",
+   "es": "Tentar a la suerte",
+   "example_en": "Keep going for more points, but lose everything if it goes wrong.",
+   "example_es": "Seguir por más puntos, pero perderlo todo si sale mal."
+  },
+  {
+   "en": "Hidden role",
+   "es": "Rol oculto",
+   "example_en": "Each player has a secret job that the others must guess.",
+   "example_es": "Cada jugador tiene un papel secreto que los demás adivinan."
+  },
+  {
+   "en": "Race",
+   "es": "Carrera",
+   "example_en": "Be first to finish a task or reach a place.",
+   "example_es": "Ser el primero en terminar una tarea o llegar a un lugar."
+  },
+  {
+   "en": "Trade",
+   "es": "Intercambiar",
+   "example_en": "Swap things with other players, with or without talking.",
+   "example_es": "Cambiar cosas con otros jugadores, hablando o sin hablar."
+  },
+  {
+   "en": "Cooperate against the game",
+   "es": "Cooperar contra el juego",
+   "example_en": "Everyone wins or loses together against the deck or the clock.",
+   "example_es": "Todos ganan o pierden juntos contra la baraja o el reloj."
+  },
+  {
+   "en": "Draw or act",
+   "es": "Dibujar o actuar",
+   "example_en": "Let the others guess your picture or your gestures.",
+   "example_es": "Los demás adivinan tu dibujo o tus gestos."
+  },
+  {
+   "en": "Stack / balance",
+   "es": "Apilar / equilibrar",
+   "example_en": "Build something that must not fall.",
+   "example_es": "Construir algo que no se puede caer."
+  },
+  {
+   "en": "Real time",
+   "es": "Tiempo real",
+   "example_en": "Nobody takes turns, everyone plays at once.",
+   "example_es": "Nadie espera turno, todos juegan a la vez."
+  },
+  {
+   "en": "Deduce",
+   "es": "Deducir",
+   "example_en": "Find the hidden answer by asking yes-or-no questions.",
+   "example_es": "Descubrir la respuesta oculta con preguntas de sí o no."
+  },
+  {
+   "en": "Build a route or map",
+   "es": "Construir un camino o mapa",
+   "example_en": "Place pieces to connect places.",
+   "example_es": "Colocar piezas para conectar lugares."
+  },
+  {
+   "en": "Control an area",
+   "es": "Controlar un territorio",
+   "example_en": "Take space and defend it.",
+   "example_es": "Ocupar un espacio y defenderlo."
+  },
+  {
+   "en": "Tell a story together",
+   "es": "Contar una historia juntos",
+   "example_en": "Each player adds a sentence and the story decides who wins.",
+   "example_es": "Cada jugador añade una frase y la historia decide quién gana."
+  },
+  {
+   "en": "Pass it on",
+   "es": "Pasar",
+   "example_en": "Something moves around the table; you do not want to hold it when it stops.",
+   "example_es": "Algo circula por la mesa y no quieres tenerlo cuando se detenga."
+  },
+  {
+   "en": "Predict",
+   "es": "Apostar o predecir",
+   "example_en": "Guess what will happen and win if you are right.",
+   "example_es": "Adivinar lo que va a pasar y ganar si aciertas."
+  },
+  {
+   "en": "Chain reaction",
+   "es": "Reacción en cadena",
+   "example_en": "One move triggers the next one.",
+   "example_es": "Una jugada provoca la siguiente."
+  },
+  {
+   "en": "Program a sequence",
+   "es": "Programar una secuencia",
+   "example_en": "Plan several steps ahead, then watch them run.",
+   "example_es": "Planear varios pasos y verlos ejecutarse."
+  },
+  {
+   "en": "Take down the leader",
+   "es": "Quitar al líder",
+   "example_en": "The player in front is a target for everyone else.",
+   "example_es": "El jugador que va ganando es el objetivo de todos."
+  },
+  {
+   "en": "Hide and find",
+   "es": "Esconder y encontrar",
+   "example_en": "Hide an object in the room or on the table, and give clues.",
+   "example_es": "Esconder un objeto en el cuarto o en la mesa y dar pistas."
+  }
+ ],
+ "goals": [
+  {
+   "en": "Score the most points",
+   "es": "Conseguir más puntos"
+  },
+  {
+   "en": "Be the last one standing",
+   "es": "Ser el último que queda"
+  },
+  {
+   "en": "Win or lose together",
+   "es": "Ganar o perder juntos"
+  },
+  {
+   "en": "Reach the end first",
+   "es": "Llegar primero al final"
+  },
+  {
+   "en": "Teach the players something",
+   "es": "Enseñar algo a los jugadores"
+  },
+  {
+   "en": "Complete your private mission",
+   "es": "Cumplir tu misión secreta"
+  },
+  {
+   "en": "Survive until the timer ends",
+   "es": "Sobrevivir hasta que suene el reloj"
+  },
+  {
+   "en": "Tell the best story",
+   "es": "Contar la mejor historia"
+  },
+  {
+   "en": "Collect the most of one thing",
+   "es": "Reunir más de una sola cosa"
+  },
+  {
+   "en": "Keep the table in balance",
+   "es": "Mantener el equilibrio en la mesa"
+  },
+  {
+   "en": "Control the most area at the end",
+   "es": "Controlar más territorio al final"
+  },
+  {
+   "en": "Be the most trusted player",
+   "es": "Ser el jugador más confiable"
+  },
+  {
+   "en": "Finish a shared picture or puzzle",
+   "es": "Completar juntos un dibujo o rompecabezas"
+  }
+ ],
+ "limits": [
+  {
+   "en": "Only 20 cards",
+   "es": "Solo 20 cartas"
+  },
+  {
+   "en": "No dice",
+   "es": "Sin dados"
+  },
+  {
+   "en": "No text on the cards",
+   "es": "Sin texto en las cartas"
+  },
+  {
+   "en": "The game takes 5 minutes",
+   "es": "El juego dura 5 minutos"
+  },
+  {
+   "en": "No talking during the game",
+   "es": "Sin hablar durante el juego"
+  },
+  {
+   "en": "Played standing up",
+   "es": "Se juega de pie"
+  },
+  {
+   "en": "At least 8 players",
+   "es": "Mínimo 8 jugadores"
+  },
+  {
+   "en": "Everyone in the class plays at once",
+   "es": "Toda la clase juega a la vez"
+  },
+  {
+   "en": "Nobody waits more than 10 seconds for a turn",
+   "es": "Nadie espera más de 10 segundos su turno"
+  },
+  {
+   "en": "One shared board for all players",
+   "es": "Un solo tablero para todos"
+  },
+  {
+   "en": "Playable without sharing a language",
+   "es": "Se puede jugar sin hablar el mismo idioma"
+  },
+  {
+   "en": "Some information is always hidden",
+   "es": "Siempre hay información oculta"
+  },
+  {
+   "en": "No turns and no points",
+   "es": "Sin turnos y sin puntos"
+  },
+  {
+   "en": "Players must keep moving",
+   "es": "Los jugadores no pueden quedarse quietos"
+  },
+  {
+   "en": "Max 10 cards in the whole game",
+   "es": "Máximo 10 cartas en todo el juego"
+  },
+  {
+   "en": "The game gets harder as it goes on",
+   "es": "El juego se vuelve más difícil mientras avanza"
+  }
+ ],
+ "twists": [
+  {
+   "en": "Add a hidden role",
+   "es": "Añade un rol oculto"
+  },
+  {
+   "en": "Add a second way to win",
+   "es": "Añade una segunda forma de ganar"
+  },
+  {
+   "en": "Make it work for a 10-year-old",
+   "es": "Hazlo jugable para un niño de 10 años"
+  },
+  {
+   "en": "Swap your Thing with another team's",
+   "es": "Cambia tu objeto por el de otro equipo"
+  },
+  {
+   "en": "Nobody wins any more",
+   "es": "Ya nadie gana"
+  },
+  {
+   "en": "Add a coin flip or a draw that changes one result",
+   "es": "Añade una moneda o un sorteo que cambie un resultado"
+  },
+  {
+   "en": "Take the setting of another team",
+   "es": "Toma el escenario de otro equipo"
+  },
+  {
+   "en": "Make the game last half as long",
+   "es": "Haz que el juego dure la mitad"
+  },
+  {
+   "en": "Reward a surprise",
+   "es": "Premia una sorpresa"
+  },
+  {
+   "en": "Add a secret signal teammates can use",
+   "es": "Añade una señal secreta entre compañeros"
+  },
+  {
+   "en": "Make it playable without sharing a language",
+   "es": "Haz que se pueda jugar sin hablar el mismo idioma"
+  },
+  {
+   "en": "Draw a new Audience from the pile",
+   "es": "Saca un nuevo público del montón"
+  },
+  {
+   "en": "Add a second Setting from the pile",
+   "es": "Añade un segundo escenario del montón"
+  },
+  {
+   "en": "Add a second Thing from the pile",
+   "es": "Añade un segundo objeto del montón"
+  },
+  {
+   "en": "Rescue a discarded note",
+   "es": "Rescata una nota descartada"
+  },
+  {
+   "en": "Trade Audiences with another team",
+   "es": "Cambia tu público con otro equipo"
+  }
+ ],
+ "collisions": [
+  [
+   "Only 20 cards",
+   "Max 10 cards in the whole game"
+  ],
+  [
+   "Nobody waits more than 10 seconds for a turn",
+   "No turns and no points"
+  ],
+  [
+   "Playable without sharing a language",
+   "Make it playable without sharing a language"
+  ],
+  [
+   "No talking during the game",
+   "Deduce"
+  ],
+  [
+   "No talking during the game",
+   "Tell a story together"
+  ],
+  [
+   "No talking during the game",
+   "Tell the best story"
+  ],
+  [
+   "Playable without sharing a language",
+   "Tell a story together"
+  ],
+  [
+   "Playable without sharing a language",
+   "Tell the best story"
+  ],
+  [
+   "Make it playable without sharing a language",
+   "Tell a story together"
+  ],
+  [
+   "Make it playable without sharing a language",
+   "Tell the best story"
+  ],
+  [
+   "No turns and no points",
+   "Score the most points"
+  ],
+  [
+   "Add a hidden role",
+   "Hidden role"
+  ]
+ ]
+}
