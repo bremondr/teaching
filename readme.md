@@ -57,8 +57,9 @@ scripts/sync_topics.py           cards in topics.json from the item READMEs
 ```
 
 An item lives in exactly one folder, named after its type. The folder name is a short
-lowercase ASCII slug with hyphens (`game-design-guadalajara`, not `Game Design (v2)`).
-The first item is `workshops/game-design-guadalajara/`: a facilitator app, slides and
+lowercase ASCII slug with hyphens (`cook-a-game`, not `Game Design (v2)`). A workshop that
+has a note folder in the notes vault uses the same slug there, so the two always match.
+The first item is `workshops/cook-a-game/`: a facilitator app, slides and
 a print kit.
 
 ## Adding an item

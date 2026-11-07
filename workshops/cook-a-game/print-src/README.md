@@ -7,7 +7,7 @@ pixel for pixel the same as the PDFs in `../print/` (checked on 2026-11-07).
 ## Rebuild
 
 ```
-python3 workshops/game-design-guadalajara/print-src/build_print.py
+python3 workshops/cook-a-game/print-src/build_print.py
 ```
 
 It writes the seven single PDFs and `print-kit-all.pdf` into `../print/`. To try a change
