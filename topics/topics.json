@@ -12,57 +12,57 @@
       "resources": [
         {
           "label": "Facilitator app (script, presenter view, slides)",
-          "href": "./workshops/game-design-guadalajara/",
+          "href": "./workshops/cook-a-game/",
           "available": true
         },
         {
           "label": "Print: everything in one PDF (19 pages, cover page tells what to print)",
-          "href": "./workshops/game-design-guadalajara/print/print-kit-all.pdf",
+          "href": "./workshops/cook-a-game/print/print-kit-all.pdf",
           "available": true
         },
         {
           "label": "Print: ingredient cards (64 cards, 7 pages)",
-          "href": "./workshops/game-design-guadalajara/print/deck-cards.pdf",
+          "href": "./workshops/cook-a-game/print/deck-cards.pdf",
           "available": true
         },
         {
           "label": "Print: team slips with fruit and vegetable pictures",
-          "href": "./workshops/game-design-guadalajara/print/team-slips.pdf",
+          "href": "./workshops/cook-a-game/print/team-slips.pdf",
           "available": true
         },
         {
           "label": "Print: idea card",
-          "href": "./workshops/game-design-guadalajara/print/idea-card.pdf",
+          "href": "./workshops/cook-a-game/print/idea-card.pdf",
           "available": true
         },
         {
           "label": "Print: rules card A6 (first version)",
-          "href": "./workshops/game-design-guadalajara/print/rules-card-a6.pdf",
+          "href": "./workshops/cook-a-game/print/rules-card-a6.pdf",
           "available": true
         },
         {
           "label": "Print: rules card A5 (final version, after the twist)",
-          "href": "./workshops/game-design-guadalajara/print/rules-card-a5-final.pdf",
+          "href": "./workshops/cook-a-game/print/rules-card-a5-final.pdf",
           "available": true
         },
         {
           "label": "Example: filled-in rules card A6",
-          "href": "./workshops/game-design-guadalajara/print/rules-card-example-a6.pdf",
+          "href": "./workshops/cook-a-game/print/rules-card-example-a6.pdf",
           "available": true
         },
         {
           "label": "Example: filled-in final rules card A5",
-          "href": "./workshops/game-design-guadalajara/print/rules-card-example-a5.pdf",
+          "href": "./workshops/cook-a-game/print/rules-card-example-a5.pdf",
           "available": true
         },
         {
           "label": "README",
-          "href": "./workshops/game-design-guadalajara/README.md",
+          "href": "./workshops/cook-a-game/README.md",
           "available": true
         },
         {
           "label": "Print kit sources and how to rebuild",
-          "href": "./workshops/game-design-guadalajara/print-src/README.md",
+          "href": "./workshops/cook-a-game/print-src/README.md",
           "available": true
         }
       ]

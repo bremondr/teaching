@@ -38,9 +38,9 @@ The app is static: no build step and no server code. It must be opened from a we
 address, not as a double-clicked file, because the presenter window and the slide
 window talk to each other through the browser and that needs a normal origin.
 
-- On GitHub Pages: open `workshops/game-design-guadalajara/` on the published site.
+- On GitHub Pages: open `workshops/cook-a-game/` on the published site.
 - Locally: run `python3 -m http.server` in the repo root and open
-  `http://localhost:8000/workshops/game-design-guadalajara/`.
+  `http://localhost:8000/workshops/cook-a-game/`.
 
 Three views, chosen by the end of the address:
 
