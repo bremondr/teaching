@@ -1,14 +1,27 @@
+---
+title: Title of the item
+type: workshop
+category: Short category name
+tags: [lowercase-tag, another-tag]
+languages: [en]
+level: Intro
+status: Draft, Month YYYY
+description: One or two plain sentences. It is shown on the hub card and under the title of this page.
+open: ./
+open_label: Open the app
+---
+
 # Title of the item
 
 One paragraph: what it is, who it is for, how long it takes, where it was first used.
 
 Language of the materials: ...
-Status: draft | first run done | ready
 
 ## What is here
 
 | Path | What it is |
 | --- | --- |
+| `README.md` | This page |
 
 ## Using it
 
