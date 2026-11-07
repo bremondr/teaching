@@ -66,12 +66,12 @@ app shrinks long text to fit, but a very long slide becomes hard to read.
 
 | File | Pages | What |
 | --- | --- | --- |
-| `deck-cards.pdf` | 7 | 64 ingredient cards, 90 x 55 mm, 10 per page, Spanish upside down above the English |
-| `rules-card-a6.pdf` | 2 | First rules card, A6, 4 per page, no twist box |
-| `rules-card-a5-final.pdf` | 4 | Final rules card after the twist, A5 landscape, 2 per page |
-| `rules-card-example-a6.pdf`, `rules-card-example-a5.pdf` | 1 each | Filled-in examples (the game The Mind) |
-| `idea-card.pdf` | 1 | The one-sentence idea card, 10 per page |
-| `team-slips.pdf` | 2 | 72 team slips with fruit and vegetable pictures, for up to 8 teams |
+| [`deck-cards.pdf`](print/deck-cards.pdf) | 7 | 64 ingredient cards, 90 x 55 mm, 10 per page, Spanish upside down above the English |
+| [`rules-card-a6.pdf`](print/rules-card-a6.pdf) | 2 | First rules card, A6, 4 per page, no twist box |
+| [`rules-card-a5-final.pdf`](print/rules-card-a5-final.pdf) | 4 | Final rules card after the twist, A5 landscape, 2 per page |
+| [`rules-card-example-a6.pdf`](print/rules-card-example-a6.pdf), [`rules-card-example-a5.pdf`](print/rules-card-example-a5.pdf) | 1 each | Filled-in examples (the game The Mind) |
+| [`idea-card.pdf`](print/idea-card.pdf) | 1 | The one-sentence idea card, 10 per page |
+| [`team-slips.pdf`](print/team-slips.pdf) | 2 | 72 team slips with fruit and vegetable pictures, for up to 8 teams |
 
 Print at 100 percent, not "fit to page". Colour system: yellow, green and pink sticky
 notes for setting, thing and audience; the printed cards are blue (mechanic), orange
