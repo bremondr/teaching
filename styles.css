@@ -133,6 +133,17 @@ header p {
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
 }
 
+.material-card h3 .card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.material-card h3 .card-title-link:hover,
+.material-card h3 .card-title-link:focus-visible {
+  color: var(--blueberry);
+  text-decoration: underline;
+}
+
 .material-card h3 {
   margin: 0;
   font-size: 1.3rem;
