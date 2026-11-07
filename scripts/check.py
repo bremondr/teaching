@@ -167,8 +167,16 @@ def check_files(files):
             warn(f"{f}: {size / (1024 * 1024):.1f} MB; consider shrinking it")
 
 
+def check_pages():
+    # GitHub Pages runs Jekyll unless this file exists. Jekyll turns every Markdown file that has
+    # front matter into HTML and stops serving the raw .md, so readme.html could not load it.
+    if not (ROOT / ".nojekyll").is_file():
+        err(".nojekyll is missing: GitHub Pages would turn the README files into HTML and readme.html could not load them")
+
+
 def main():
     strict = "--strict" in sys.argv
+    check_pages()
     files = tracked_files()
     linked, hrefs = check_topics()
     check_items(linked, files, hrefs)
