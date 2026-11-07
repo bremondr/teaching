@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teaching Hub</title>
+    <!-- Renders any Markdown file of this repo, e.g. readme.html?f=workshops/some-item/README.md
+         or readme.html?p=workshops/some-item (shorthand for that folder's README.md).
+         Palette and layout come from styles.css; the extras are in assets/readme.css. -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/readme.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="./">← All materials</a>
+        <span id="crumbPath"></span>
+      </nav>
+      <div class="doc-layout">
+        <article class="doc" id="doc">
+          <p class="loading-copy">Loading…</p>
+          <noscript>You need JavaScript enabled to read this page.</noscript>
+        </article>
+        <aside class="toc" id="toc" aria-label="On this page" hidden></aside>
+      </div>
+    </div>
+    <footer>
+      Teaching materials © 2025 by Ondrej Brem ·
+      <a id="sourceLink" href="https://github.com/bremondr/teaching">Source on GitHub</a>
+    </footer>
+    <script src="assets/vendor/marked.min.js"></script>
+    <script src="assets/vendor/purify.min.js"></script>
+    <script src="assets/readme.js"></script>
+  </body>
+</html>

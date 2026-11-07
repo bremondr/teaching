@@ -7,8 +7,9 @@
 It uses only the standard library. It checks:
   1. topics/topics.json: required fields, allowed type and language codes, tag style,
      and that every available link points to something that exists in the repo.
-  2. Item folders (lectures/, workshops/, templates/): each has a README.md and is
-     linked from topics.json.
+  2. Item folders (lectures/, workshops/, templates/): each has a README.md with front
+     matter (title, type, description), is linked from topics.json, and the card in
+     topics.json agrees with the README (see scripts/sync_topics.py).
   3. File hygiene for tracked files: ASCII file names without spaces or Windows-unsafe
      characters, no case-only duplicates, no archives or videos, size limits.
 """
@@ -108,8 +109,22 @@ def check_items(linked, files):
             rel = item.relative_to(ROOT).as_posix()
             if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", item.name):
                 err(f"{rel}: folder name must be lowercase ASCII words joined by hyphens")
-            if not (item / "README.md").is_file():
+            readme = item / "README.md"
+            if not readme.is_file():
                 err(f"{rel}: missing README.md")
+            else:
+                text = readme.read_text(encoding="utf-8")
+                m = re.match(r"^---\r?\n(.*?)\r?\n---", text, re.S)
+                if not m:
+                    warn(f"{rel}/README.md: no front matter; the hub card and the page header need it (copy _template/README.md)")
+                else:
+                    keys = {line.split(":", 1)[0].strip() for line in m.group(1).splitlines() if ":" in line}
+                    for key in ("title", "type", "description"):
+                        if key not in keys:
+                            err(f"{rel}/README.md: front matter is missing '{key}'")
+                    t = re.search(r"^type:\s*(\S+)", m.group(1), re.M)
+                    if t and t.group(1) != kind:
+                        err(f"{rel}/README.md: front matter type '{t.group(1)}' does not match the folder ({kind})")
             if not any(l == rel or l.startswith(rel + "/") for l in linked):
                 warn(f"{rel}: not linked from topics/topics.json")
             total = sum((ROOT / f).stat().st_size for f in files if f.startswith(rel + "/"))
@@ -149,6 +164,9 @@ def main():
     linked = check_topics()
     check_items(linked, files)
     check_files(files)
+    sync = subprocess.run([sys.executable, str(ROOT / "scripts" / "sync_topics.py"), "--check"], capture_output=True, text=True)
+    if sync.returncode != 0:
+        err("topics/topics.json is out of line with the item READMEs. Run: python3 scripts/sync_topics.py")
     for w in warnings:
         print("WARN ", w)
     for e in errors:

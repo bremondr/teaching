@@ -1,3 +1,15 @@
+---
+title: "Cook a game: game design workshop"
+type: workshop
+category: Game design
+tags: [game-design, workshop-kit, creative-tech]
+languages: [en, es]
+level: Intro
+status: First version, Nov 2026
+description: Three-hour workshop where teams build a tabletop game from ingredient cards, adapt it to a secret twist and playtest it. Facilitator app with slides, presenter view and timers, plus a printable card kit.
+open: ./
+open_label: Open the facilitator app
+---
 # Cook a game: game design workshop
 
 A three-hour workshop where teams of students design, play and improve a small

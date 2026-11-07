@@ -150,7 +150,7 @@ function buildTopicCard(topic) {
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.textContent = resource.label || "Resource";
-    link.href = resource.href || "#";
+    link.href = viewerHref(resource.href);
     if (!resource.available) {
       link.setAttribute("aria-disabled", "true");
     } else {
@@ -162,6 +162,13 @@ function buildTopicCard(topic) {
   });
 
   return template;
+}
+
+// Links to Markdown files of this repo open in the readme viewer (readme.html) so they render nicely.
+function viewerHref(href) {
+  if (!href || href === "#" || /^[a-z][a-z0-9+.-]*:/i.test(href)) return href || "#";
+  const path = href.replace(/^\.\//, "");
+  return /\.md($|#)/i.test(path) ? "readme.html?f=" + encodeURI(path) : href;
 }
 
 function capitalize(value = "") {
