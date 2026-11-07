@@ -59,8 +59,9 @@ def check_topics():
         data = json.loads(path.read_text(encoding="utf-8"))
     except Exception as e:  # noqa: BLE001
         err(f"topics/topics.json cannot be read: {e}")
-        return set()
+        return set(), set()
     linked = set()
+    hrefs = set()
     titles = set()
     for i, t in enumerate(data.get("topics", [])):
         name = t.get("title", f"entry {i + 1}")
@@ -83,6 +84,7 @@ def check_topics():
                 if key not in r:
                     err(f"{name}: a resource is missing '{key}'")
             href = r.get("href", "")
+            hrefs.add(href)
             if r.get("available") and href in ("", "#"):
                 err(f"{name}: resource '{r.get('label')}' is marked available but has no link")
             if href.startswith(("http://", "https://")):
@@ -97,10 +99,10 @@ def check_topics():
                 linked.add(rel.rstrip("/"))
                 if r.get("available") and not target.exists():
                     warn(f"{name}: link '{href}' points to a path that is not in the repo")
-    return linked
+    return linked, hrefs
 
 
-def check_items(linked, files):
+def check_items(linked, files, hrefs):
     for folder, kind in TYPE_DIRS.items():
         base = ROOT / folder
         if not base.is_dir():
@@ -127,6 +129,13 @@ def check_items(linked, files):
                         err(f"{rel}/README.md: front matter type '{t.group(1)}' does not match the folder ({kind})")
             if not any(l == rel or l.startswith(rel + "/") for l in linked):
                 warn(f"{rel}: not linked from topics/topics.json")
+            # every PDF in print/ must be reachable from the hub card or the item README
+            readme_text = readme.read_text(encoding="utf-8") if readme.is_file() else ""
+            for f in files:
+                if f.startswith(rel + "/print/") and f.lower().endswith(".pdf"):
+                    name = Path(f).name
+                    if not any(h.endswith(name) for h in hrefs) and name not in readme_text:
+                        warn(f"{f}: not linked from the hub card or from {rel}/README.md")
             total = sum((ROOT / f).stat().st_size for f in files if f.startswith(rel + "/"))
             if total > ITEM_WARN:
                 warn(f"{rel}: {total // (1024 * 1024)} MB in total; keep an item under {ITEM_WARN // (1024 * 1024)} MB")
@@ -158,11 +167,19 @@ def check_files(files):
             warn(f"{f}: {size / (1024 * 1024):.1f} MB; consider shrinking it")
 
 
+def check_pages():
+    # GitHub Pages runs Jekyll unless this file exists. Jekyll turns every Markdown file that has
+    # front matter into HTML and stops serving the raw .md, so readme.html could not load it.
+    if not (ROOT / ".nojekyll").is_file():
+        err(".nojekyll is missing: GitHub Pages would turn the README files into HTML and readme.html could not load them")
+
+
 def main():
     strict = "--strict" in sys.argv
+    check_pages()
     files = tracked_files()
-    linked = check_topics()
-    check_items(linked, files)
+    linked, hrefs = check_topics()
+    check_items(linked, files, hrefs)
     check_files(files)
     sync = subprocess.run([sys.executable, str(ROOT / "scripts" / "sync_topics.py"), "--check"], capture_output=True, text=True)
     if sync.returncode != 0:

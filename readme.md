@@ -86,6 +86,9 @@ header from the front matter, table of contents, tables, code, relative links an
 - `readme.html?f=path/to/file.md` shows any `.md` file in the repo.
 - Links to `.md` files in the hub cards, and inside rendered Markdown, open in the viewer
   by themselves. Links to PDFs and external sites open in a new tab.
+- GitHub Pages must serve the files as they are, so the repo has an empty `.nojekyll` file.
+  Never delete it: without it Jekyll turns every `.md` file that has front matter into HTML,
+  the raw `.md` disappears from the site and the viewer shows "Could not load".
 - The viewer needs no build step. Markdown is parsed by `marked` and cleaned by
   `DOMPurify`, both kept in `assets/vendor/` with their licences (no internet needed).
 
