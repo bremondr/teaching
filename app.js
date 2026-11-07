@@ -103,7 +103,19 @@ function buildTopicCard(topic) {
   typeEl.textContent = `${capitalize(topic.type || "session")} · ${
     topic.category || "General"
   }`;
-  titleEl.textContent = topic.title || "Untitled topic";
+  const readmeResource = resources.find(
+    (r) => r.available && /\.md($|#)/i.test(r.href || "") && !/^[a-z][a-z0-9+.-]*:/i.test(r.href)
+  );
+  if (readmeResource) {
+    // The card title opens the item's README in the viewer.
+    const titleLink = document.createElement("a");
+    titleLink.className = "card-title-link";
+    titleLink.href = viewerHref(readmeResource.href);
+    titleLink.textContent = topic.title || "Untitled topic";
+    titleEl.appendChild(titleLink);
+  } else {
+    titleEl.textContent = topic.title || "Untitled topic";
+  }
   descEl.textContent = topic.description || "";
 
   tagsContainer.innerHTML = "";
