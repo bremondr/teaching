@@ -29,7 +29,8 @@ Status: first version, built 2026-11-07 before the first run. Expect changes aft
 | `index.html`, `app.css`, `app.js` | The facilitator app: script plan, presenter view and slide window |
 | `content.js` | All the words of the workshop: script blocks, slide texts, twists, team names |
 | `fonts/` | Two variable fonts (latin and latin-ext), so the app looks the same offline |
-| `print/` | The print kit as PDFs, A4, with cut marks (see below) |
+| `print/` | The print kit as PDFs, A4, with cut marks, and all of it in one file (see below) |
+| `print-src/` | The sources of the print kit and the script that builds the PDFs |
 
 ## Running the app
 
@@ -66,6 +67,7 @@ app shrinks long text to fit, but a very long slide becomes hard to read.
 
 | File | Pages | What |
 | --- | --- | --- |
+| [`print-kit-all.pdf`](print/print-kit-all.pdf) | 19 | Everything below in one file, with a cover page that says what to print and how many pages each part has |
 | [`deck-cards.pdf`](print/deck-cards.pdf) | 7 | 64 ingredient cards, 90 x 55 mm, 10 per page, Spanish upside down above the English |
 | [`rules-card-a6.pdf`](print/rules-card-a6.pdf) | 2 | First rules card, A6, 4 per page, no twist box |
 | [`rules-card-a5-final.pdf`](print/rules-card-a5-final.pdf) | 4 | Final rules card after the twist, A5 landscape, 2 per page |
@@ -77,9 +79,7 @@ Print at 100 percent, not "fit to page". Colour system: yellow, green and pink s
 notes for setting, thing and audience; the printed cards are blue (mechanic), orange
 (goal), slate (limit) and violet (twist).
 
-The PDFs were generated from scripts that are not in this repo yet. If a card text has
-to change, change it in the PDF source first; until the sources are added here, ask
-before editing the PDFs by hand.
+The PDFs are built from the sources in [`print-src/`](print-src/README.md): `deck.json` holds the ingredient cards, and one command rebuilds every PDF and the merged file. Change the sources, not the PDFs.
 
 ## Known limits
 

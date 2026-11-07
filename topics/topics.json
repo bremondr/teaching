@@ -16,6 +16,11 @@
           "available": true
         },
         {
+          "label": "Print: everything in one PDF (19 pages, cover page tells what to print)",
+          "href": "./workshops/game-design-guadalajara/print/print-kit-all.pdf",
+          "available": true
+        },
+        {
           "label": "Print: ingredient cards (64 cards, 7 pages)",
           "href": "./workshops/game-design-guadalajara/print/deck-cards.pdf",
           "available": true
@@ -53,6 +58,11 @@
         {
           "label": "README",
           "href": "./workshops/game-design-guadalajara/README.md",
+          "available": true
+        },
+        {
+          "label": "Print kit sources and how to rebuild",
+          "href": "./workshops/game-design-guadalajara/print-src/README.md",
           "available": true
         }
       ]
