@@ -81,6 +81,52 @@ notes for setting, thing and audience; the printed cards are blue (mechanic), or
 
 The PDFs are built from the sources in [`print-src/`](print-src/README.md): `deck.json` holds the ingredient cards, and one command rebuilds every PDF and the merged file. Change the sources, not the PDFs.
 
+## Materials
+
+Everything to bring or ask the hosts for. The quantities are for 20 students in 5 teams of 4; the
+facilitator app works out the same list for the real numbers (bottom of the script plan view,
+`#plan`), so check there on the day.
+
+**Printed from `print/`** (at 100 percent, with the cut marks; see the table above)
+
+- Ingredient deck, 64 cards, 7 pages, one set for the facilitator.
+- Rules cards, first version (A6, no twist box), 8 cards on 2 pages.
+- Rules cards, final version (A5, handed out at the twist), 8 cards on 4 pages.
+- Idea cards, 1 page of 10 is enough for 5 teams.
+- Team slips, 2 pages, 72 slips for up to 8 teams, cut out; spares cover late students.
+- The two filled-in examples (A6 and A5), one copy each to show.
+
+**Writing and building supplies**
+
+| Item | Quantity (20 students, 5 teams) |
+| --- | --- |
+| Sticky notes, 3 colours: yellow (setting), green (thing), pink (audience) | 30 of each, one note per student per colour plus spares |
+| Index cards | about 200 (40 per team) |
+| Pens or pencils | 20, one each |
+| Markers, different colours | 22 (4 per team and 2 for the facilitator) |
+| Tokens (coins, beans, buttons) | about 100 (20 per team) |
+| Blank A4 paper | 50 sheets (10 per team) |
+| Scissors | 5 (one per team) |
+| Tape, plus masking tape for the walls | 5 rolls |
+| Paper cups or envelopes, for hiding things | 10 |
+| Paper clips or rubber bands | a small handful per team |
+| A box or bag for the discarded notes (twist T15 needs them) | 1 |
+
+**Flipcharts**
+
+| Item | Quantity |
+| --- | --- |
+| Flipchart stand with a paper pad, for the facilitator: the language rule, the time plan, a parking lot for questions | 1 |
+| Flipchart paper sheets, for each team to show its game or keep its rules visible, taped to the wall if there are no stands | 1 or 2 per team, 5 to 10 in all |
+| Flipchart markers, thick, at least 4 colours (the marker count above is for the tables) | 1 set for the facilitator, 1 per team if the sheets are used |
+
+**Room and equipment**
+
+- Movable chairs, a table per team, one open table for the deal, wall space for the flipchart sheets.
+- A projector with an HDMI or USB-C adapter, and a laptop with the app open: the presenter view on the laptop, the slide window on the projector.
+- A real game for the mini-lecture: Codenames (Pictures), or another game that can be taken apart.
+- A timer and a camera for photos (a phone is enough; the app has the clock).
+
 ## Known limits
 
 - The two windows must be in the same browser on the same computer.
