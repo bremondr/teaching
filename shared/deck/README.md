@@ -90,6 +90,8 @@ figure: `<figure class="dk-fig"><img src="assets/x.webp" alt="â€¦"><figcaption>â
 - The text of the slide is drawn above the layer. `data-pad` (top, right, bottom, left, in slide pixels) moves the
   text area away from the pictures, so the fitting keeps the text in the free part. `dk-front` on the layer draws it
   above the text.
+- `<div class="dk-shade" style="left:%;top:%;width:%;height:%"></div>` inside the layer, after the pictures, lays a
+  half-transparent panel in the slide colour under text that sits on a photo, so the text stays readable in both looks.
 - `p.dk-credit` puts a small credit in the bottom right corner. A link around the `img` (for a video that the
   original linked) stays clickable.
 - Keep the layer on one line in Markdown (a blank line ends an HTML block), inside the `::: en` or `::: cs` block
