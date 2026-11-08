@@ -52,6 +52,6 @@ Based on the draw-an-alien exercise from creativity research by Kozbelt and Durm
 
 ## Known limits
 
-- The legacy material had pictures that are not reproduced; where useful, the speaker notes say so. Drawings by participants are not included.
+- The pictures of the legacy Aalto slides (CC BY-NC 4.0) are shown as there: two typical alien drawings and the licence badge, in `assets/`, with the credit on the slide. Drawings by participants are not included.
 - The timers beep at zero if the browser allows sound; there is no other alarm.
 - Czech text is a first translation and should be read by a native speaker before use.

@@ -73,7 +73,20 @@
 
   var T = function (en, cs) { return { en: en, cs: cs }; };
 
-  Deck.module({
+  // Pictures of the original Aalto slides, placed as there (see shared/deck/README.md, "Pictures"); the same in both languages.
+  var PICS = {
+   "intro": "<div class=\"dk-canvas\" data-pad=\"58 560 56 64\"><figure class=\"dk-pic\" style=\"left:70.99%;top:22.19%;width:4.08%;height:7.25%\"><img src=\"assets/icon-tick.webp\" alt=\"A green tick\"></figure><figure class=\"dk-pic\" style=\"left:81.66%;top:22.06%;width:4.11%;height:7.3%\"><img src=\"assets/icon-cross.webp\" alt=\"An orange cross\"></figure><figure class=\"dk-pic dk-paper\" style=\"left:63.15%;top:31.77%;width:29.49%;height:48.24%\"><img src=\"assets/circle-grid.webp\" alt=\"A sheet titled 30 circles challenge with five rows of six empty circles\"></figure><figure class=\"dk-pic dk-paper\" style=\"left:1.62%;top:91.22%;width:8.23%;height:4.02%\"><img src=\"assets/cc-by-nc.webp\" alt=\"Creative Commons BY-NC licence badge\"></figure><p class=\"dk-credit\">Slides adapted from the Aalto Ventures Program deck, CC BY-NC 4.0</p></div>",
+   "rules": "<div class=\"dk-canvas\" data-pad=\"58 560 56 64\"><figure class=\"dk-pic dk-paper\" style=\"left:57.65%;top:5.17%;width:36.14%;height:83.66%\"><img src=\"assets/examples-broken-rules.webp\" alt=\"Example drawings: a cat face and a bicycle that go outside the circles, and a caterpillar made of several circles\"></figure><p class=\"dk-credit\">Slides adapted from the Aalto Ventures Program deck, CC BY-NC 4.0</p></div>"
+  };
+  function withPictures(def) {
+    def.slides.forEach(function (s) {
+      var h = PICS[s.id];
+      if (h && s.body && typeof s.body === "object") s.body = { en: s.body.en + h, cs: s.body.cs + h };
+    });
+    return def;
+  }
+
+  Deck.module(withPictures({
     id: "30-circles",
     title: T("30 circles", "30 kruhů"),
     slides: [
@@ -140,5 +153,5 @@
         notes: T("<p>The questions are a suggestion for the follow-up talk. The aim is to show that quantity and rule-bending produce less obvious ideas.</p>",
                  "<p>Otázky jsou návrh pro navazující rozhovor. Cílem je ukázat, že množství nápadů a ohýbání pravidel vede k méně obvyklým výsledkům.</p>") }
     ]
-  });
+  }));
 })();
