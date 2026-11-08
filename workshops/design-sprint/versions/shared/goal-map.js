@@ -1,7 +1,7 @@
 // Day 1 block: lightning talks, long-term goal, sprint questions, map of the challenge.
 Deck.module({ id: "goalmap", title: "Goal, questions and map", slides: [
   { id: "talks", min: 15, title: "Lightning talks",
-    body: "<h2>Lightning talks</h2><p>One minute each: share the vision, context and background of the project.</p><p>Everyone else takes notes under three headings:</p><ul><li>promising</li><li>positive</li><li>negative</li></ul>",
+    body: "<h2>Lightning talks</h2><p>One minute each: share the vision, context and background of the project.</p><p>Everyone else takes notes under three headings:</p><ul><li>promising</li><li>positive</li><li>negative</li></ul><div class='dk-timer' data-seconds='480' data-size='small'></div>",
     notes: DS.n("Fifteen minutes is a guess for a team of up to ten; scale it by one minute per speaker plus a little slack.",
       "The three headings are a quick way to listen with a purpose: what has potential, what is good, what worries you.") },
   { id: "goal-why", min: 2, title: "Long-term goal",

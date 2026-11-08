@@ -12,7 +12,7 @@
 
   var css = document.createElement("style");
   css.textContent =
-    ".ds-clock{font:700 150px Consolas,monospace;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)}" +
+    ".ds-clock{font:700 150px var(--font-display),system-ui,sans-serif;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)}" +
     ".ds-clock.ds-done{color:var(--stage-bad)}.ds-clock.ds-flash{color:var(--stage-hi)}" +
     ".ds-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}" +
     ".ds-inner-btn{font-size:28px;padding:10px 22px;cursor:pointer}" +
@@ -23,6 +23,9 @@
     ".ds-days{display:grid;gap:14px}.ds-day{background:color-mix(in srgb,var(--stage-fg) 8%,transparent);border:1px solid color-mix(in srgb,var(--stage-fg) 25%,transparent);border-radius:10px;padding:14px 18px}" +
     ".ds-day b{color:var(--stage-hi);font-size:30px}.ds-day span{display:block;font-size:26px;line-height:1.3}" +
     ".ds-day.ds-now{border-color:var(--stage-hi)}" +
+    ".ds-icons li{position:relative;padding-left:84px;min-height:64px}.ds-icons li::before{display:none}" +
+    ".ds-icon{position:absolute;left:0;top:-4px;width:64px;height:64px;filter:invert(1) grayscale(1) brightness(1.6)}" +
+    "[data-slides=light] .ds-icon{filter:none}" +
     ".ds-ph{border:2px dashed color-mix(in srgb,var(--stage-fg) 28%,transparent);border-radius:10px;padding:14px 18px;font-size:26px;color:var(--stage-dim)}";
   document.head.appendChild(css);
 
