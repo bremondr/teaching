@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "Draw an alien",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "creativity"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "Five minutes to draw an alien, then a comparison of the drawings that shows how new ideas combine old ones. Timer and a count-the-room slide.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/draw-alien/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/draw-alien/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "30 circles",
       "type": "template",
       "category": "Ideation exercise",
