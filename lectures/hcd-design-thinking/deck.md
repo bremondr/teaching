@@ -118,11 +118,9 @@ Image slide in the original (no text). Image not available here.
 
 ---
 
-# Teams
+# Teams: role
 
-Questions of the team-forming survey (in Czech, as in the original):
-
-<div class="dk-cols"><div>
+Question of the team-forming survey (in Czech, as in the original):
 
 **Jaká role je pro vás prioritní v rámci projektu?**
 
@@ -133,15 +131,24 @@ Questions of the team-forming survey (in Czech, as in the original):
 - Business developer
 - Obchodník
 
-</div><div>
+---
+
+# Teams: study programme
+
+Question of the team-forming survey (in Czech, as in the original):
 
 **Jaké zaměření máte za sebou/nebo ho studujete?**
+
+<div class="dk-cols"><div>
 
 - Informační bezpečnost
 - Manažerská informatika
 - Počítačová grafika
 - Počítačové inženýrství
 - Sítě a Internet
+
+</div><div>
+
 - Systémy a virtualizace
 - SW inženýrství
 - Teoretická informatika

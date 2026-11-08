@@ -51,7 +51,9 @@ html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: va
 .dk-frame { position: relative; overflow: hidden; background: var(--stage); border-radius: 14px; box-shadow: 0 0 0 1.5px var(--line); }
 .dk-root.dk-slidewin .dk-frame, .dk-root.dk-embed .dk-frame { border-radius: 0; box-shadow: none; }
 .dk-slide { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; overflow: hidden; color: var(--stage-fg); background: var(--stage); }
-.dk-inner { width: 100%; height: 100%; padding: 58px 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.dk-inner { width: 100%; height: 100%; padding: 58px 64px 56px; }
+/* .dk-fit is the content box inside the margins; the engine scales it down when a slide holds too much (see fitContent in deck.js) */
+.dk-fit { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
 
 /* slide typography, in design pixels (the whole slide is scaled), after cook-a-game */
 .dk-kick { font-family: var(--font-display); font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--stage-hi); }

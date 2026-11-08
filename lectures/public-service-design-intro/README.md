@@ -14,7 +14,7 @@ open_label: Open the slides
 
 # NI-PSD: Introduction to public service design
 
-A Markdown slide deck, 26 slides, converted from the older Google Slides lecture: the opening lecture of the course NI-PSD (Public Service Design, FIT ČVUT): who we are, motivation and expectations, a team exercise, why design public services, the organisation of the course (time, outcomes, evaluation, grading, MS Teams) and forming the project teams. About one 90-minute lesson.
+A Markdown slide deck, 27 slides, converted from the older Google Slides lecture: the opening lecture of the course NI-PSD (Public Service Design, FIT ČVUT): who we are, motivation and expectations, a team exercise, why design public services, the organisation of the course (time, outcomes, evaluation, grading, MS Teams) and forming the project teams. About one 90-minute lesson.
 
 Language of the materials: English.
 

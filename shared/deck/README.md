@@ -69,6 +69,19 @@ one set of keys and one projector window. The exercise item can still be opened 
 An iframe is the fallback for something that cannot be a module; `?embed=1` hides the controls and
 `?lang=cs` and `?s=<slide id>` choose the language and the first slide.
 
+## Slides that hold too much
+
+A slide is 1280 by 720 with margins (64 px at the sides, 58 px on top, 56 px at the bottom). After drawing each slide the engine
+measures its content and, when it does not fit, scales it down in 5% steps, widening it as it shrinks so the text reflows, until it
+sits inside the margins. It never goes below 55%: a slide that still does not fit gets `data-overflow="1"` on its `.dk-inner`
+and a console warning, and should be split in two. A slide that had to go below 80% is hard to read from the back of a room,
+so split it as well.
+
+`node scripts/audit_slides.js` checks every deck of the repo (every language, every slide) and lists the slides that do not fit
+(exit code 1) and the ones the engine had to shrink a lot. Run it after adding or changing a deck. It needs Playwright, and it
+serves the pages under a faked address, so it also works where github.io cannot be reached. An address part narrows it:
+`node scripts/audit_slides.js lectures/formgiving`.
+
 ## Keys
 
 Arrows, space and page keys move. Home and End jump. `F` is fullscreen, `L` switches language.
