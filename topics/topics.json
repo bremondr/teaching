@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "30 circles",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "creativity"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A three-minute warm-up where people turn as many empty circles as they can into objects, followed by a debrief on assumed rules. An on-screen sheet with a timer and a print button, as interactive slides.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/30-circles/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/30-circles/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
