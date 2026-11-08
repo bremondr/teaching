@@ -168,9 +168,71 @@
     return k;
   }
 
+  // ---------- picture layer ----------
+  // Moves the layer out of the fitted content box, applies data-pad / data-onpic, opens links in a new tab, and makes a
+  // linked YouTube still play inside the slide on click (youtube-nocookie, loaded only then).
+  function canvas(inner, content, c, preview) {
+    if (c.parentNode !== inner) inner.insertBefore(c, content);
+    if (c.hasAttribute("data-onpic")) inner.classList.add("dk-onpic");
+    // data-pad="top right bottom left" (slide pixels) moves the text area away from the pictures
+    if (c.dataset.pad) inner.style.padding = c.dataset.pad.trim().split(/\s+/).map(function (v) { return v + "px"; }).join(" ");
+    c.querySelectorAll("a[href]").forEach(function (a) {
+      a.target = "_blank"; a.rel = "noopener";
+      var m = /(?:youtube\.com\/watch\?(?:.*&)?v=|youtu\.be\/)([\w-]{6,})/.exec(a.getAttribute("href") || "");
+      var fig = a.closest(".dk-pic");
+      if (!m || !fig || preview) return;
+      fig.classList.add("dk-video");
+      a.title = "Play the video here";
+      a.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + m[1] + "?autoplay=1&rel=0";
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
+        f.title = (a.querySelector("img") || {}).alt || "Video";
+        fig.textContent = ""; fig.appendChild(f);
+        var open = el("a", "dk-video-open", "Open on YouTube \u2197"); open.href = a.href; open.target = "_blank"; open.rel = "noopener";
+        fig.appendChild(open);
+      });
+    });
+  }
+
+  // ---------- countdown for Markdown and body slides ----------
+  // <div class="dk-timer" data-seconds="900"></div> becomes a clock with Start, Reset and +1 min. Windows of the same deck
+  // (presenter, projector) follow each other through a BroadcastChannel named after the deck channel and the slide.
+  var deckChannel = "deck";
+  function mmss(x) { x = Math.max(0, Math.ceil(x)); var h = Math.floor(x / 3600), m = Math.floor(x % 3600 / 60), s = x % 60;
+    return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(s).padStart(2, "0"); }
+  function timer(box, sid, preview) {
+    var total = parseInt(box.dataset.seconds, 10) || 300, st = { running: false, endAt: 0, left: total };
+    var clock = el("div", "dk-clock-big", mmss(total)); box.textContent = ""; box.appendChild(clock);
+    if (preview) return function () {};
+    var row = el("div", "dk-timer-row"), go = el("button", "", "Start"), reset = el("button", "", "Reset"), plus = el("button", "", "+1 min");
+    row.appendChild(go); row.appendChild(reset); row.appendChild(plus); box.appendChild(row);
+    var bc = null, key = sid + "#" + (box.dataset.id || "t");
+    try { bc = new BroadcastChannel("dk-timer:" + deckChannel); } catch (e) {}
+    function send() { if (bc) try { bc.postMessage({ key: key, st: st }); } catch (e) {} }
+    function left() { return st.running ? Math.max(0, (st.endAt - Date.now()) / 1000) : st.left; }
+    function draw() {
+      var l = left();
+      if (st.running && l <= 0) { st.running = false; st.left = 0; send(); }
+      clock.textContent = mmss(l); clock.classList.toggle("dk-done", l <= 0);
+      go.textContent = st.running ? "Pause" : "Start";
+    }
+    go.addEventListener("click", function () {
+      if (st.running) { st.left = left(); st.running = false; } else { if (st.left <= 0) st.left = total; st.endAt = Date.now() + st.left * 1000; st.running = true; }
+      send(); draw();
+    });
+    reset.addEventListener("click", function () { st = { running: false, endAt: 0, left: total }; send(); draw(); });
+    plus.addEventListener("click", function () { if (st.running) st.endAt += 60000; else st.left += 60; total = Math.max(total, st.left); send(); draw(); });
+    if (bc) bc.onmessage = function (m) { if (m.data && m.data.key === key) { st = m.data.st; draw(); } };
+    var iv = setInterval(draw, 250); draw();
+    return function () { clearInterval(iv); if (bc) bc.close(); };
+  }
+
   // ---------- the app ----------
   function start(cfg) {
     cfg = Object.assign({ root: "#deck", title: document.title, channel: "deck", langs: ["en"], lang: null }, cfg);
+    deckChannel = cfg.channel;
     var root = typeof cfg.root === "string" ? document.querySelector(cfg.root) : cfg.root;
     root.classList.add("dk-root");
     root.textContent = "";
@@ -229,16 +291,21 @@
       var content = el("div", "dk-fit"); inner.appendChild(content);   // everything of the slide, kept inside the margins
       var kick = loc(s.kicker, lang, cfg.langs);
       if (kick) content.appendChild(el("div", "dk-kick", kick));
+      var cleanups = [];
       if (typeof s.render === "function") {
         var r = s.render(content, { lang: lang, slide: s, deck: api, mode: mode, preview: !!preview });
-        if (typeof r === "function") stage.cleanup = r;
+        if (typeof r === "function") cleanups.push(r);
       } else {
         content.insertAdjacentHTML("beforeend", loc(s.body, lang, cfg.langs));
         content.querySelectorAll("img,source,video,audio").forEach(function (n) {
           var v = n.getAttribute("src");
           if (v && !/^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) n.setAttribute("src", new URL(v, s.base || location.href).href);
         });
+        content.querySelectorAll(".dk-timer").forEach(function (t) { cleanups.push(timer(t, s.id, !!preview)); });
       }
+      // a picture layer (.dk-canvas) is placed on the whole slide, outside the margins and outside the fitting
+      inner.querySelectorAll(".dk-canvas").forEach(function (c) { canvas(inner, content, c, !!preview); });
+      if (cleanups.length) stage.cleanup = function () { cleanups.forEach(function (f) { try { f(); } catch (e) {} }); };
       var refit = function () { if (content.isConnected) fitContent(inner, content, s.id); };
       refit();
       // measure again when late things arrive: the web fonts, and pictures

@@ -42,7 +42,7 @@ The controls row has an **Exit** button. By default it leads to the hub; `exit: 
 
 One file, slides separated by a line with only `---`. A block `::: cs` … `:::` appears only in that
 language, text outside a block appears in every language. Speaker notes go in `::: notes`
-(or `::: notes cs`). A block `::: kicker` … `:::` is the small yellow label above the slide, usually the section name. Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers.
+(or `::: notes cs`). A block `::: kicker` … `:::` is the small yellow label above the slide, usually the section name. Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers. A question to the room is a callout: `<div class="dk-callout">` with an inline SVG icon and a `<p class="dk-big">`.
 
 ### Workshops and exercises: JS slides
 
@@ -68,6 +68,48 @@ with one slide entry, `{ id: "warmup", include: "../../templates/30-circles/exer
 one set of keys and one projector window. The exercise item can still be opened by itself.
 An iframe is the fallback for something that cannot be a module; `?embed=1` hides the controls and
 `?lang=cs` and `?s=<slide id>` choose the language and the first slide.
+
+## Pictures
+
+Pictures of an item live in its own `assets/` folder, web size only: WebP, at most 1600 px on the long side, no
+location or camera data. Every picture has alt text; a credit goes on the slide when the picture is not mine.
+
+**In the text flow.** A plain `![alt](assets/x.webp)` works; it is limited to 440 px in height. For a caption use a
+figure: `<figure class="dk-fig"><img src="assets/x.webp" alt="…"><figcaption>…</figcaption></figure>`.
+
+**As on the original slide.** A picture layer keeps the layout of a slide that was built in PowerPoint or Google Slides:
+
+```html
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59%;top:0%;width:41%;height:100%"><img src="assets/x.webp" alt="…"></figure><p class="dk-credit">Poster: …</p></div>
+```
+
+- The layer covers the whole 1280 by 720 slide, margins included, and is not shrunk by the fitting described below.
+  Each `figure.dk-pic` is placed in percent of the slide. The picture fills its box; a cropped picture has an `img`
+  that is larger than the box and shifted (`style="left:-10%;top:0;width:125%;height:100%"`). Add `dk-contain`
+  to the figure to letterbox the picture instead.
+- The text of the slide is drawn above the layer. `data-pad` (top, right, bottom, left, in slide pixels) moves the
+  text area away from the pictures, so the fitting keeps the text in the free part. `dk-front` on the layer draws it
+  above the text.
+- `<div class="dk-shade" style="left:%;top:%;width:%;height:%"></div>` inside the layer, after the pictures, lays a
+  half-transparent panel in the slide colour under text that sits on a photo, so the text stays readable in both looks.
+- `data-onpic` on the layer gives each text block of the slide its own half-transparent backing, for a title that sits on
+  a picture. `dk-paper` on a figure puts a white sheet behind a picture with a transparent background and dark lines.
+- `p.dk-credit` puts a small credit in the bottom right corner.
+- A link around an `img` in the layer opens in a new tab. Clicks pass through the empty parts of the text above it, so
+  the picture stays clickable. A link to a YouTube video (`youtube.com/watch?v=…`) gets a play button: a click plays the
+  video inside the picture's box (from youtube-nocookie.com, loaded only then), with an "Open on YouTube" link in the
+  corner. The video plays only in the window where it was clicked, not in the projector window as well.
+- Keep the layer on one line in Markdown (a blank line ends an HTML block), inside the `::: en` or `::: cs` block
+  when the alt text differs per language.
+- After adding pictures run `node scripts/audit_slides.js` on the item: the engine measures a slide again when a picture
+  in the text flow loads.
+
+## Countdown
+
+`<div class="dk-timer" data-seconds="900"></div>` in a Markdown or body slide becomes a large clock with Start, Reset and
++1 min. The presenter view and the projector window of the same deck follow each other (a BroadcastChannel named after
+the deck's `channel`). Two timers on one slide need `data-id` to tell them apart; `data-size="small"` makes the clock smaller. Workshops with their own timer helper
+(such as `DS.timer` in the Design Sprint workshop) can keep it.
 
 ## Slides that hold too much
 
