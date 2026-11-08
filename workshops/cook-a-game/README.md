@@ -42,11 +42,11 @@ window talk to each other through the browser and that needs a normal origin.
 - Locally: run `python3 -m http.server` in the repo root and open
   `http://localhost:8000/workshops/cook-a-game/`.
 
-Three views, chosen by the end of the address:
+Three views, chosen by the end of the address. The "Exit to README" button at the top right of the presenter view and the plan leaves the app and opens this README.
 
-- (nothing) or `#plan`: the script plan. Switch parts on or off, change their minutes,
+- `#plan`: the script plan. Switch parts on or off, change their minutes,
   move them, read the script, leave notes. Load the 180 or the 90 minute plan.
-- `#presenter`: the presenter view for your laptop. Slide preview, next slide, notes,
+- (nothing) or `#presenter`: the presenter view for your laptop, the default. Slide preview, next slide, notes,
   timer, workshop clock, team maker, twist dealer, comment box.
 - `#slide`: the slide window for the projector. Press `F` or double-click for full
   screen. Open it with the "Open slide window" button in the presenter view, or by
