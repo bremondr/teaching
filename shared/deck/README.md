@@ -69,6 +69,34 @@ one set of keys and one projector window. The exercise item can still be opened 
 An iframe is the fallback for something that cannot be a module; `?embed=1` hides the controls and
 `?lang=cs` and `?s=<slide id>` choose the language and the first slide.
 
+## Pictures
+
+Pictures of an item live in its own `assets/` folder, web size only: WebP, at most 1600 px on the long side, no
+location or camera data. Every picture has alt text; a credit goes on the slide when the picture is not mine.
+
+**In the text flow.** A plain `![alt](assets/x.webp)` works; it is limited to 440 px in height. For a caption use a
+figure: `<figure class="dk-fig"><img src="assets/x.webp" alt="…"><figcaption>…</figcaption></figure>`.
+
+**As on the original slide.** A picture layer keeps the layout of a slide that was built in PowerPoint or Google Slides:
+
+```html
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59%;top:0%;width:41%;height:100%"><img src="assets/x.webp" alt="…"></figure><p class="dk-credit">Poster: …</p></div>
+```
+
+- The layer covers the whole 1280 by 720 slide, margins included, and is not shrunk by the fitting described below.
+  Each `figure.dk-pic` is placed in percent of the slide. The picture fills its box; a cropped picture has an `img`
+  that is larger than the box and shifted (`style="left:-10%;top:0;width:125%;height:100%"`). Add `dk-contain`
+  to the figure to letterbox the picture instead.
+- The text of the slide is drawn above the layer. `data-pad` (top, right, bottom, left, in slide pixels) moves the
+  text area away from the pictures, so the fitting keeps the text in the free part. `dk-front` on the layer draws it
+  above the text.
+- `p.dk-credit` puts a small credit in the bottom right corner. A link around the `img` (for a video that the
+  original linked) stays clickable.
+- Keep the layer on one line in Markdown (a blank line ends an HTML block), inside the `::: en` or `::: cs` block
+  when the alt text differs per language.
+- After adding pictures run `node scripts/audit_slides.js` on the item: the engine measures a slide again when a picture
+  in the text flow loads.
+
 ## Slides that hold too much
 
 A slide is 1280 by 720 with margins (64 px at the sides, 58 px on top, 56 px at the bottom). After drawing each slide the engine

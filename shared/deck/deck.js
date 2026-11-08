@@ -238,6 +238,12 @@
           var v = n.getAttribute("src");
           if (v && !/^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) n.setAttribute("src", new URL(v, s.base || location.href).href);
         });
+        // a picture layer (.dk-canvas) is placed on the whole slide, outside the margins and outside the fitting
+        content.querySelectorAll(".dk-canvas").forEach(function (c) {
+          inner.insertBefore(c, content);
+          // data-pad="top right bottom left" (slide pixels) moves the text area away from the pictures
+          if (c.dataset.pad) inner.style.padding = c.dataset.pad.trim().split(/\s+/).map(function (v) { return v + "px"; }).join(" ");
+        });
       }
       var refit = function () { if (content.isConnected) fitContent(inner, content, s.id); };
       refit();

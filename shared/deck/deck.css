@@ -51,7 +51,7 @@ html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: va
 .dk-frame { position: relative; overflow: hidden; background: var(--stage); border-radius: 14px; box-shadow: 0 0 0 1.5px var(--line); }
 .dk-root.dk-slidewin .dk-frame, .dk-root.dk-embed .dk-frame { border-radius: 0; box-shadow: none; }
 .dk-slide { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; overflow: hidden; color: var(--stage-fg); background: var(--stage); }
-.dk-inner { width: 100%; height: 100%; padding: 58px 64px 56px; }
+.dk-inner { position: relative; width: 100%; height: 100%; padding: 58px 64px 56px; }
 /* .dk-fit is the content box inside the margins; the engine scales it down when a slide holds too much (see fitContent in deck.js) */
 .dk-fit { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
 
@@ -82,6 +82,20 @@ html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: va
 .dk-inner .dk-center { text-align: center; align-items: center; }
 .dk-inner .dk-big { font-family: var(--font-display); font-size: 64px; line-height: 1.1; font-weight: 700; }
 .dk-inner .dk-small { font-size: 26px; color: var(--stage-dim); }
+
+/* pictures. A figure in the text flow: <figure class="dk-fig"><img alt="…"><figcaption>…</figcaption></figure>.
+   A picture layer that keeps the layout of an original slide: <div class="dk-canvas"> with <figure class="dk-pic"
+   style="left:%;top:%;width:%;height:%"> children, positioned on the whole 1280x720 slide (margins included) and not
+   scaled by the fitting. The text of the slide is drawn above the layer; .dk-front puts the layer above the text. */
+.dk-inner .dk-fig { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: center; min-height: 0; }
+.dk-inner .dk-fig figcaption, .dk-canvas figcaption { font-size: 20px; color: var(--stage-dim); }
+.dk-fit { position: relative; z-index: 1; }
+.dk-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.dk-canvas.dk-front { z-index: 2; }
+.dk-canvas .dk-pic { position: absolute; margin: 0; overflow: hidden; }
+.dk-canvas .dk-pic img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: fill; border-radius: 0; display: block; }
+.dk-canvas .dk-pic.dk-contain img { object-fit: contain; }
+.dk-canvas .dk-credit { position: absolute; right: 14px; bottom: 8px; max-width: 70%; font-size: 15px; line-height: 1.2; text-align: right; color: var(--stage-dim); text-shadow: 0 0 4px var(--stage); }
 
 /* presenter view, after cook-a-game */
 .dk-pgrid { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 14px; align-items: start; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px)); max-width: 1400px; width: 100%; margin: 0 auto; }
