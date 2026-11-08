@@ -16,12 +16,74 @@
       "description": "An experimental project course on designing games for real customers, run with the Faculty of Architecture. Its material is not published yet."
     }
   ],
+  "tags": [
+    {
+      "code": "ux",
+      "label": "UX"
+    },
+    {
+      "code": "user-research",
+      "label": "User research"
+    },
+    {
+      "code": "usability-testing",
+      "label": "Usability testing"
+    },
+    {
+      "code": "design-process",
+      "label": "Design process"
+    },
+    {
+      "code": "design-sprint",
+      "label": "Design sprint"
+    },
+    {
+      "code": "prototyping",
+      "label": "Prototyping"
+    },
+    {
+      "code": "ideation",
+      "label": "Ideation"
+    },
+    {
+      "code": "sketching",
+      "label": "Sketching"
+    },
+    {
+      "code": "accessibility",
+      "label": "Accessibility"
+    },
+    {
+      "code": "design-systems",
+      "label": "Design systems"
+    },
+    {
+      "code": "strategy",
+      "label": "Strategy"
+    },
+    {
+      "code": "public-services",
+      "label": "Public services"
+    },
+    {
+      "code": "game-design",
+      "label": "Game design"
+    },
+    {
+      "code": "creative-tech",
+      "label": "Creative tech"
+    },
+    {
+      "code": "ai",
+      "label": "AI"
+    }
+  ],
   "topics": [
     {
       "title": "NI-PSD: Usability testing",
       "type": "lecture",
       "category": "Research and validation",
-      "tags": ["ni-psd", "usability-testing", "user-interviews", "validation"],
+      "tags": ["usability-testing", "user-research"],
       "languages": ["en"],
       "level": "Intro",
       "status": "Draft, November 2026",
@@ -44,7 +106,7 @@
       "title": "NI-PSD: Human-centred design and design thinking",
       "type": "lecture",
       "category": "Design process",
-      "tags": ["ni-psd", "human-centred-design", "design-thinking", "design-sprint"],
+      "tags": ["design-process", "design-sprint"],
       "languages": ["en"],
       "level": "Intro",
       "status": "Draft, November 2026",
@@ -67,7 +129,7 @@
       "title": "NI-PSD: Introduction to public service design",
       "type": "lecture",
       "category": "Course introduction",
-      "tags": ["ni-psd", "public-services", "course-intro", "teamwork"],
+      "tags": ["public-services", "design-process"],
       "languages": ["en"],
       "level": "Intro",
       "status": "Draft, November 2026",
@@ -90,7 +152,7 @@
       "title": "Design Sprint: interactive facilitation deck",
       "type": "workshop",
       "category": "Design and UX",
-      "tags": ["ni-dsw", "design-sprint"],
+      "tags": ["design-sprint"],
       "languages": ["en"],
       "level": "Intermediate",
       "status": "Draft, Nov 2026",
@@ -113,7 +175,7 @@
       "title": "Design Sprint method sheets",
       "type": "template",
       "category": "Design process",
-      "tags": ["ni-dsw", "design-sprint"],
+      "tags": ["design-sprint"],
       "languages": ["en"],
       "level": "Intro",
       "status": "Draft, Nov 2026",
@@ -131,7 +193,7 @@
       "title": "Devil's 8s",
       "type": "template",
       "category": "Ideation exercise",
-      "tags": ["exercise", "ideation", "brainstorming"],
+      "tags": ["ideation"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -153,7 +215,7 @@
       "title": "Drawing instructor",
       "type": "template",
       "category": "Ideation exercise",
-      "tags": ["exercise", "ideation", "communication"],
+      "tags": ["ideation", "sketching"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -175,7 +237,7 @@
       "title": "Everyone can sketch",
       "type": "template",
       "category": "Ideation exercise",
-      "tags": ["exercise", "ideation", "sketching"],
+      "tags": ["ideation", "sketching"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -197,7 +259,7 @@
       "title": "Draw an alien",
       "type": "template",
       "category": "Ideation exercise",
-      "tags": ["exercise", "ideation", "creativity"],
+      "tags": ["ideation", "sketching"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -219,7 +281,7 @@
       "title": "30 circles",
       "type": "template",
       "category": "Ideation exercise",
-      "tags": ["exercise", "ideation", "creativity"],
+      "tags": ["ideation"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -241,7 +303,7 @@
       "title": "Formgiving",
       "type": "lecture",
       "category": "Design",
-      "tags": ["design", "ux", "human-centered-design", "design-sprint", "prototyping"],
+      "tags": ["ux", "prototyping", "design-process", "design-sprint"],
       "languages": ["en"],
       "level": "Intro",
       "status": "Draft, November 2026",
@@ -263,7 +325,7 @@
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
-      "tags": ["game-design", "workshop-kit", "creative-tech"],
+      "tags": ["game-design", "creative-tech"],
       "languages": ["en", "es"],
       "level": "Intro",
       "status": "First version, Nov 2026",
@@ -330,7 +392,7 @@
       "title": "Introduction to UX",
       "type": "lecture",
       "category": "UX",
-      "tags": ["ux", "research", "prototyping", "design-process", "usability"],
+      "tags": ["ux", "user-research", "prototyping", "design-process", "usability-testing"],
       "languages": ["en", "cs"],
       "level": "Intro",
       "status": "Draft, November 2026",
@@ -352,7 +414,7 @@
       "title": "Ethical Design Systems",
       "type": "lecture",
       "category": "Accessibility",
-      "tags": ["accessibility", "ux", "systems"],
+      "tags": ["accessibility", "ux", "design-systems"],
       "languages": ["en", "cs"],
       "level": "Intermediate",
       "status": "Drafting",
@@ -379,7 +441,7 @@
       "title": "Product Strategy Primer",
       "type": "workshop",
       "category": "Product",
-      "tags": ["strategy", "workshop-kit", "prioritization"],
+      "tags": ["strategy"],
       "languages": ["en", "sk"],
       "level": "Mixed",
       "status": "Ready",

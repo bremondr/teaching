@@ -2,7 +2,7 @@
 title: "Cook a game: game design workshop"
 type: workshop
 category: Game design
-tags: [game-design, workshop-kit, creative-tech]
+tags: [game-design, creative-tech]
 languages: [en, es]
 level: Intro
 status: First version, Nov 2026

@@ -2,7 +2,7 @@
 title: "Everyone can sketch"
 type: template
 category: Ideation exercise
-tags: [exercise, ideation, sketching]
+tags: [ideation, sketching]
 languages: [en, cs]
 level: Intro
 status: First version, Nov 2026

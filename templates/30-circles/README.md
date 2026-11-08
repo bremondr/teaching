@@ -2,7 +2,7 @@
 title: "30 circles"
 type: template
 category: Ideation exercise
-tags: [exercise, ideation, creativity]
+tags: [ideation]
 languages: [en, cs]
 level: Intro
 status: First version, Nov 2026

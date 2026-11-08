@@ -5,7 +5,8 @@
     python3 scripts/check.py --strict   # warnings fail too
 
 It uses only the standard library. It checks:
-  1. topics/topics.json: required fields, allowed type and language codes, tag style,
+  1. topics/topics.json: required fields, allowed type and language codes, tags (only from the
+     "tags" list at the top, at most 5 per card; the list itself must have no near-duplicates),
      and that every available link points to something that exists in the repo.
   2. Item folders (lectures/, workshops/, templates/): each has a README.md with front
      matter (title, type, description), is linked from topics.json, and the card in
@@ -13,6 +14,7 @@ It uses only the standard library. It checks:
   3. File hygiene for tracked files: ASCII file names without spaces or Windows-unsafe
      characters, no case-only duplicates, no archives or videos, size limits.
 """
+import difflib
 import json
 import re
 import subprocess
@@ -22,6 +24,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TYPES = {"lecture", "workshop", "template"}
 TYPE_DIRS = {"lectures": "lecture", "workshops": "workshop", "templates": "template"}
+MAX_TAGS = 5      # tags per card
+MAX_VOCAB = 20    # size of the tag list before the check warns
 LANGS = {"en", "cs", "sk", "es", "de", "fr", "pl"}
 REQUIRED = ["title", "type", "category", "tags", "languages", "status", "description", "resources"]
 BAD_EXT = {".zip", ".7z", ".rar", ".mov", ".mp4", ".avi", ".psd", ".key"}
@@ -63,7 +67,9 @@ def check_topics():
     linked = set()
     hrefs = set()
     titles = set()
+    used_tags = set()
     courses = {c.get("code") for c in data.get("courses", [])}
+    vocab = check_tag_list(data, courses)
     for c in data.get("courses", []):
         for key in ("code", "title", "description"):
             if not c.get(key):
@@ -80,9 +86,19 @@ def check_topics():
         if name in titles:
             err(f"{name}: duplicate title")
         titles.add(name)
-        for tag in t.get("tags", []):
+        tags = t.get("tags", [])
+        if len(tags) > MAX_TAGS:
+            err(f"{name}: {len(tags)} tags; use at most {MAX_TAGS}")
+        if len(set(tags)) != len(tags):
+            err(f"{name}: a tag is listed twice")
+        for tag in tags:
             if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", tag):
                 err(f"{name}: tag '{tag}' must be lowercase words joined by hyphens")
+            elif tag not in vocab:
+                close = difflib.get_close_matches(tag, sorted(vocab), n=1)
+                hint = f" (did you mean '{close[0]}'?)" if close else ""
+                err(f"{name}: tag '{tag}' is not in the \"tags\" list of topics/topics.json{hint}. Use a listed tag, or add the new one to the list first")
+            used_tags.add(tag)
         for lang in t.get("languages", []):
             if lang not in LANGS:
                 err(f"{name}: language '{lang}' is not in {sorted(LANGS)} (add it to app.js and to this script)")
@@ -106,7 +122,41 @@ def check_topics():
                 linked.add(rel.rstrip("/"))
                 if r.get("available") and not target.exists():
                     warn(f"{name}: link '{href}' points to a path that is not in the repo")
+    for code in sorted(set(vocab) - used_tags):
+        warn(f"tag '{code}' is in the tags list but no card uses it; remove it or use it")
     return linked, hrefs
+
+
+def check_tag_list(data, courses):
+    """The controlled tag vocabulary: a list of {code, label} at the top of topics.json."""
+    vocab = {}
+    labels = {}
+    entries = data.get("tags")
+    if not isinstance(entries, list) or not entries:
+        err('topics/topics.json: the "tags" list (the controlled tag vocabulary) is missing')
+        return vocab
+    reserved = {c.lower() for c in courses} | TYPES | {"exercise", "workshop-kit", "course-intro"}
+    for e in entries:
+        code, label = (e.get("code"), e.get("label")) if isinstance(e, dict) else (None, None)
+        if not code or not label:
+            err(f"tags list: every entry needs a 'code' and a 'label' ({e!r})")
+            continue
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", code):
+            err(f"tags list: '{code}' must be lowercase words joined by hyphens")
+        if code in vocab:
+            err(f"tags list: '{code}' is listed twice")
+        if code in reserved:
+            err(f"tags list: '{code}' repeats a course or an item type, which have their own filters")
+        key = re.sub(r"[^a-z0-9]", "", label.lower())
+        if key in labels:
+            err(f"tags list: '{label}' and '{labels[key]}' are the same tag spelled differently")
+        if key != re.sub(r"[^a-z0-9]", "", code):
+            warn(f"tags list: label '{label}' does not match code '{code}'")
+        labels[key] = label
+        vocab[code] = label
+    if len(vocab) > MAX_VOCAB:
+        warn(f"tags list: {len(vocab)} tags; keep the list short (about {MAX_VOCAB} at most), merge near-duplicates")
+    return vocab
 
 
 def check_items(linked, files, hrefs):

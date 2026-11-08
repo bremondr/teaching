@@ -6,7 +6,7 @@ portable.
 
 ## Features
 - Curated intro explaining how to navigate the repository.
-- Filterable grid of lecture/workshop/template cards (search, type, tags) with expandable content sections.
+- Filterable grid of lecture/workshop/template cards (search, type, course, tags) with expandable content sections.
 - Color palette inspired by grafit.games: anthracite base, light greys, blueberry
   accents, and cloudberry highlights.
 - Future-facing section outlining the planned Markdown → HTML/PDF builder so each
@@ -31,7 +31,7 @@ For an item with a folder, `scripts/sync_topics.py` writes the card from the REA
 "Adding an item"). To add extra links to a card, or a placeholder card without a folder,
 edit `topics/topics.json` by hand:
 1. Duplicate one of the objects inside `topics/topics.json`.
-2. Update its metadata (title, type, tags, level/status, description).
+2. Update its metadata (title, type, tags from the `tags` list, level/status, description).
 3. Add any resource links with `{ label, href, available }`.
 4. Supply `languages: []` with ISO codes (`en`, `cs`, etc.); the UI renders flag
    icons via Twemoji based on those codes.
@@ -60,6 +60,33 @@ The homepage lists the items in sections, built from `topics/topics.json`:
    course says so on its card, and the Course filter finds it.
 
 To add a course, add it to the `courses` list. A `course` value that is not in the list is an error in `check.py`.
+
+## Tags and the filter bar
+
+The bar at the top of the homepage has, in this order: **Search** (title, description, category, course and tag
+names), **Type**, **Course** and **Tags**. Under them it says "N of 16 materials" and has a **Clear filters** button.
+
+- The choices combine: a card must pass all of them, and when several tags are chosen it must have every one of them.
+- Options that would leave nothing are left out (a course with no published item, a tag no remaining card has), and the
+  Type, Course and tag lists show how many cards each would leave. A section with no card left is hidden together with
+  its jump link.
+- The tags on a card are buttons too: a click adds or removes that tag in the filter.
+- The choice is kept in the address, so a filtered view can be shared:
+  `?q=sketch&type=template&course=ni-psd&tag=ideation,sketching` (`tag` takes a comma separated list).
+- Colours come from `shared/design/tokens.css` only, so the bar follows the light and dark themes.
+
+**Tags are a controlled list.** The `tags` list at the top of `topics/topics.json` is the only place where a tag exists
+(`code`, the lowercase hyphenated spelling used in README front matter, and `label`, the text shown on the page, for
+example `{"code": "ux", "label": "UX"}`). Rules, which `scripts/check.py` enforces:
+
+- Use only listed tags, at most 5 per item. An unknown tag is an error and the check suggests the nearest listed one.
+- One tag per concept, one English spelling (`design-process`, not `design-thinking` or `human-centred-design`).
+  Two labels that differ only in case or punctuation are an error.
+- No tag that repeats a course (`ni-psd`) or an item type (`exercise`, `workshop-kit`): those have their own filters.
+- Keep the list short, about 15 tags, and warned about above 20. A listed tag no card uses is a warning.
+
+To add a tag, add it to the `tags` list (and use it); to rename or merge one, change the front matter of the affected
+READMEs, run `python3 scripts/sync_topics.py`, then remove the old entry from the list.
 
 ## Folder layout
 
@@ -126,6 +153,6 @@ header from the front matter, table of contents, tables, code, relative links an
 - Large generated files (PDFs, fonts) are fine up to a few MB each. The check warns at
   2 MB per file and 25 MB per item, and fails at 10 MB per file.
 - File names are ASCII, without spaces, and never differ only in letter case.
-- New tags need no change in `index.html`: the filter lists every tag used in
-  `topics.json`. Tags are lowercase words joined by hyphens.
+- Tags come from a short controlled list, see "Tags and the filter bar". A new tag goes into
+  that list first; `index.html` never needs to change.
 

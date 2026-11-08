@@ -3,7 +3,7 @@ title: NI-PSD: Introduction to public service design
 type: lecture
 category: Course introduction
 course: NI-PSD
-tags: [ni-psd, public-services, course-intro, teamwork]
+tags: [public-services, design-process]
 languages: [en]
 level: Intro
 status: Draft, November 2026

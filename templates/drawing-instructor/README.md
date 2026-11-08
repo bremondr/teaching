@@ -2,7 +2,7 @@
 title: "Drawing instructor"
 type: template
 category: Ideation exercise
-tags: [exercise, ideation, communication]
+tags: [ideation, sketching]
 languages: [en, cs]
 level: Intro
 status: First version, Nov 2026

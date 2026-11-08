@@ -27,48 +27,35 @@
         </p>
       </header>
 
-      <!-- Filters: search, type, course (the course option list is built from topics.json), and topic tags -->
-      <section class="filters" aria-label="Filters">
-        <label>
-          Search
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="Search by topic name..."
-            aria-label="Search across materials"
-          />
-        </label>
-        <label>
-          Type
-          <select id="typeFilter" aria-label="Filter by material type">
-            <option value="all" selected>All types</option>
-            <option value="lecture">Lecture</option>
-            <option value="workshop">Workshop</option>
-            <option value="template">Template</option>
-          </select>
-        </label>
-        <label>
-          Course
-          <select id="courseFilter" aria-label="Filter by course">
-            <option value="all" selected>All courses</option>
-          </select>
-        </label>
-        <label>
-          Tag
-          <select id="tagFilter" aria-label="Filter by topic tag">
-            <option value="all" selected>All tags</option>
-            <option value="ux">UX</option>
-            <option value="research">Research</option>
-            <option value="prototyping">Prototyping</option>
-            <option value="accessibility">Accessibility</option>
-            <option value="strategy">Strategy</option>
-            <option value="ai">AI</option>
-            <option value="workshop-kit">Workshop kit</option>
-            <option value="systems">Systems</option>
-            <option value="prioritization">Prioritization</option>
-            <option value="creative-tech">Creative tech</option>
-          </select>
-        </label>
+      <!-- Filters, in this order: search, type, course, tags. Options, tag chips and counts are built by app.js from
+           topics/topics.json (the "courses" and "tags" lists); the page keeps the choice in the address (?q= ?type= ?course= ?tag=). -->
+      <section class="filters" aria-label="Filter the materials">
+        <div class="filter-row">
+          <div class="field field-search">
+            <label for="searchInput">Search</label>
+            <input type="search" id="searchInput" placeholder="Title, topic or tag" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="typeFilter">Type</label>
+            <select id="typeFilter">
+              <option value="all" selected>All types</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="courseFilter">Course</label>
+            <select id="courseFilter">
+              <option value="all" selected>All courses</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-tags" role="group" aria-labelledby="tagGroupLabel">
+          <span class="field-label" id="tagGroupLabel">Tags</span>
+          <div class="chips" id="tagChips"></div>
+        </div>
+        <div class="filter-status">
+          <p class="result-count" id="resultCount" role="status" aria-live="polite">Loading materials...</p>
+          <button type="button" class="clear-filters" id="clearFilters" disabled>Clear filters</button>
+        </div>
       </section>
 
       <!-- Jump links to the sections, filled in by app.js -->

@@ -2,7 +2,7 @@
 title: Formgiving
 type: lecture
 category: Design
-tags: [design, ux, human-centered-design, design-sprint, prototyping]
+tags: [ux, prototyping, design-process, design-sprint]
 languages: [en]
 level: Intro
 status: Draft, November 2026

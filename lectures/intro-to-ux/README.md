@@ -2,7 +2,7 @@
 title: Introduction to UX
 type: lecture
 category: UX
-tags: [ux, research, prototyping, design-process, usability]
+tags: [ux, user-research, prototyping, design-process, usability-testing]
 languages: [en, cs]
 level: Intro
 status: Draft, November 2026
