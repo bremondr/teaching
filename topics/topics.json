@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "NI-PSD: Human-centred design and design thinking",
+      "type": "lecture",
+      "category": "Design process",
+      "tags": ["ni-psd", "human-centred-design", "design-thinking", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Second lecture of NI-PSD: a short intro to human-centred design, the design sprint and the five phases of design thinking, plus team forming and homework.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/hcd-design-thinking/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/hcd-design-thinking/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "NI-PSD: Introduction to public service design",
       "type": "lecture",
       "category": "Course introduction",
