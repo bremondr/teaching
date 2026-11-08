@@ -24,10 +24,191 @@ Opening. Slide 2 starts with a short warm-up on experiences, before any definiti
 :::
 
 ::: notes en
-Image missing: the original slide shows the artifacts (objects or screens) that the pairs pick from. Add the pictures before teaching, or bring real objects.
+The next ten slides are the artifacts, one per slide as in the original deck. Click through them; each pair picks one artifact for the next task.
 :::
+
 ::: notes cs
-Chybí obrázek: původní slide ukazuje artefakty (předměty nebo obrazovky), ze kterých dvojice vybírají. Před výukou doplnit obrázky, nebo přinést skutečné předměty.
+Dalších deset slidů jsou artefakty, jeden na slide jako v původní prezentaci. Proklikejte je; každá dvojice si vybere jeden artefakt pro další úkol.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:36.58%;top:2.96%;width:26.85%;height:94.07%"><img src="assets/artifact-cookie-consent.webp" alt="A news site almost hidden behind a long cookie consent dialog with dozens of switches"></figure><p class="dk-credit">Screenshot: electrek.co</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:36.58%;top:2.96%;width:26.85%;height:94.07%"><img src="assets/artifact-cookie-consent.webp" alt="Zpravodajský web téměř schovaný za dlouhým dialogem souhlasu s cookies s desítkami přepínačů"></figure><p class="dk-credit">Screenshot: electrek.co</p></div>
+:::
+
+::: notes en
+Artifact 1 of 10.
+:::
+
+::: notes cs
+Artefakt 1 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:33.67%;top:2.96%;width:32.66%;height:94.07%"><img src="assets/artifact-bin-bag-shelf.webp" alt="Shop shelf of bin bags with a tall sign that sorts them by bin size: 10–20 l, 35–40 l, 60–70 l, 120–300 l"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:33.67%;top:2.96%;width:32.66%;height:94.07%"><img src="assets/artifact-bin-bag-shelf.webp" alt="Regál s pytli na odpadky s vysokou cedulí, která je třídí podle velikosti koše: 10–20 l, 35–40 l, 60–70 l, 120–300 l"></figure></div>
+:::
+
+::: notes en
+Artifact 2 of 10.
+:::
+
+::: notes cs
+Artefakt 2 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:8.54%;top:9.72%;width:82.92%;height:80.56%"><img src="assets/artifact-skip-intro.webp" alt="Streaming player with a Skip intro button over the opening of a series"></figure><p class="dk-credit">Screenshot: Netflix</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:8.54%;top:9.72%;width:82.92%;height:80.56%"><img src="assets/artifact-skip-intro.webp" alt="Přehrávač streamovací služby s tlačítkem Přeskočit úvod během znělky seriálu"></figure><p class="dk-credit">Screenshot: Netflix</p></div>
+:::
+
+::: notes en
+Artifact 3 of 10.
+:::
+
+::: notes cs
+Artefakt 3 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:59.92%;height:54.04%"><img src="assets/artifact-airbnb-filters.webp" alt="Airbnb search for Copenhagen with the filter panel open: price histogram, rooms and amenities"></figure><figure class="dk-pic" style="left:55.43%;top:36.9%;width:43.51%;height:54.76%"><img src="assets/artifact-airbnb-experiences.webp" alt="Airbnb page listing experiences with large photos"></figure><p class="dk-credit">Screenshots: Airbnb; right: via Mobbin</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:59.92%;height:54.04%"><img src="assets/artifact-airbnb-filters.webp" alt="Vyhledávání na Airbnb v Kodani s otevřeným panelem filtrů: histogram cen, pokoje a vybavení"></figure><figure class="dk-pic" style="left:55.43%;top:36.9%;width:43.51%;height:54.76%"><img src="assets/artifact-airbnb-experiences.webp" alt="Stránka Airbnb se zážitky a velkými fotkami"></figure><p class="dk-credit">Screenshots: Airbnb; right: via Mobbin</p></div>
+:::
+
+::: notes en
+Artifact 4 of 10.
+:::
+
+::: notes cs
+Artefakt 4 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:13.72%;width:100%;height:72.57%"><img src="assets/artifact-shoe-shop-list.webp" alt="Product list of an online shoe shop: a row of winter boots with prices and colour dots"></figure><p class="dk-credit">Screenshot of an online shoe shop</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:13.72%;width:100%;height:72.57%"><img src="assets/artifact-shoe-shop-list.webp" alt="Výpis produktů e-shopu s obuví: řada zimních bot s cenami a barevnými tečkami"></figure><p class="dk-credit">Screenshot of an online shoe shop</p></div>
+:::
+
+::: notes en
+Artifact 5 of 10.
+:::
+
+::: notes cs
+Artefakt 5 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:12.86%;top:2.96%;width:74.28%;height:94.07%"><img src="assets/artifact-shoe-shop-filters.webp" alt="Women&#x27;s boots in an online shop with a row of filter buttons above the products"></figure><p class="dk-credit">Screenshot of an online shoe shop</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:12.86%;top:2.96%;width:74.28%;height:94.07%"><img src="assets/artifact-shoe-shop-filters.webp" alt="Dámské boty v e-shopu s řadou filtrovacích tlačítek nad produkty"></figure><p class="dk-credit">Screenshot of an online shoe shop</p></div>
+:::
+
+::: notes en
+Artifact 6 of 10.
+:::
+
+::: notes cs
+Artefakt 6 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:3.37%;top:17.45%;width:44.36%;height:65.09%"><img src="assets/artifact-car-wheel-renault.webp" alt="Steering wheel and analogue dashboard of an older Renault" style="left:-4.93%;top:-0%;width:110.05%;height:100%"></figure><figure class="dk-pic" style="left:50%;top:17.45%;width:46.55%;height:65.09%"><img src="assets/artifact-car-wheel-digital.webp" alt="Steering wheel with many buttons in front of a digital dashboard that shows a map" style="left:-20.47%;top:-0%;width:138.87%;height:100%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:3.37%;top:17.45%;width:44.36%;height:65.09%"><img src="assets/artifact-car-wheel-renault.webp" alt="Volant a analogový přístrojový štít staršího Renaultu" style="left:-4.93%;top:-0%;width:110.05%;height:100%"></figure><figure class="dk-pic" style="left:50%;top:17.45%;width:46.55%;height:65.09%"><img src="assets/artifact-car-wheel-digital.webp" alt="Volant s mnoha tlačítky před digitálním přístrojovým štítem s mapou" style="left:-20.47%;top:-0%;width:138.87%;height:100%"></figure></div>
+:::
+
+::: notes en
+Artifact 7 of 10.
+:::
+
+::: notes cs
+Artefakt 7 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:8.36%;top:15.7%;width:31.29%;height:68.6%"><img src="assets/artifact-car-console-buttons.webp" alt="Centre console of an older car: radio, hazard button and climate knobs, all physical" style="left:-14.03%;top:-13.89%;width:126.83%;height:137.15%"></figure><figure class="dk-pic" style="left:45.78%;top:54.64%;width:39.78%;height:42.83%"><img src="assets/artifact-car-console-renault.webp" alt="Centre console of a Renault with a phone holder, radio and climate buttons" style="left:-10.3%;top:-108.21%;width:118.81%;height:261.55%"></figure><figure class="dk-pic" style="left:44.78%;top:5.29%;width:41.77%;height:45.73%"><img src="assets/artifact-car-touchscreen.webp" alt="Large touchscreen of a newer car with a map, a tutorial tile and a row of app icons" style="left:-0%;top:-0%;width:100%;height:121.79%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:8.36%;top:15.7%;width:31.29%;height:68.6%"><img src="assets/artifact-car-console-buttons.webp" alt="Středová konzole staršího auta: rádio, výstražná světla a ovladače topení, vše fyzické" style="left:-14.03%;top:-13.89%;width:126.83%;height:137.15%"></figure><figure class="dk-pic" style="left:45.78%;top:54.64%;width:39.78%;height:42.83%"><img src="assets/artifact-car-console-renault.webp" alt="Středová konzole Renaultu s držákem telefonu, rádiem a tlačítky klimatizace" style="left:-10.3%;top:-108.21%;width:118.81%;height:261.55%"></figure><figure class="dk-pic" style="left:44.78%;top:5.29%;width:41.77%;height:45.73%"><img src="assets/artifact-car-touchscreen.webp" alt="Velká dotyková obrazovka novějšího auta s mapou, dlaždicí s návodem a řadou ikon aplikací" style="left:-0%;top:-0%;width:100%;height:121.79%"></figure></div>
+:::
+
+::: notes en
+Artifact 8 of 10.
+:::
+
+::: notes cs
+Artefakt 8 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:68.91%;height:94.07%"><img src="assets/artifact-braille-handrail.webp" alt="A handrail with braille dots on a viewpoint above the bay of Naples"></figure><p class="dk-credit">Photo from a LinkedIn post by Stuart Bernstein</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:68.91%;height:94.07%"><img src="assets/artifact-braille-handrail.webp" alt="Zábradlí s Braillovým písmem na vyhlídce nad Neapolským zálivem"></figure><p class="dk-credit">Photo from a LinkedIn post by Stuart Bernstein</p></div>
+:::
+
+::: notes en
+Artifact 9 of 10.
+:::
+
+::: notes cs
+Artefakt 9 z 10.
+:::
+
+---
+
+::: en
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:9.81%;width:96.67%;height:80.39%"><img src="assets/artifact-cppreference.webp" alt="The dense index page of cppreference.com: hundreds of small blue links on a white page"></figure><p class="dk-credit">Screenshot: cppreference.com</p></div>
+:::
+
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:9.81%;width:96.67%;height:80.39%"><img src="assets/artifact-cppreference.webp" alt="Hustá rozcestníková stránka cppreference.com: stovky malých modrých odkazů na bílé stránce"></figure><p class="dk-credit">Screenshot: cppreference.com</p></div>
+:::
+
+::: notes en
+Artifact 10 of 10.
+:::
+
+::: notes cs
+Artefakt 10 z 10.
 :::
 
 ---
@@ -207,23 +388,19 @@ Parafráze, ne doslovná citace. Před citací na slidu ověřit přesné zněn�
 ---
 
 ::: en
-# Design process: six steps
-:::
-::: cs
-# Designový proces: šest kroků
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:8.01%;width:100%;height:83.99%"><img src="assets/design-process-diamonds.webp" alt="The design process as three diamonds with six phases: Understand, Define, Sketch, Decide, Prototype, Validate"></figure></div>
 :::
 
-| | |
-| --- | --- |
-| 1 Understand | 4 Decide |
-| 2 Define | 5 Prototype |
-| 3 Sketch | 6 Validate |
+::: cs
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:8.01%;width:100%;height:83.99%"><img src="assets/design-process-diamonds.webp" alt="Designový proces jako tři diamanty se šesti fázemi: Pochopit, Definovat, Skicovat, Rozhodnout, Prototypovat, Ověřit"></figure></div>
+:::
 
 ::: notes en
-Image missing: the original slide is a diagram of the process. This table replaces it; swap in the diagram if you redraw it.
+The six phases: Understand, Define, Sketch, Decide, Prototype, Validate. The next six slides take them one by one; the small diagram in the corner shows where you are.
 :::
+
 ::: notes cs
-Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po překreslení diagram vložit.
+Šest fází: Pochopit, Definovat, Skicovat, Rozhodnout, Prototypovat, Ověřit. Dalších šest slidů je probere jednu po druhé; malý diagram v rohu ukazuje, kde jste.
 :::
 
 ---
@@ -243,6 +420,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Kdy se hodí:** na začátku projektu, když nevíte, co uživatelé opravdu potřebují
 :::
 
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.38%;top:80.58%;width:29.27%;height:17.18%"><img src="assets/design-process-1-understand.webp" alt="Process diagram with phase 1, Understand, highlighted" style="left:-0%;top:-7.79%;width:100%;height:107.79%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.38%;top:80.58%;width:29.27%;height:17.18%"><img src="assets/design-process-1-understand.webp" alt="Diagram procesu se zvýrazněnou fází 1, Pochopit" style="left:-0%;top:-7.79%;width:100%;height:107.79%"></figure></div>
+:::
+
 ---
 
 ::: en
@@ -258,6 +443,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Cíl:** jasně formulovat problém
 - **Metoda:** persony. Vytvořte fiktivní postavu, která představuje typického uživatele a jeho výzvu, potřebu nebo problém.
 - **Kdy se hodí:** když máte data z výzkumu a chcete je zhmotnit do konkrétního "člověka", nebo když výsledky potřebujete předat dál
+:::
+
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.09%;top:81.09%;width:30.52%;height:16.23%"><img src="assets/design-process-2-define.webp" alt="Process diagram with phase 2, Define, highlighted" style="left:-0%;top:-6.14%;width:100%;height:106.14%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.09%;top:81.09%;width:30.52%;height:16.23%"><img src="assets/design-process-2-define.webp" alt="Diagram procesu se zvýrazněnou fází 2, Definovat" style="left:-0%;top:-6.14%;width:100%;height:106.14%"></figure></div>
 :::
 
 ---
@@ -277,6 +470,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Kdy se hodí:** když chcete rychle prozkoumat různé přístupy bez velké investice času
 :::
 
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.19%;top:80.61%;width:29.27%;height:17.22%"><img src="assets/design-process-3-sketch.webp" alt="Process diagram with phase 3, Sketch, highlighted"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:68.19%;top:80.61%;width:29.27%;height:17.22%"><img src="assets/design-process-3-sketch.webp" alt="Diagram procesu se zvýrazněnou fází 3, Skicovat"></figure></div>
+:::
+
 ---
 
 ::: en
@@ -292,6 +493,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Cíl:** vybrat nejlepší nápad k rozpracování
 - **Metoda:** dot voting. Každý dostane 3 tečky a hlasuje pro nejlepší nápady.
 - **Kdy se hodí:** když máte více návrhů a potřebujete demokraticky vybrat směr
+:::
+
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.24%;top:80.92%;width:28.54%;height:17.88%"><img src="assets/design-process-4-decide.webp" alt="Process diagram with phase 4, Decide, highlighted" style="left:-0%;top:-4.62%;width:100%;height:104.62%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.24%;top:80.92%;width:28.54%;height:17.88%"><img src="assets/design-process-4-decide.webp" alt="Diagram procesu se zvýrazněnou fází 4, Rozhodnout" style="left:-0%;top:-4.62%;width:100%;height:104.62%"></figure></div>
 :::
 
 ---
@@ -311,6 +520,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Kdy se hodí:** rychlé testování bez nutnosti programovat
 :::
 
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.24%;top:81.26%;width:28.33%;height:17.51%"><img src="assets/design-process-5-prototype.webp" alt="Process diagram with phase 5, Prototype, highlighted" style="left:-0%;top:-4.71%;width:100%;height:104.71%"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.24%;top:81.26%;width:28.33%;height:17.51%"><img src="assets/design-process-5-prototype.webp" alt="Diagram procesu se zvýrazněnou fází 5, Prototypovat" style="left:-0%;top:-4.71%;width:100%;height:104.71%"></figure></div>
+:::
+
 ---
 
 ::: en
@@ -328,6 +545,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 - **Kdy se hodí:** před finálním vypuštěním produktu. Ušetříte čas i peníze.
 :::
 
+::: en
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.15%;top:80.78%;width:28.23%;height:17.78%"><img src="assets/design-process-6-validate.webp" alt="Process diagram with phase 6, Validate, highlighted"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 64 150 64"><figure class="dk-pic" style="left:69.15%;top:80.78%;width:28.23%;height:17.78%"><img src="assets/design-process-6-validate.webp" alt="Diagram procesu se zvýrazněnou fází 6, Ověřit"></figure></div>
+:::
+
 ---
 
 ::: en
@@ -335,6 +560,14 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 :::
 ::: cs
 <div class="dk-center dk-big">Design je iterativní!</div>
+:::
+
+::: en
+<div class="dk-canvas" data-pad="560 64 56 64"><figure class="dk-pic" style="left:8%;top:2%;width:84%;height:70.55%"><img src="assets/design-process-diamonds.webp" alt="The design process as three diamonds with six phases: Understand, Define, Sketch, Decide, Prototype, Validate"></figure></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="560 64 56 64"><figure class="dk-pic" style="left:8%;top:2%;width:84%;height:70.55%"><img src="assets/design-process-diamonds.webp" alt="Designový proces jako tři diamanty se šesti fázemi: Pochopit, Definovat, Skicovat, Rozhodnout, Prototypovat, Ověřit"></figure></div>
 :::
 
 ---
@@ -359,11 +592,20 @@ Chybí obrázek: původní slide je diagram procesu. Tabulka ho nahrazuje; po p�
 ...aneb jednoduchý způsob, jak ověřit splnění základních principů UX.
 :::
 
-::: notes en
-Image missing: the original slide lists the heuristics as a picture. The older 2024 deck used the well-known set of ten usability heuristics; see versions/2024-mvt-ui-ux.md. Add your own list here if wanted.
+::: en
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59.09%;top:0%;width:40.91%;height:100%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Poster of Jakob&#x27;s ten usability heuristics, each with a short explanation and an icon"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
 :::
+
+::: cs
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59.09%;top:0%;width:40.91%;height:100%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Plakát Jakobových deseti heuristik použitelnosti, každá s krátkým vysvětlením a ikonou"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
+:::
+
+::: notes en
+The poster is the set of ten usability heuristics by Nielsen Norman Group (credited on the slide). Pick two or three and show an example of each from the artifacts above. The older 2024 deck went through all ten; see versions/2024-mvt-ui-ux.md.
+:::
+
 ::: notes cs
-Chybí obrázek: původní slide uvádí heuristiky jako obrázek. Starší deck z roku 2024 používal známou desítku použitelnostních heuristik; viz versions/2024-mvt-ui-ux.md. Případně sem doplnit vlastní seznam.
+Plakát je desítka heuristik použitelnosti od Nielsen Norman Group (zdroj je na slidu). Vyberte dvě tři a ke každé ukažte příklad z artefaktů výše. Starší deck z roku 2024 procházel všech deset; viz versions/2024-mvt-ui-ux.md.
 :::
 
 ---
@@ -462,6 +704,14 @@ In the source decks this slide and the next two were in Czech only; English is a
 :::
 ::: notes cs
 Ve zdrojových prezentacích byl tento slide a další dva jen česky; angličtina je překlad.
+:::
+
+::: en
+<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:64.51%;top:36.92%;width:35.49%;height:63.08%"><img src="assets/icon-scales-cost-benefit.webp" alt="Line icon of scales with a dollar coin on top"></figure><p class="dk-credit">Icon: Getty Images</p></div>
+:::
+
+::: cs
+<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:64.51%;top:36.92%;width:35.49%;height:63.08%"><img src="assets/icon-scales-cost-benefit.webp" alt="Lineární ikona vah s mincí s dolarem nahoře"></figure><p class="dk-credit">Icon: Getty Images</p></div>
 :::
 
 ---

@@ -26,6 +26,7 @@ Language of the materials: English and Czech (switch with `L`).
 | `README.md` | This page |
 | `index.html` | Opens the deck with the shared slide engine |
 | `deck.md` | The slides, Markdown, `::: en` and `::: cs` blocks and `::: notes` |
+| `assets/` | The pictures of the slides (WebP, web size), placed as on the original slides |
 | `versions/2024-mvt-ui-ux.md` | Outline of the older 2024 deck, kept for reference |
 
 ## Using it
@@ -53,8 +54,20 @@ in both languages.
 
 ## Known limits
 
-- Images are missing: the artifact photos, the design process diagram and the heuristics picture
-  are not in the web deck. Each place has a note in the presenter view.
+- The six hidden slides of the original (zoomed views of three artifacts, a cookie banner, a printed
+  programme leaflet and a login notice) are not included.
 - Quotes of experts are paraphrased and should be checked against the sources.
 - Links of "Where to next?" and the worst-UI examples were not copied; only names are listed.
 - No PDF export yet.
+
+## Picture credits
+
+The pictures are taken over from the original decks and placed as they were there. Most artifact
+photos and screenshots were made by the author. Pictures by others carry a credit on the slide:
+
+- Screenshots of electrek.co (cookie consent), Netflix (skip intro), Airbnb (one via Mobbin),
+  an online shoe shop and cppreference.com, shown as examples to discuss.
+- Braille handrail photo: from a LinkedIn post by Stuart Bernstein.
+- The steering wheel with the digital dashboard: source not recorded in the original deck.
+- Poster "Jakob's Ten Usability Heuristics": Nielsen Norman Group.
+- Scales icon: Getty Images.
