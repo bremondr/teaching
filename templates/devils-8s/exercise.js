@@ -10,7 +10,7 @@
   // A countdown with Start/Pause and Reset. In the small next-slide preview it only shows the full time.
   // Returns a cleanup function (stops the interval).
   function addTimer(parent, ctx, seconds, size) {
-    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--dk-fg)", mmss(seconds));
+    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)", mmss(seconds));
     clock.id = "timer-clock";
     parent.appendChild(clock);
     if (ctx.preview) return function () {};
@@ -19,7 +19,7 @@
     go.id = "timer-go"; reset.id = "timer-reset";
     row.appendChild(go); row.appendChild(reset); parent.appendChild(row);
     var left = seconds, endAt = null, iv = null, ac = null;
-    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--dk-fg)" : "var(--dk-accent)"; clock.dataset.done = left > 0 ? "" : "1"; }
+    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--stage-fg)" : "var(--stage-hi)"; clock.dataset.done = left > 0 ? "" : "1"; }
     function stop() { if (iv) clearInterval(iv); iv = null; endAt = null; go.textContent = pick(ctx, "Start", "Spustit"); }
     function beep() {
       try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var o = ac.createOscillator(), g = ac.createGain();
@@ -75,18 +75,18 @@
         render: function (box, ctx) {
           box.appendChild(mk("h2", "", pick(ctx, "What is our challenge?", "Jaká je naše výzva?")));
           if (ctx.preview) { box.appendChild(mk("p", "", challenge || pick(ctx, "(type the challenge here)", "(sem napište výzvu)"))); return; }
-          var ta = mk("textarea", "font:inherit;font-size:34px;width:100%;height:220px;padding:14px;background:var(--dk-panel);color:var(--dk-fg);border:1px solid var(--dk-line);border-radius:8px");
+          var ta = mk("textarea", "font:inherit;font-size:34px;width:100%;height:220px;padding:14px;background:color-mix(in srgb, var(--stage-fg) 10%, transparent);color:var(--stage-fg);border:1px solid color-mix(in srgb, var(--stage-fg) 28%, transparent);border-radius:8px");
           ta.id = "challenge-text"; ta.value = challenge; ta.placeholder = pick(ctx, "How might we...?", "Jak bychom mohli...?");
           ta.addEventListener("input", function () { challenge = ta.value; });
           box.appendChild(ta);
-          box.appendChild(mk("p", "font-size:26px;color:var(--dk-muted)", pick(ctx, "Then: how would we make it worse on purpose?", "A pak: jak bychom to schválně zhoršili?")));
+          box.appendChild(mk("p", "font-size:26px;color:var(--stage-dim)", pick(ctx, "Then: how would we make it worse on purpose?", "A pak: jak bychom to schválně zhoršili?")));
         } },
 
       { id: "fold", min: 1, title: T("Devil's 8s: fold the sheet", "Ďáblova osmička: přeložte list"),
         notes: T("<p>Fold the sheet in half three times, unfold it: eight rectangles.</p>", "<p>List třikrát přeložte napůl a rozložte: osm obdélníků.</p>"),
         render: function (box, ctx) {
           box.appendChild(mk("h2", "", pick(ctx, "Fold the paper in half three times", "Přeložte papír třikrát napůl")));
-          var f = mk("div", "width:480px;height:270px;color:var(--dk-fg)"); f.innerHTML = foldSvg(); box.appendChild(f);
+          var f = mk("div", "width:480px;height:270px;color:var(--stage-fg)"); f.innerHTML = foldSvg(); box.appendChild(f);
           box.appendChild(mk("p", "font-size:30px", pick(ctx, "You get 8 rectangles: one anti-solution in each.", "Vznikne 8 obdélníků: do každého jedno antiřešení.")));
         } },
 
@@ -94,7 +94,7 @@
         heading: T("8 anti-solutions in 8 minutes", "8 antiřešení za 8 minut"),
         text: { en: "Draw eight different ways to get the <b>opposite</b> of what we want.", cs: "Nakreslete osm různých způsobů, jak dosáhnout <b>opaku</b> toho, co chceme." },
         extra: function (box, ctx) {
-          if (challenge) box.appendChild(mk("p", "font-size:28px;color:var(--dk-accent)", pick(ctx, "Challenge: ", "Výzva: ") + challenge));
+          if (challenge) box.appendChild(mk("p", "font-size:28px;color:var(--stage-hi)", pick(ctx, "Challenge: ", "Výzva: ") + challenge));
         },
         notes: T("<p>Keep the pace: one drawing a minute. Quantity matters, quality does not.</p>", "<p>Držte tempo: jedna kresba za minutu. Záleží na množství, ne na kvalitě.</p>") }),
 

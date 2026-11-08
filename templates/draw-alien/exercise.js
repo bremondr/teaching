@@ -10,7 +10,7 @@
   // A countdown with Start/Pause and Reset. In the small next-slide preview it only shows the full time.
   // Returns a cleanup function (stops the interval).
   function addTimer(parent, ctx, seconds, size) {
-    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--dk-fg)", mmss(seconds));
+    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)", mmss(seconds));
     clock.id = "timer-clock";
     parent.appendChild(clock);
     if (ctx.preview) return function () {};
@@ -19,7 +19,7 @@
     go.id = "timer-go"; reset.id = "timer-reset";
     row.appendChild(go); row.appendChild(reset); parent.appendChild(row);
     var left = seconds, endAt = null, iv = null, ac = null;
-    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--dk-fg)" : "var(--dk-accent)"; clock.dataset.done = left > 0 ? "" : "1"; }
+    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--stage-fg)" : "var(--stage-hi)"; clock.dataset.done = left > 0 ? "" : "1"; }
     function stop() { if (iv) clearInterval(iv); iv = null; endAt = null; go.textContent = pick(ctx, "Start", "Spustit"); }
     function beep() {
       try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var o = ac.createOscillator(), g = ac.createGain();
@@ -101,8 +101,8 @@
             if (!ctx.preview) { ctl.appendChild(btn("−", function () { state.n[i] = Math.max(0, state.n[i] - 1); paint(); })); }
             ctl.appendChild(count);
             if (!ctx.preview) { ctl.appendChild(btn("+", function () { state.n[i] = Math.min(state.total, state.n[i] + 1); paint(); })); }
-            var pct = mk("div", "font-weight:700;color:var(--dk-accent);min-width:90px;text-align:right");
-            var ref = mk("div", "color:var(--dk-muted);font-size:26px", pick(ctx, "reported: ", "uvedeno: ") + f.ref + " %");
+            var pct = mk("div", "font-weight:700;color:var(--stage-hi);min-width:90px;text-align:right");
+            var ref = mk("div", "color:var(--stage-dim);font-size:26px", pick(ctx, "reported: ", "uvedeno: ") + f.ref + " %");
             outs.push({ count: count, pct: pct });
             [name, ctl, pct, ref].forEach(function (n) { table.appendChild(n); });
           });
@@ -113,7 +113,7 @@
           if (!ctx.preview) tot.appendChild(btn("−", function () { state.total = Math.max(1, state.total - 1); state.n = state.n.map(function (v) { return Math.min(v, state.total); }); paint(); }));
           tot.appendChild(totalOut);
           if (!ctx.preview) tot.appendChild(btn("+", function () { state.total += 1; paint(); }));
-          if (!ctx.preview) box.appendChild(tot); else box.appendChild(mk("div", "font-size:26px;color:var(--dk-muted)", pick(ctx, "Count the room with plus and minus buttons.", "Spočítejte sál tlačítky plus a mínus.")));
+          if (!ctx.preview) box.appendChild(tot); else box.appendChild(mk("div", "font-size:26px;color:var(--stage-dim)", pick(ctx, "Count the room with plus and minus buttons.", "Spočítejte sál tlačítky plus a mínus.")));
           paint();
         } },
 

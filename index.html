@@ -4,21 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teaching Hub</title>
-    <!-- Core palette documentation lives inside styles.css -->
+    <!-- Colours, fonts and the light and dark themes live in shared/design/tokens.css; styles.css holds the layout -->
+    <link rel="stylesheet" href="shared/design/tokens.css" />
+    <script src="shared/design/theme.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <div class="tagline">
-          <span></span>
-          Teaching by Ondrej Brem
+        <div class="topbar">
+          <div class="tagline">
+            <span></span>
+            Teaching by Ondrej Brem
+          </div>
+          <button type="button" class="pill" data-theme-toggle aria-label="Switch the page between light and dark">Page: light</button>
         </div>
         <h1>Lectures, Workshops & Live Materials</h1>
         <p>
-          Everything I use to teach UX, product thinking, and creative technology,
-          organized with ready-to-share slide decks,
-          workshop kits, and notes.
+          Everything I use to teach UX, product thinking, and creative technology.
+          The courses come first, then lectures and workshops that stand on their own,
+          then the building blocks: exercises, templates and handouts to reuse anywhere.
         </p>
       </header>
 
@@ -66,12 +71,14 @@
         </label>
       </section>
 
-      <!-- Grid below hosts current and future decks -->
-      <!-- materialsGrid is populated from /topics/topics.json via app.js -->
-      <section class="materials-grid" id="materialsGrid">
+      <!-- Jump links to the sections, filled in by app.js -->
+      <nav class="jump" id="jump" aria-label="Sections"></nav>
+
+      <!-- materialsGrid holds the sections (a course each, standalone, building blocks); app.js builds them from topics/topics.json -->
+      <div id="materialsGrid">
         <p class="loading-copy">Loading topics...</p>
         <noscript>You need JavaScript enabled to load the topic library.</noscript>
-      </section>
+      </div>
 
       <!-- Template keeps card structure editable without touching JS -->
       <template id="topic-template">

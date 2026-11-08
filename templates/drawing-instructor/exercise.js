@@ -10,7 +10,7 @@
   // A countdown with Start/Pause and Reset. In the small next-slide preview it only shows the full time.
   // Returns a cleanup function (stops the interval).
   function addTimer(parent, ctx, seconds, size) {
-    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--dk-fg)", mmss(seconds));
+    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)", mmss(seconds));
     clock.id = "timer-clock";
     parent.appendChild(clock);
     if (ctx.preview) return function () {};
@@ -19,7 +19,7 @@
     go.id = "timer-go"; reset.id = "timer-reset";
     row.appendChild(go); row.appendChild(reset); parent.appendChild(row);
     var left = seconds, endAt = null, iv = null, ac = null;
-    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--dk-fg)" : "var(--dk-accent)"; clock.dataset.done = left > 0 ? "" : "1"; }
+    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--stage-fg)" : "var(--stage-hi)"; clock.dataset.done = left > 0 ? "" : "1"; }
     function stop() { if (iv) clearInterval(iv); iv = null; endAt = null; go.textContent = pick(ctx, "Start", "Spustit"); }
     function beep() {
       try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var o = ac.createOscillator(), g = ac.createGain();
@@ -79,12 +79,12 @@
                  "<p>Tento slide nepromítejte skupině. Ukažte ho jen instruktorovi, nebo použijte vlastní obrázek. I originál měl ukázkové obrázky; tyto tři jsou nové.</p>"),
         render: function (box, ctx) {
           box.appendChild(mk("h2", "", pick(ctx, "Pictures for the instructor", "Obrázky pro instruktora")));
-          box.appendChild(mk("p", "font-size:26px;color:var(--dk-muted)", pick(ctx, "Do not show to the class. Pick one.", "Neukazujte skupině. Vyberte jeden.")));
-          var row = mk("div", "display:flex;gap:40px;color:var(--dk-fg)"), cards = [];
+          box.appendChild(mk("p", "font-size:26px;color:var(--stage-dim)", pick(ctx, "Do not show to the class. Pick one.", "Neukazujte skupině. Vyberte jeden.")));
+          var row = mk("div", "display:flex;gap:40px;color:var(--stage-fg)"), cards = [];
           PICTURES.forEach(function (p) {
             var c = mk("div", "display:flex;flex-direction:column;align-items:center;gap:6px");
             var f = mk("div", "width:200px;height:200px;visibility:hidden"); f.className = "pic"; f.innerHTML = svg(p.s, 160, 160, "width:100%;height:100%");
-            c.appendChild(f); c.appendChild(mk("div", "font-size:24px;color:var(--dk-muted)", pick(ctx, p.en, p.cs)));
+            c.appendChild(f); c.appendChild(mk("div", "font-size:24px;color:var(--stage-dim)", pick(ctx, p.en, p.cs)));
             row.appendChild(c); cards.push(f);
           });
           box.appendChild(row);

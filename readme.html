@@ -6,7 +6,9 @@
     <title>Teaching Hub</title>
     <!-- Renders any Markdown file of this repo, e.g. readme.html?f=workshops/some-item/README.md
          or readme.html?p=workshops/some-item (shorthand for that folder's README.md).
-         Palette and layout come from styles.css; the extras are in assets/readme.css. -->
+         Colours and the light and dark themes come from shared/design/tokens.css; layout from styles.css; the extras are in assets/readme.css. -->
+    <link rel="stylesheet" href="shared/design/tokens.css" />
+    <script src="shared/design/theme.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="assets/readme.css" />
   </head>
@@ -15,6 +17,7 @@
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="./">← All materials</a>
         <span id="crumbPath"></span>
+        <button type="button" class="pill" data-theme-toggle aria-label="Switch the page between light and dark">Page: light</button>
       </nav>
       <div class="doc-layout">
         <article class="doc" id="doc">

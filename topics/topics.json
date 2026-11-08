@@ -1,4 +1,21 @@
 {
+  "courses": [
+    {
+      "code": "NI-PSD",
+      "title": "Public Service Design",
+      "description": "A FIT ČVUT course on designing public services with human-centred methods. Student teams work on assignments from public institutions."
+    },
+    {
+      "code": "NI-DSW",
+      "title": "Design Sprint",
+      "description": "A FIT ČVUT course in which student teams run a Design Sprint on a real brief from a partner, in Prague and in Athens."
+    },
+    {
+      "code": "NI-ESC",
+      "title": "Design Project",
+      "description": "An experimental project course on designing games for real customers, run with the Faculty of Architecture. Its material is not published yet."
+    }
+  ],
   "topics": [
     {
       "title": "NI-PSD: Usability testing",

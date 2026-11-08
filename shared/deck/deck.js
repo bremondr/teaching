@@ -150,10 +150,16 @@
     var q = new URLSearchParams(location.search);
     var hash = location.hash;
     var mode = hash === "#slide" ? "slide" : (hash === "#presenter" ? "presenter" : "view");
-    // The look: ?theme=light|dark forces one, ?event=name switches on an event theme (see shared/design/).
-    var themeQ = q.get("theme"), eventQ = q.get("event");
-    if (themeQ === "light" || themeQ === "dark") document.documentElement.setAttribute("data-theme", themeQ);
-    if (eventQ && /^[a-z0-9-]+$/.test(eventQ)) document.documentElement.setAttribute("data-event", eventQ);
+    // The look (shared/design/): the page theme, the slide style (a separate choice) and an optional event theme.
+    // An address parameter wins, then the choice saved by the buttons in the controls row.
+    var docEl = document.documentElement;
+    function savedPref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+    function savePref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    function lookPref(param, key) { var v = q.get(param) || savedPref(key); return v === "light" || v === "dark" ? v : null; }
+    var themeNow = lookPref("theme", "deck-theme"), slidesNow = lookPref("slides", "deck-slides"), eventQ = q.get("event");
+    if (themeNow) docEl.setAttribute("data-theme", themeNow);
+    if (slidesNow) docEl.setAttribute("data-slides", slidesNow);
+    if (eventQ && /^[a-z0-9-]+$/.test(eventQ)) docEl.setAttribute("data-event", eventQ);
     var embed = q.get("embed") === "1";
     if (embed) root.classList.add("dk-embed", "dk-hover");
     var stored = null; try { stored = localStorage.getItem("deck-lang:" + cfg.channel); } catch (e) {}
@@ -210,6 +216,22 @@
     function planTotal() { return planStart(S.seq.length); }
     function elapsed() { return tm.acc + (tm.at ? (Date.now() - tm.at) / 1000 : 0); }
 
+    // ----- the two look buttons: page light or dark, slides light or dark -----
+    function pageIsDark() { var t = docEl.getAttribute("data-theme"); return t ? t === "dark" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches); }
+    function slidesAreLight() { return docEl.getAttribute("data-slides") === "light"; }
+    function paintLooks() {
+      if (ui.themeBtn) ui.themeBtn.textContent = "Page: " + (pageIsDark() ? "dark" : "light");
+      if (ui.slidesBtn) ui.slidesBtn.textContent = "Slides: " + (slidesAreLight() ? "light" : "dark");
+    }
+    function lookButtons() {
+      ui.themeBtn = pill("button", "", "Switch the page between light and dark");
+      ui.slidesBtn = pill("button", "", "Switch the slides between light and dark");
+      ui.themeBtn.addEventListener("click", function () { var v = pageIsDark() ? "light" : "dark"; docEl.setAttribute("data-theme", v); savePref("deck-theme", v); paintLooks(); });
+      ui.slidesBtn.addEventListener("click", function () { var v = slidesAreLight() ? "dark" : "light"; docEl.setAttribute("data-slides", v); savePref("deck-slides", v); paintLooks(); broadcast(); });
+      paintLooks();
+      return [ui.themeBtn, ui.slidesBtn];
+    }
+
     // ----- build the DOM for the current mode -----
     function pill(tag, text, label) { var b = el(tag, "dk-btn", text); if (label) b.setAttribute("aria-label", label); return b; }
     function exitLink() {
@@ -236,6 +258,7 @@
         [ui.prev, ui.next, ui.open, ui.fs, ui.exit, ui.count].forEach(function (n) { if (n) r1.appendChild(n); });
         left.appendChild(r1);
         if (multi) { ui.langs = langButtons(); left.appendChild(ui.langs); }
+        var looksRow = el("div", "dk-row"); lookButtons().forEach(function (b) { looksRow.appendChild(b); }); left.appendChild(looksRow);
         ui.status = el("div", "dk-status"); left.appendChild(ui.status);
         var clock = el("div", "dk-card"), crow = el("div", "dk-row");
         ui.clock = el("div", "dk-clock", "0:00"); ui.go = pill("button", "Start"); ui.reset = el("button", "dk-mini", "Reset");
@@ -261,6 +284,7 @@
       ui.prev = pill("button", "◀", "Previous slide"); ui.next = pill("button", "▶", "Next slide");
       bar.appendChild(ui.prev); bar.appendChild(ui.next);
       if (multi) { ui.langs = langButtons(); bar.appendChild(ui.langs); }
+      lookButtons().forEach(function (b) { bar.appendChild(b); });
       ui.fs = pill("button", "Fullscreen"); bar.appendChild(ui.fs);
       if (!embed) { ui.pres = pill("a", "Presenter view"); ui.pres.href = "#presenter"; ui.pres.target = "_blank"; ui.pres.rel = "noopener"; bar.appendChild(ui.pres); }
       ui.exit = exitLink(); if (ui.exit) bar.appendChild(ui.exit);
@@ -327,7 +351,7 @@
     }
 
     // ----- presenter and slide window sync -----
-    function model() { return { id: S.seq[S.si].id, lang: lang }; }
+    function model() { return { id: S.seq[S.si].id, lang: lang, slides: slidesAreLight() ? "light" : "dark" }; }
     function post(msg) {
       msg.id = CID + ":" + Date.now() + ":" + Math.random().toString(36).slice(2, 6);
       if (chan) { try { chan.postMessage(msg); } catch (e) {} }
@@ -340,6 +364,7 @@
         gotSync = true;
         var i = S.seq.findIndex(function (s) { return s.id === m.model.id; });
         if (cfg.langs.indexOf(m.model.lang) >= 0) lang = m.model.lang;
+        if (m.model.slides === "light" || m.model.slides === "dark") docEl.setAttribute("data-slides", m.model.slides);
         if (i >= 0) S.si = i;
         renderAll(); post({ type: "ack" });
       } else if (mode === "presenter" && m.type === "hello") { post({ type: "sync", model: model() }); lastAck = Date.now(); status(); }

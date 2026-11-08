@@ -23,7 +23,7 @@ html { color-scheme: light; }
 :root {
   --bg: #f3f6f7; --surface: #ffffff; --fg: #14282e; --muted: #5b6e74; --line: #d3dde0;
   --accent: #c2185b; --accent-fg: #ffffff; --accent-soft: #fbe3ec; --ink: #0e5a63; --ok: #1b7a4b; --warn: #b3261e;
-  --stage: #0b2a30; --stage-fg: #f2f8f9; --stage-dim: #9fc2c8; --stage-hi: #ffd166;
+  --stage: #0b2a30; --stage-fg: #f2f8f9; --stage-dim: #9fc2c8; --stage-hi: #ffd166; --stage-bad: #ff8a80;
   --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -38,4 +38,12 @@ html { color-scheme: light; }
   --bg: #0f1b1f; --surface: #172a30; --fg: #e6f0f2; --muted: #93a9b0; --line: #2a4249;
   --accent: #f06292; --accent-fg: #1a0610; --accent-soft: #3a1626; --ink: #6cc7d1; --ok: #6fd3a1; --warn: #ff8a80;
   --stage: #061a1e; color-scheme: dark;
+}
+
+/* Slide style: LIGHT slides. This is separate from the page theme above: a light or a dark page can show dark or light
+   slides. Switch it with data-slides="light" on <html> (the "Slides" button in a deck, or ?slides=light).
+   The yellow highlight cannot be read on white, so a light slide uses the magenta for its label and dashes.
+   Keep this block LAST in the file: it has to win over the dark blocks above, which set --stage too. */
+:root[data-slides="light"] {
+  --stage: #f7fafb; --stage-fg: #14282e; --stage-dim: #5b6e74; --stage-hi: #c2185b; --stage-bad: #b3261e;
 }

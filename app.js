@@ -27,6 +27,7 @@ const LANGUAGE_NAMES = {
 };
 
 let materials = [];
+let courses = [];
 const emptyStateEl = document.createElement("p");
 emptyStateEl.className = "empty-state";
 emptyStateEl.textContent = "No topics match your filters yet.";
@@ -36,6 +37,7 @@ async function loadTopics() {
     const response = await fetch("topics/topics.json");
     const payload = await response.json();
     const topics = payload.topics || [];
+    courses = payload.courses || [];
     renderTopics(topics);
   } catch (error) {
     materialsGrid.innerHTML =
@@ -49,14 +51,56 @@ function renderTopics(topics) {
     return;
   }
 
-  const fragment = document.createDocumentFragment();
+  materialsGrid.innerHTML = "";
+  const jump = document.getElementById("jump");
+  jump.innerHTML = "";
 
-  topics.forEach((topic) => {
-    fragment.appendChild(buildTopicCard(topic));
+  buildGroups().forEach((group) => {
+    const items = topics.filter(group.match);
+    // A course always gets its section, even while nothing is published for it. The other two only when they have items.
+    if (!items.length && group.kind !== "course") return;
+
+    const section = document.createElement("section");
+    section.className = `group group-${group.kind}`;
+    section.id = group.id;
+
+    const head = document.createElement("div");
+    head.className = "group-head";
+    const title = document.createElement("h2");
+    title.textContent = group.title;
+    if (group.subtitle) {
+      const small = document.createElement("small");
+      small.textContent = group.subtitle;
+      title.appendChild(small);
+    }
+    head.appendChild(title);
+    if (group.intro) {
+      const intro = document.createElement("p");
+      intro.textContent = group.intro;
+      head.appendChild(intro);
+    }
+    section.appendChild(head);
+
+    if (items.length) {
+      const grid = document.createElement("div");
+      grid.className = "materials-grid";
+      items.forEach((topic) => grid.appendChild(buildTopicCard(topic)));
+      section.appendChild(grid);
+    } else {
+      const empty = document.createElement("p");
+      empty.className = "group-empty";
+      empty.textContent = "Nothing is published for this course yet.";
+      section.appendChild(empty);
+    }
+    materialsGrid.appendChild(section);
+
+    const link = document.createElement("a");
+    link.className = "pill";
+    link.href = `#${group.id}`;
+    link.textContent = group.title;
+    jump.appendChild(link);
   });
 
-  materialsGrid.innerHTML = "";
-  materialsGrid.appendChild(fragment);
   materials = Array.from(materialsGrid.querySelectorAll(".material-card"));
   syncTagOptions(topics);
   syncCourseOptions(topics);
@@ -81,17 +125,51 @@ function syncTagOptions(topics) {
   });
 }
 
-// One option per course named in topics.json (the "course" field), so a new course needs no edit here.
-function syncCourseOptions(topics) {
+// The sections of the page. The courses come from the "courses" list at the top of topics.json (one section each,
+// in that order). Then lectures and workshops with no course, then every template as a building block. A template can
+// still name a course (it says so on its card and the course filter finds it), but it is listed with the building blocks.
+function courseCode(topic) {
+  const code = (topic.course || "").trim();
+  return courses.some((course) => course.code === code) ? code : "";
+}
+
+function buildGroups() {
+  const groups = courses.map((course) => ({
+    id: `course-${course.code.toLowerCase()}`,
+    kind: "course",
+    title: course.code,
+    subtitle: course.title,
+    intro: course.description,
+    match: (topic) => topic.type !== "template" && courseCode(topic) === course.code
+  }));
+  groups.push({
+    id: "standalone",
+    kind: "standalone",
+    title: "Standalone lectures and workshops",
+    intro: "Guest lectures and workshops that do not belong to a course.",
+    match: (topic) => topic.type !== "template" && !courseCode(topic)
+  });
+  groups.push({
+    id: "building-blocks",
+    kind: "blocks",
+    title: "Building blocks",
+    intro: "Exercises, templates and handouts to reuse inside any lecture or workshop. Some were made for a course and say so on the card.",
+    match: (topic) => topic.type === "template"
+  });
+  return groups;
+}
+
+// One filter option per course in the list, in the list's order.
+function syncCourseOptions() {
   const known = new Set(Array.from(courseFilter.options).map((option) => option.value));
-  topics.forEach((topic) => {
-    const course = (topic.course || "").trim();
-    if (!course || known.has(course.toLowerCase())) return;
+  courses.forEach((course) => {
+    const value = course.code.toLowerCase();
+    if (known.has(value)) return;
     const option = document.createElement("option");
-    option.value = course.toLowerCase();
-    option.textContent = course;
+    option.value = value;
+    option.textContent = course.code;
     courseFilter.appendChild(option);
-    known.add(course.toLowerCase());
+    known.add(value);
   });
 }
 
@@ -119,7 +197,7 @@ function buildTopicCard(topic) {
 
   typeEl.textContent = `${capitalize(topic.type || "session")} · ${
     topic.category || "General"
-  }`;
+  }${topic.course ? ` · ${topic.course}` : ""}`;
   const readmeResource = resources.find(
     (r) => r.available && /\.md($|#)/i.test(r.href || "") && !/^[a-z][a-z0-9+.-]*:/i.test(r.href)
   );
@@ -241,6 +319,16 @@ function filterMaterials() {
     const shouldShow = matchesSearch && matchesType && matchesTag && matchesCourse;
     card.style.display = shouldShow ? "flex" : "none";
     if (shouldShow) visibleCount += 1;
+  });
+
+  // Hide a section while a filter leaves nothing in it. With no filter every section stays, an empty course says so.
+  const filtersActive =
+    Boolean(searchTerm) || typeSelection !== "all" || tagSelection !== "all" || courseSelection !== "all";
+  materialsGrid.querySelectorAll(".group").forEach((group) => {
+    const shown = Array.from(group.querySelectorAll(".material-card")).filter(
+      (card) => card.style.display !== "none"
+    ).length;
+    group.hidden = filtersActive && shown === 0;
   });
 
   if (visibleCount === 0 && materials.length > 0) {
