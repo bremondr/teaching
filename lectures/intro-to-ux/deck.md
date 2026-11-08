@@ -593,11 +593,11 @@ The six phases: Understand, Define, Sketch, Decide, Prototype, Validate. The nex
 :::
 
 ::: en
-<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59.09%;top:0%;width:40.91%;height:100%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Poster of Jakob&#x27;s ten usability heuristics, each with a short explanation and an icon"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59%;top:6%;width:36%;height:88%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Poster of Jakob&#x27;s ten usability heuristics, each with a short explanation and an icon"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
 :::
 
 ::: cs
-<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59.09%;top:0%;width:40.91%;height:100%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Plakát Jakobových deseti heuristik použitelnosti, každá s krátkým vysvětlením a ikonou"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
+<div class="dk-canvas" data-pad="58 560 56 64"><figure class="dk-pic" style="left:59%;top:6%;width:36%;height:88%"><img src="assets/nng-ten-usability-heuristics.webp" alt="Plakát Jakobových deseti heuristik použitelnosti, každá s krátkým vysvětlením a ikonou"></figure><p class="dk-credit">Poster: Nielsen Norman Group</p></div>
 :::
 
 ::: notes en
@@ -707,11 +707,11 @@ Ve zdrojových prezentacích byl tento slide a další dva jen česky; angličti
 :::
 
 ::: en
-<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:64.51%;top:36.92%;width:35.49%;height:63.08%"><img src="assets/icon-scales-cost-benefit.webp" alt="Line icon of scales with a dollar coin on top"></figure><p class="dk-credit">Icon: Getty Images</p></div>
+<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:65%;top:32%;width:30%;height:53.3%"><img src="assets/icon-scales-cost-benefit.webp" alt="Line icon of scales with a dollar coin on top"></figure><p class="dk-credit">Icon: Getty Images</p></div>
 :::
 
 ::: cs
-<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:64.51%;top:36.92%;width:35.49%;height:63.08%"><img src="assets/icon-scales-cost-benefit.webp" alt="Lineární ikona vah s mincí s dolarem nahoře"></figure><p class="dk-credit">Icon: Getty Images</p></div>
+<div class="dk-canvas" data-pad="58 470 56 64"><figure class="dk-pic" style="left:65%;top:32%;width:30%;height:53.3%"><img src="assets/icon-scales-cost-benefit.webp" alt="Lineární ikona vah s mincí s dolarem nahoře"></figure><p class="dk-credit">Icon: Getty Images</p></div>
 :::
 
 ---
