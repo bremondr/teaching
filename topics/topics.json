@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "NI-PSD: Usability testing",
+      "type": "lecture",
+      "category": "Research and validation",
+      "tags": ["ni-psd", "usability-testing", "user-interviews", "validation"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Lecture on testing prototypes with users in NI-PSD: ways to test, preparing a test, dos and don'ts, the five-act interview, group note-taking and debrief.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/usability-testing/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/usability-testing/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "NI-PSD: Human-centred design and design thinking",
       "type": "lecture",
       "category": "Design process",
