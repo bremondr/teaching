@@ -106,6 +106,116 @@
       ]
     },
     {
+      "title": "Devil's 8s",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "brainstorming"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "Eight anti-solutions in eight minutes on a folded sheet of paper, to lose the fear of bad ideas. Challenge input, fold guide and timer.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/devils-8s/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/devils-8s/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Drawing instructor",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "communication"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A 15-minute ice breaker: one person describes a picture using only geometric shapes and the others draw it. Shows the value of feedback and shared terms.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/drawing-instructor/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/drawing-instructor/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Everyone can sketch",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "sketching"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A 15-minute warm-up that takes the pressure off drawing: simple shapes become houses, boats, cars and people. Timed slides with shape illustrations.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/everyone-can-sketch/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/everyone-can-sketch/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Draw an alien",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "creativity"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "Five minutes to draw an alien, then a comparison of the drawings that shows how new ideas combine old ones. Timer and a count-the-room slide.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/draw-alien/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/draw-alien/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "30 circles",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "creativity"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A three-minute warm-up where people turn as many empty circles as they can into objects, followed by a debrief on assumed rules. An on-screen sheet with a timer and a print button, as interactive slides.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/30-circles/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/30-circles/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
