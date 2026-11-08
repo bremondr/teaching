@@ -3,7 +3,7 @@ title: Title of the item
 type: workshop
 category: Short category name
 # course: NI-PSD   (optional: the course this belongs to; the hub gets a filter entry for it)
-tags: [lowercase-tag, another-tag]
+tags: [lowercase-tag, another-tag]   # from the "tags" list in topics/topics.json
 languages: [en]
 level: Intro
 status: Draft, Month YYYY

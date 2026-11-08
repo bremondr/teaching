@@ -3,7 +3,7 @@ title: "Design Sprint: interactive facilitation deck"
 type: workshop
 category: Design and UX
 course: NI-DSW
-tags: [ni-dsw, design-sprint]
+tags: [design-sprint]
 languages: [en]
 level: Intermediate
 status: Draft, Nov 2026

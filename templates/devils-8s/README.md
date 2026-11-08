@@ -2,7 +2,7 @@
 title: "Devil's 8s"
 type: template
 category: Ideation exercise
-tags: [exercise, ideation, brainstorming]
+tags: [ideation]
 languages: [en, cs]
 level: Intro
 status: First version, Nov 2026

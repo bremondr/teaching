@@ -3,7 +3,7 @@ title: Design Sprint method sheets
 type: template
 category: Design process
 course: NI-DSW
-tags: [ni-dsw, design-sprint]
+tags: [design-sprint]
 languages: [en]
 level: Intro
 status: Draft, Nov 2026
