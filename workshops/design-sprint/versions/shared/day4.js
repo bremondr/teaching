@@ -12,7 +12,7 @@ Deck.module({ id: "day4", title: "Day 4: testing", slides: [
     body: "<h2>Watch together, learn together</h2><p>When everyone sees the same interview, learning is faster and the conclusions are better. At the end of the day the team can decide the next step on what it saw.</p>" },
   { id: "grid", min: 3, title: "Take notes in a grid",
     body: "<h2>A shared note grid</h2><ul><li>Draw columns for the five users and rows for the parts of the prototype or sprint questions</li><li>Everybody writes quotes, observations and interpretations on notes, marked as positive, neutral or negative</li><li>Be quiet during the interviews</li><li>After each interview, stick the notes in the right cell</li></ul>",
-    notes: DS.n("Image placeholder: the original shows a grid with five named columns, sample notes and a legend for the markers. Draw your own on the board.") },
+    notes: DS.n("In the original deck this grid is drawn with shapes: five named columns, sample notes and a legend for the markers. Draw your own on the board.") },
   DS.timer({ id: "interview-clock", min: 60, title: "One interview", text: "Everyone writes notes. Be quiet. Reset for the next user.",
     notes: DS.n("Take a break after each interview, then put the notes on the grid.") }),
   { id: "debrief", min: 3, title: "Debrief",

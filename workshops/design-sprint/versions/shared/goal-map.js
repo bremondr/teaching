@@ -16,7 +16,7 @@ Deck.module({ id: "goalmap", title: "Goal, questions and map", slides: [
     notes: DS.n("One or two questions are fine, so are a dozen. Stick them next to the long-term goal.") }),
   { id: "map-how", min: 4, title: "Map the challenge",
     body: "<h2>Map the challenge</h2><ol><li>Actors on the left (users, stakeholders)</li><li>The end goal on the right</li><li>Journey stages along the top</li><li>Fill the space between with a few words and arrows</li></ol><p class='dk-small'>Five to fifteen steps is enough. It can be corrected all day.</p>",
-    notes: DS.n("Image placeholder: the original slides show a diagram of a map with numbered steps and a worked example from another domain. Draw one live on the board, using the team's own topic.") },
+    notes: DS.n("In the original deck the map is a diagram drawn with shapes, with numbered steps and a worked example from another domain. Draw one live on the board, using the team's own topic.") },
   DS.timer({ id: "map-clock", min: 45, title: "Draw the map", text: "Keep it simple. Between 30 and 60 minutes, then stop.",
     notes: DS.n("Facilitator: keep people from perfecting it. The map is a thinking tool, not a deliverable.") }),
   { id: "milestone", min: 3, title: "Milestone",

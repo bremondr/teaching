@@ -27,7 +27,8 @@ Language of the materials: English.
 | `versions/fall-2025.js` | The current version (fall 2025) |
 | `versions/spring-2025.js` | The spring 2025 version |
 | `versions/four-day.js` | The 4 day variant |
-| `versions/shared/` | Parts the versions share: `intro.js` (the explanation intro), `brief.js`, `kickoff.js`, the day blocks, and `tools.js` (timer, picker, week and agenda helpers) |
+| `versions/shared/` | Parts the versions share: `intro.js` (the explanation intro), `brief.js`, `kickoff.js`, the day blocks, `tools.js` (timer, picker, week and agenda helpers) and `pictures.js` (the pictures of the original decks, by slide id) |
+| `assets/` | The pictures (WebP, web size) |
 
 The deck runs on the shared engine in `shared/deck/`.
 
@@ -69,11 +70,12 @@ After an edit run `python3 scripts/check.py` and `python3 scripts/sync_topics.py
 
 ## Sources
 
-The method follows the Design Sprint by Jake Knapp, John Zeratsky and Braden Kowitz (Google Ventures). The slides are the author's own wording of the steps. The original materials of the method, such as the book, the official decks and checklists, are not included here.
+The method follows the Design Sprint by Jake Knapp, John Zeratsky and Braden Kowitz (Google Ventures). The slides are the author's own wording of the steps. The book, the official checklists and the planner are not included here. Pictures from The Design Sprint deck by Jake Knapp (the black and white sprint photos and the sketch sheet drawings) are shown on the slides as in the original decks, with a credit.
 
 ## Known limits
 
-- No images: the original decks used stock photos and diagrams. The speaker notes say where they were.
+- Pictures: `versions/shared/pictures.js` adds the pictures of the fall 2025 deck and of the explanation deck to the slide that carries the same content, placed as on the original slide, and inserts the picture-only slides (the double diamond, the fall 2025 timetable, the GV video, example sketches and storyboards, the sprint room). The other versions share them. The timer videos of the original are shown next to the live timer and link to YouTube. Diagrams that the original drew with shapes (the map, the note grid) are not redrawn.
+- Picture credits are on the slides: Jake Knapp's deck, the Sprint book cover, the double diamond after the Design Council, GV's video, timer videos on YouTube, an AI-generated rose. The dice, the icons and the photos of sketches and storyboards come from the original decks without a recorded source.
 - The topic scope and the challenge brief are prompts to fill in for each run.
 - Timers sync only between windows of the same browser.
 - The planned times are the ones named in the original decks where they exist; the rest are estimates and the plan clock should be read as a rough guide.
