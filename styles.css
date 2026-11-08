@@ -363,32 +363,6 @@ details[open] {
   color: var(--accent);
 }
 
-.future-block {
-  background: var(--surface);
-  color: var(--fg);
-  padding: 2rem;
-  border-radius: 1.25rem;
-  margin-bottom: 3rem;
-  border: 1px solid var(--line);
-}
-
-.future-block h2 {
-  margin-top: 0;
-}
-
-.future-pipeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.pipeline-card {
-  background: var(--bg);
-  padding: 1rem;
-  border-radius: 0.8rem;
-  border: 1px dashed var(--line);
-}
-
 footer {
   text-align: center;
   padding: 2rem 0;
