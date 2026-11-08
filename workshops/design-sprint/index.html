@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Sprint workshop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/deck/deck.css">
+<style>
+  body { margin: 0; background: #1c1c1c; color: #f2f2f2; font: 18px/1.5 system-ui, sans-serif; }
+  .ds-start { max-width: 860px; margin: 0 auto; padding: 32px 16px 56px; }
+  .ds-start h1 { color: #ffc857; margin: 0 0 8px; }
+  .ds-start a { color: #9db3f2; }
+  .ds-card { background: #262626; border: 1px solid #3a3a3a; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+  .ds-card.ds-cur { border-color: #ffc857; }
+  .ds-card h2 { margin: 0 0 4px; font-size: 24px; }
+  .ds-tag { display: inline-block; font-size: 14px; background: #ffc857; color: #1c1c1c; border-radius: 999px; padding: 1px 10px; margin-left: 8px; vertical-align: middle; }
+  .ds-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; }
+  .ds-links a.ds-main { font-weight: 700; }
+  .ds-small { color: #b4b4b4; font-size: 15px; }
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<script src="../../shared/deck/deck.js"></script>
+<script src="versions/shared/tools.js"></script>
+<script src="versions/fall-2025.js"></script>
+<script src="versions/spring-2025.js"></script>
+<script src="versions/four-day.js"></script>
+<script>
+(function () {
+  // The version is a query parameter (?v=four-day) so the presenter window and the projector window open the same one.
+  var V = window.DS_VERSIONS, order = ["fall-2025", "spring-2025", "four-day"];
+  var want = new URLSearchParams(location.search).get("v"), root = document.getElementById("deck");
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+
+  if (want && V[want]) {
+    var v = V[want];
+    DS.channel = v.channel;
+    document.title = "Design Sprint: " + v.label;
+    Deck.start({ title: "Design Sprint: " + v.label, channel: v.channel, langs: ["en"], slides: v.slides });
+    return;
+  }
+
+  // start page
+  root.className = "ds-start";
+  root.appendChild(el("h1", "", "Design Sprint workshop"));
+  root.appendChild(el("p", "", "Pick the version to run. Each one is a slide deck with speaker notes, a plan clock and timers. " +
+    "The choice is kept in the address (<code>?v=...</code>), so the presenter view and the projector window show the same deck."));
+  if (want) root.appendChild(el("p", "", "<b>Unknown version \"" + want.replace(/[<>&\"]/g, "") + "\".</b> Pick one below."));
+  order.forEach(function (id) {
+    var x = V[id], c = el("div", "ds-card" + (x.current ? " ds-cur" : ""));
+    c.appendChild(el("h2", "", x.label + (x.current ? "<span class='ds-tag'>current</span>" : "")));
+    c.appendChild(el("p", "", x.summary));
+    var n = 0; x.slides.forEach(function (s) { n += s.min || 0; });
+    var links = el("div", "ds-links");
+    links.innerHTML = "<a class='ds-main' href='?v=" + id + "'>Open the slides</a>" +
+      "<a href='?v=" + id + "#presenter'>Presenter view</a>" +
+      "<a href='?v=" + id + "&amp;s=day1/open'>Start at day 1</a><a href='?v=" + id + "&amp;s=day2/open'>day 2</a>" +
+      "<a href='?v=" + id + "&amp;s=day3/open'>day 3</a><a href='?v=" + id + "&amp;s=day4/open'>day 4</a>";
+    c.appendChild(links);
+    root.appendChild(c);
+  });
+  root.appendChild(el("p", "ds-small", "In the presenter view use the button to open the slide window for the projector. " +
+    "The plan clock adds up the planned minutes of all days, so for a single day jump to its start with the links above."));
+  root.appendChild(el("p", "ds-small", "<a href='../../readme.html?p=workshops/design-sprint'>About this workshop</a>"));
+})();
+</script>
+</body>
+</html>

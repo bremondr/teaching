@@ -67,6 +67,28 @@
       ]
     },
     {
+      "title": "Design Sprint: interactive facilitation deck",
+      "type": "workshop",
+      "category": "Design and UX",
+      "tags": ["ni-dsw", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intermediate",
+      "status": "Draft, Nov 2026",
+      "description": "Facilitation slides for a four-session Design Sprint, as an interactive web deck with presenter view, plan clock, countdown timers and a team picker. Three versions are included: fall 2025 (the current one), spring 2025 and the 4 day variant.",
+      "resources": [
+        {
+          "label": "Open the Design Sprint deck",
+          "href": "./workshops/design-sprint/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./workshops/design-sprint/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
