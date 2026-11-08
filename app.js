@@ -2,6 +2,7 @@
 const searchInput = document.getElementById("searchInput");
 const typeFilter = document.getElementById("typeFilter");
 const tagFilter = document.getElementById("tagFilter");
+const courseFilter = document.getElementById("courseFilter");
 const materialsGrid = document.getElementById("materialsGrid");
 const topicTemplate = document.getElementById("topic-template");
 
@@ -58,6 +59,7 @@ function renderTopics(topics) {
   materialsGrid.appendChild(fragment);
   materials = Array.from(materialsGrid.querySelectorAll(".material-card"));
   syncTagOptions(topics);
+  syncCourseOptions(topics);
   filterMaterials();
   applyTwemoji(materialsGrid);
 }
@@ -76,6 +78,20 @@ function syncTagOptions(topics) {
       tagFilter.appendChild(option);
       known.add(tag);
     });
+  });
+}
+
+// One option per course named in topics.json (the "course" field), so a new course needs no edit here.
+function syncCourseOptions(topics) {
+  const known = new Set(Array.from(courseFilter.options).map((option) => option.value));
+  topics.forEach((topic) => {
+    const course = (topic.course || "").trim();
+    if (!course || known.has(course.toLowerCase())) return;
+    const option = document.createElement("option");
+    option.value = course.toLowerCase();
+    option.textContent = course;
+    courseFilter.appendChild(option);
+    known.add(course.toLowerCase());
   });
 }
 
@@ -99,6 +115,7 @@ function buildTopicCard(topic) {
   card.dataset.title = (topic.title || "").toLowerCase();
   card.dataset.type = topic.type || "session";
   card.dataset.tags = tags.join(",");
+  card.dataset.course = (topic.course || "").trim().toLowerCase();
 
   typeEl.textContent = `${capitalize(topic.type || "session")} · ${
     topic.category || "General"
@@ -201,6 +218,7 @@ function filterMaterials() {
   const searchTerm = searchInput.value.toLowerCase().trim();
   const typeSelection = typeFilter.value;
   const tagSelection = tagFilter.value;
+  const courseSelection = courseFilter.value;
   let visibleCount = 0;
 
   materials.forEach((card) => {
@@ -217,7 +235,10 @@ function filterMaterials() {
     const matchesTag =
       tagSelection === "all" || tags.includes(tagSelection);
 
-    const shouldShow = matchesSearch && matchesType && matchesTag;
+    const matchesCourse =
+      courseSelection === "all" || card.dataset.course === courseSelection;
+
+    const shouldShow = matchesSearch && matchesType && matchesTag && matchesCourse;
     card.style.display = shouldShow ? "flex" : "none";
     if (shouldShow) visibleCount += 1;
   });
@@ -234,6 +255,7 @@ function filterMaterials() {
 searchInput.addEventListener("input", filterMaterials);
 typeFilter.addEventListener("change", filterMaterials);
 tagFilter.addEventListener("change", filterMaterials);
+courseFilter.addEventListener("change", filterMaterials);
 
 loadTopics();
 

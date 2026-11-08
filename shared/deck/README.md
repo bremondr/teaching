@@ -12,7 +12,8 @@ after its first run.
 | Path | What it is |
 | --- | --- |
 | `deck.js` | The engine and the Markdown slide parser |
-| `deck.css` | Styles, all prefixed `dk-`. Colours are variables (`--dk-bg`, `--dk-accent` and so on) that an item can override |
+| `deck.css` | Styles, all prefixed `dk-`. The look is the one of `workshops/cook-a-game` (same tokens, pill buttons, cards, dark teal stage with yellow accents, light and dark page themes). Tokens such as `--ink`, `--stage` and `--stage-hi` can be overridden on `:root` by an item |
+| `fonts/` | Bricolage Grotesque and Source Sans 3, loaded by `deck.css` |
 | `example/` | A bilingual Markdown lecture, a JS workshop deck and a reusable exercise module |
 
 Open `shared/deck/example/` in the published site to try it. Add `#presenter` to the address for
@@ -35,11 +36,13 @@ An item page loads the engine and starts a deck:
 
 `channel` is a name that is unique per deck. The presenter and the slide window talk through it.
 
+The controls row has an **Exit** button. By default it leads to the hub; `exit: "some/path/"` sends it somewhere else (the Design Sprint workshop returns to its version picker) and `exit: false` removes it. Embedded decks (`?embed=1`) and the projector window have no Exit.
+
 ### Lectures: Markdown
 
 One file, slides separated by a line with only `---`. A block `::: cs` … `:::` appears only in that
 language, text outside a block appears in every language. Speaker notes go in `::: notes`
-(or `::: notes cs`). Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers.
+(or `::: notes cs`). A block `::: kicker` … `:::` is the small yellow label above the slide, usually the section name. Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers.
 
 ### Workshops and exercises: JS slides
 
@@ -52,7 +55,7 @@ Deck.start({ title: "…", channel: "…", langs: ["en"], slides: [
 ] });
 ```
 
-`title`, `body` and `notes` may be a string, an object `{ en, cs }` or a function of the language.
+`title`, `body`, `notes` and `kicker` may be a string, an object `{ en, cs }` or a function of the language.
 `min` is the planned minutes; the presenter view shows how far ahead or behind the plan the clock is.
 `render(box, ctx)` draws an interactive slide; `ctx` has `lang`, `mode` and `preview` (true in the
 small next-slide preview, where nothing should start running). It may return a cleanup function.
