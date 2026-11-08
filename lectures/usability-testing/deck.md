@@ -4,7 +4,7 @@
 ---
 
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100%"><a href="https://www.youtube.com/watch?v=bvim4rsNHkQ" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-rocket-landing-fail.webp" alt="Video still: a rocket stage burning on a landing platform at sea"></a></figure><p class="dk-credit">Video on YouTube (click to open)</p></div>
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100%"><a href="https://www.youtube.com/watch?v=bvim4rsNHkQ" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-rocket-landing-fail.webp" alt="Video still: a rocket stage burning on a landing platform at sea"></a></figure><p class="dk-credit">Video on YouTube (click to play)</p></div>
 
 ::: notes
 Opening video: click the picture to open it on YouTube.
@@ -99,11 +99,12 @@ Short team work, 15 minutes: each team prepares the story that frames the test f
 
 ---
 
+## Prepare your stories
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100%"><a href="https://www.youtube.com/watch?v=1gQJUjgCqrU" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-timer-15-minutes.webp" alt="A 15:00 countdown timer"></a></figure><p class="dk-credit">Timer video on YouTube (click to open)</p></div>
+<div class="dk-timer" data-seconds="900"></div>
 
 ::: notes
-A 15-minute timer video; the presenter clock does the same.
+15 minutes for the teams to prepare the story that frames the test. In the original deck this was a timer video.
 :::
 
 ---
@@ -134,7 +135,7 @@ A 15-minute timer video; the presenter clock does the same.
 ---
 
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100.52%;height:100.52%"><a href="https://www.youtube.com/watch?v=qvy78uDvYfU" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-musk-interview.webp" alt="Video still: an interview, with a photo of two people toasting in a green frame"></a></figure><p class="dk-credit">Video on YouTube (click to open)</p></div>
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100.52%;height:100.52%"><a href="https://www.youtube.com/watch?v=qvy78uDvYfU" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-musk-interview.webp" alt="Video still: an interview, with a photo of two people toasting in a green frame"></a></figure><p class="dk-credit">Video on YouTube (click to play)</p></div>
 
 ::: notes
 Video: click the picture to open it on YouTube.
@@ -186,7 +187,6 @@ In the original this board is drawn with shapes and sticky notes, with invented 
 - At the end of each interview, collect the notes and stick them to the whiteboard
 - Mark notes as positive (+), neutral (~) or negative (-)
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:10.94%;top:36.37%;width:2.45%;height:4.35%"><img src="assets/icon-clock.webp" alt="Clock icon"></figure></div>
 
 ::: notes
 Overview of the testing day, with the same example board as the previous slide.

@@ -39,7 +39,8 @@ All content is in `deck.md`. Slides are separated by a line with only `---`; spe
 
 - Pictures are taken over from the original deck and placed as there; the three hidden build steps of
   the original are kept. Not published: slide 4, a screenshot of a private person's social-media post.
-- Picture credits: Starship photo by SpaceX; video stills link to the videos on YouTube; the dialog,
+- The 15-minute timer video of the original (slide 11) is a live timer.
+- Picture credits: Starship photo by SpaceX; the video stills play the videos from YouTube inside the slide; the dialog,
   mug and footpath pictures come from the original deck without a recorded source.
 - Some slides are repeats from animation steps in the original and are kept for fidelity.
 - Third-party material was paraphrased or left out; check the notes before publishing a new version.

@@ -39,7 +39,7 @@ All content is in `deck.md`. Slides are separated by a line with only `---`; spe
 
 - Pictures are taken over from the original deck and placed as there. The phase slides (Empathize to
   Validate) have no picture in the original either.
-- Picture credits: video still and link of GV's "Sprint: 90 second intro"; the squiggle follows The
+- Picture credits: GV's "Sprint: 90 second intro" (plays inside the slide); the squiggle follows The
   Design Squiggle by Damien Newman; meme made with makeameme.org; the design thinking circles come from
   the original deck without a recorded source.
 - Some slides are repeats from animation steps in the original and are kept for fidelity.

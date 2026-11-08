@@ -19,7 +19,7 @@ Short discussion with the students. The original has no more text on this slide.
 ---
 
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:12.5%;top:0%;width:75%;height:100%"><a href="https://www.youtube.com/watch?v=K2vSQPh6MCE" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-sprint-90-second-intro.webp" alt="Video still: Sprint, 90 second intro, a facilitator in front of a wall of sketches"></a></figure><p class="dk-credit">Video: GV, Sprint 90 second intro (click to open)</p></div>
+<div class="dk-canvas"><figure class="dk-pic" style="left:12.5%;top:0%;width:75%;height:100%"><a href="https://www.youtube.com/watch?v=K2vSQPh6MCE" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-sprint-90-second-intro.webp" alt="Video still: Sprint, 90 second intro, a facilitator in front of a wall of sketches"></a></figure><p class="dk-credit">Video: GV, Sprint 90 second intro (click to play)</p></div>
 
 ::: notes
 Play the 90-second video by GV: click the picture to open it on YouTube.
@@ -39,7 +39,7 @@ The sprint week as the course runs it: discover, sketch, decide, prototype, test
 
 # Design thinking
 
-<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:27.38%;top:12.57%;width:73.46%;height:74.86%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure></div>
+<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:29.3%;top:16.3%;width:65.7%;height:67.4%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure></div>
 
 ::: notes
 The design thinking process. The next five slides take its phases one by one.
@@ -69,7 +69,7 @@ The design thinking process. The next five slides take its phases one by one.
 
 # Design thinking
 
-<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:26.54%;top:12.57%;width:73.46%;height:74.86%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure><figure class="dk-pic" style="left:27.13%;top:14.17%;width:72.29%;height:71.66%"><img src="assets/design-squiggle-phases.webp" alt="Phases discover, define, ideate, prototype, test, refine above a squiggle that goes from tangled to a straight line"></figure><p class="dk-credit">Squiggle after The Design Squiggle by Damien Newman</p></div>
+<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:29.3%;top:16.3%;width:65.7%;height:67.4%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure><figure class="dk-pic" style="left:30.2%;top:17.6%;width:64.8%;height:64.8%"><img src="assets/design-squiggle-phases.webp" alt="Phases discover, define, ideate, prototype, test, refine above a squiggle that goes from tangled to a straight line"></figure><p class="dk-credit">Squiggle after The Design Squiggle by Damien Newman</p></div>
 
 ::: notes
 Closing overview: the five phases again, then the design squiggle, which shows how messy the start of the process is.

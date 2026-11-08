@@ -188,7 +188,7 @@ IN PROGRESS
 
 # Tangram
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100.16%"><img src="assets/tangram.webp" alt="Hands laying out tangram pieces into the shape of a cat"></figure></div>
+<div class="dk-canvas" data-onpic><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100.16%"><img src="assets/tangram.webp" alt="Hands laying out tangram pieces into the shape of a cat"></figure></div>
 
 ---
 
