@@ -9,13 +9,14 @@
  * It opens each deck, steps through every slide in every language, and measures where the content really is.
  * The slide has margins (64 px at the sides, 58 px on top, 56 px at the bottom). A slide FAILS when content leaves that
  * safe area even after the engine's automatic shrinking, or when the engine gave up (it never shrinks below 0.55);
+ * Picture layers (.dk-canvas) are left out: they may cover the whole slide, margins included.
  * a slide is SHRUNK when the engine had to scale it down (below 0.8 is hard to read and worth splitting in two).
  * Exit code 1 when a slide fails. */
 const fs = require("fs"), path = require("path");
 const { chromium } = require("playwright");
 const ROOT = path.resolve(__dirname, "..");
 const BASE = "https://bremondr.github.io/teaching/";
-const MIME = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".md": "text/markdown", ".woff2": "font/woff2", ".png": "image/png", ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".pdf": "application/pdf" };
+const MIME = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".md": "text/markdown", ".woff2": "font/woff2", ".png": "image/png", ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".webp": "image/webp", ".pdf": "application/pdf" };
 const filter = process.argv[2] || "";
 const SAFE = { top: 58, bottom: 720 - 56, left: 64, right: 1280 - 64 }, TOL = 6;   // design pixels
 const SHRUNK_BELOW = 0.8;   // report slides the engine scaled below this
@@ -50,6 +51,7 @@ function items() {
     const sr = slide.getBoundingClientRect(), k = sr.width / 1280;
     let top = 1e9, bottom = -1e9, left = 1e9, right = -1e9, n = 0;
     inner.querySelectorAll("*").forEach((e) => {
+      if (e.closest(".dk-canvas")) return;   // a picture layer may cover the whole slide on purpose
       if (e.children.length && !/^(P|LI|H1|H2|H3|TD|TH|BUTTON|A|SPAN)$/.test(e.tagName)) return;
       const r = e.getBoundingClientRect(); if (!r.width || !r.height) return;
       n++; top = Math.min(top, (r.top - sr.top) / k); bottom = Math.max(bottom, (r.bottom - sr.top) / k);
