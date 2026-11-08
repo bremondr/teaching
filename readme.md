@@ -42,6 +42,19 @@ Deploy the root directory via GitHub Pages to expose the landing page. Future
 Markdown sources and build scripts can live inside each track folder and publish
 their outputs back to the same repo.
 
+## How the homepage is organised
+
+The homepage lists the items in sections, built from `topics/topics.json`:
+
+1. **One section per course**, in the order of the `courses` list at the top of `topics.json` (`code`, `title`, `description`).
+   A lecture or workshop belongs to a course when its README front matter has `course: NI-PSD`. A course with nothing
+   published says so.
+2. **Standalone lectures and workshops**: anything with no course (guest lectures and workshops outside the courses).
+3. **Building blocks**: every template (exercises, method sheets, handouts), whatever its course. A template that was made for a
+   course says so on its card, and the Course filter finds it.
+
+To add a course, add it to the `courses` list. A `course` value that is not in the list is an error in `check.py`.
+
 ## Folder layout
 
 ```

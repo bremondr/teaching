@@ -10,7 +10,7 @@
   // A countdown with Start/Pause and Reset. In the small next-slide preview it only shows the full time.
   // Returns a cleanup function (stops the interval).
   function addTimer(parent, ctx, seconds, size) {
-    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--dk-fg)", mmss(seconds));
+    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)", mmss(seconds));
     clock.id = "timer-clock";
     parent.appendChild(clock);
     if (ctx.preview) return function () {};
@@ -19,7 +19,7 @@
     go.id = "timer-go"; reset.id = "timer-reset";
     row.appendChild(go); row.appendChild(reset); parent.appendChild(row);
     var left = seconds, endAt = null, iv = null, ac = null;
-    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--dk-fg)" : "var(--dk-accent)"; clock.dataset.done = left > 0 ? "" : "1"; }
+    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--stage-fg)" : "var(--stage-hi)"; clock.dataset.done = left > 0 ? "" : "1"; }
     function stop() { if (iv) clearInterval(iv); iv = null; endAt = null; go.textContent = pick(ctx, "Start", "Spustit"); }
     function beep() {
       try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var o = ac.createOscillator(), g = ac.createGain();
@@ -66,11 +66,11 @@
     { en: "A truck", cs: "Nákladní auto", s: '<rect x="6" y="20" width="66" height="48"/><path d="M72 36 L98 36 L112 52 L112 68 L72 68 Z"/><circle cx="28" cy="72" r="11"/><circle cx="92" cy="72" r="11"/>' }
   ];
   function gallery(items, ctx, big) {
-    var row = mk("div", "display:flex;gap:28px;flex-wrap:wrap;color:var(--dk-fg)");
+    var row = mk("div", "display:flex;gap:28px;flex-wrap:wrap;color:var(--stage-fg)");
     items.forEach(function (it) {
       var c = mk("div", "display:flex;flex-direction:column;align-items:center;gap:6px");
       var f = mk("div", BOX + ";" + (big ? "width:190px;height:142px" : "")); f.innerHTML = svg(it.s, 120, 96, "width:100%;height:100%");
-      c.appendChild(f); c.appendChild(mk("div", "font-size:24px;color:var(--dk-muted)", pick(ctx, it.en, it.cs)));
+      c.appendChild(f); c.appendChild(mk("div", "font-size:24px;color:var(--stage-dim)", pick(ctx, it.en, it.cs)));
       row.appendChild(c);
     });
     return row;
@@ -114,9 +114,9 @@
                  "<p>Nakreslete pěticípou hvězdu a pak z ní udělejte postavu: horní cíp je hlava, boční cípy ruce, spodní nohy. Předveďte na flipchartu.</p>"),
         render: function (box, ctx) {
           box.appendChild(mk("h2", "", pick(ctx, "Now people: start with a star", "Teď lidé: začněte hvězdou")));
-          var row = mk("div", "display:flex;gap:30px;align-items:center;color:var(--dk-fg)");
+          var row = mk("div", "display:flex;gap:30px;align-items:center;color:var(--stage-fg)");
           var a = mk("div", "width:150px;height:150px"); a.innerHTML = svg(STAR, 120, 108, "width:100%;height:100%");
-          var arrow = mk("div", "font-size:60px;color:var(--dk-accent)", "→");
+          var arrow = mk("div", "font-size:60px;color:var(--stage-hi)", "→");
           var b = mk("div", "width:150px;height:150px"); b.innerHTML = svg(FIGURE, 120, 108, "width:100%;height:100%");
           [a, arrow, b].forEach(function (n) { row.appendChild(n); });
           box.appendChild(row);

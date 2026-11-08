@@ -12,18 +12,18 @@
 
   var css = document.createElement("style");
   css.textContent =
-    ".ds-clock{font:700 150px Consolas,monospace;line-height:1;font-variant-numeric:tabular-nums;color:#f2f2f2}" +
-    ".ds-clock.ds-done{color:#ff8a80}.ds-clock.ds-flash{color:#ffc857}" +
+    ".ds-clock{font:700 150px Consolas,monospace;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)}" +
+    ".ds-clock.ds-done{color:var(--stage-bad)}.ds-clock.ds-flash{color:var(--stage-hi)}" +
     ".ds-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}" +
     ".ds-inner-btn{font-size:28px;padding:10px 22px;cursor:pointer}" +
-    ".ds-panel{font-size:40px;color:#ffc857;min-height:56px}" +
-    ".ds-pick{font:700 130px/1.1 system-ui,sans-serif;color:#ffc857;min-height:150px}" +
-    ".ds-drawn{font-size:28px;color:#b4b4b4}" +
-    ".ds-num{font-size:28px;width:4.5ch;padding:6px 8px;background:#262626;color:#f2f2f2;border:1px solid #3a3a3a;border-radius:6px}" +
-    ".ds-days{display:grid;gap:14px}.ds-day{background:#262626;border:1px solid #3a3a3a;border-radius:10px;padding:14px 18px}" +
-    ".ds-day b{color:#ffc857;font-size:30px}.ds-day span{display:block;font-size:26px;line-height:1.3}" +
-    ".ds-day.ds-now{border-color:#ffc857}" +
-    ".ds-ph{border:2px dashed #3a3a3a;border-radius:10px;padding:14px 18px;font-size:26px;color:#b4b4b4}";
+    ".ds-panel{font-size:40px;color:var(--stage-hi);min-height:56px}" +
+    ".ds-pick{font:700 130px/1.1 system-ui,sans-serif;color:var(--stage-hi);min-height:150px}" +
+    ".ds-drawn{font-size:28px;color:var(--stage-dim)}" +
+    ".ds-num{font-size:28px;width:4.5ch;padding:6px 8px;background:color-mix(in srgb,var(--stage-fg) 10%,transparent);color:var(--stage-fg);border:1px solid color-mix(in srgb,var(--stage-fg) 28%,transparent);border-radius:6px}" +
+    ".ds-days{display:grid;gap:14px}.ds-day{background:color-mix(in srgb,var(--stage-fg) 8%,transparent);border:1px solid color-mix(in srgb,var(--stage-fg) 25%,transparent);border-radius:10px;padding:14px 18px}" +
+    ".ds-day b{color:var(--stage-hi);font-size:30px}.ds-day span{display:block;font-size:26px;line-height:1.3}" +
+    ".ds-day.ds-now{border-color:var(--stage-hi)}" +
+    ".ds-ph{border:2px dashed color-mix(in srgb,var(--stage-fg) 28%,transparent);border-radius:10px;padding:14px 18px;font-size:26px;color:var(--stage-dim)}";
   document.head.appendChild(css);
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }

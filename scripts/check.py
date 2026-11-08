@@ -63,6 +63,11 @@ def check_topics():
     linked = set()
     hrefs = set()
     titles = set()
+    courses = {c.get("code") for c in data.get("courses", [])}
+    for c in data.get("courses", []):
+        for key in ("code", "title", "description"):
+            if not c.get(key):
+                err(f"courses: an entry is missing '{key}'")
     for i, t in enumerate(data.get("topics", [])):
         name = t.get("title", f"entry {i + 1}")
         for key in REQUIRED:
@@ -70,6 +75,8 @@ def check_topics():
                 err(f"{name}: missing field '{key}'")
         if t.get("type") not in TYPES:
             err(f"{name}: type must be one of {sorted(TYPES)}")
+        if t.get("course") and t["course"] not in courses:
+            err(f"{name}: course '{t['course']}' is not in the courses list at the top of topics/topics.json")
         if name in titles:
             err(f"{name}: duplicate title")
         titles.add(name)

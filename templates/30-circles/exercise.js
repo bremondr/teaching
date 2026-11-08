@@ -10,7 +10,7 @@
   // A countdown with Start/Pause and Reset. In the small next-slide preview it only shows the full time.
   // Returns a cleanup function (stops the interval).
   function addTimer(parent, ctx, seconds, size) {
-    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--dk-fg)", mmss(seconds));
+    var clock = mk("div", "font-size:" + (size || 120) + "px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--stage-fg)", mmss(seconds));
     clock.id = "timer-clock";
     parent.appendChild(clock);
     if (ctx.preview) return function () {};
@@ -19,7 +19,7 @@
     go.id = "timer-go"; reset.id = "timer-reset";
     row.appendChild(go); row.appendChild(reset); parent.appendChild(row);
     var left = seconds, endAt = null, iv = null, ac = null;
-    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--dk-fg)" : "var(--dk-accent)"; clock.dataset.done = left > 0 ? "" : "1"; }
+    function paint() { clock.textContent = left > 0 ? mmss(left) : pick(ctx, "Time!", "Čas!"); clock.style.color = left > 0 ? "var(--stage-fg)" : "var(--stage-hi)"; clock.dataset.done = left > 0 ? "" : "1"; }
     function stop() { if (iv) clearInterval(iv); iv = null; endAt = null; go.textContent = pick(ctx, "Start", "Spustit"); }
     function beep() {
       try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var o = ac.createOscillator(), g = ac.createGain();
@@ -95,7 +95,7 @@
         render: function (box, ctx) {
           box.style.cssText += ";flex-direction:row;align-items:center;gap:40px;padding:36px 56px";
           var left = mk("div", "flex:0 0 auto;height:100%;display:flex;align-items:center");
-          left.innerHTML = sheetSvg("height:100%;max-height:640px;width:auto;color:var(--dk-fg)");
+          left.innerHTML = sheetSvg("height:100%;max-height:640px;width:auto;color:var(--stage-fg)");
           var right = mk("div", "display:flex;flex-direction:column;gap:20px;flex:1");
           right.appendChild(mk("h2", "", pick(ctx, "Draw!", "Kreslete!")));
           right.appendChild(mk("p", "font-size:28px", pick(ctx, "Circle = part of the object. 3 minutes.", "Kruh = součást předmětu. 3 minuty.")));

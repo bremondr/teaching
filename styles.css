@@ -1,22 +1,26 @@
-/* Palette: anthracite #1c1c1c, blueberry #3a5fc7, cloudberry #ffc857 */
-:root {
-  --anthracite: #1c1c1c;
-  --light-grey: #f2f2f2;
-  --white: #ffffff;
-  --blueberry: #3a5fc7;
-  --cloudberry: #ffc857;
-}
-
+/* The hub page. Colours, fonts and the light and dark themes come from shared/design/tokens.css:
+   change the look there, not here. This file only holds the layout of the hub. */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f9f9f9;
-  color: var(--anthracite);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
 }
 
 .container {
@@ -26,32 +30,42 @@ body {
 }
 
 header {
-  padding: 3rem 0 2rem;
+  padding: 2rem 0 2rem;
 }
 
 header h1 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.3rem, 4vw, 3.3rem);
+  line-height: 1.08;
   margin-bottom: 0.5rem;
+  text-wrap: balance;
 }
 
 header p {
-  max-width: 50ch;
-  font-size: 1.05rem;
-  color: rgba(28, 28, 28, 0.85);
+  max-width: 56ch;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
 .tagline {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(58, 95, 199, 0.12);
-  color: var(--blueberry);
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  color: var(--ink);
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
 }
 
 .tagline span {
@@ -59,32 +73,43 @@ header p {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  background: var(--cloudberry);
+  background: var(--accent);
 }
 
-.intro {
-  background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+/* pill buttons and links, the same as in the decks */
+.pill {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.intro p {
-  margin: 0.5rem 0;
+.pill:hover {
+  border-color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .filters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  background: var(--white);
-  color: var(--anthracite);
+  background: var(--surface);
+  color: var(--fg);
   padding: 1.25rem;
   border-radius: 1rem;
-  margin-bottom: 3rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--line);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
 }
 
@@ -92,36 +117,95 @@ header p {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(28, 28, 28, 0.6);
+  color: var(--muted);
 }
 
 .filters input,
 .filters select {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: var(--light-grey);
-  color: var(--anthracite);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font: inherit;
 }
 
 .filters input::placeholder {
-  color: rgba(28, 28, 28, 0.5);
+  color: var(--muted);
+}
+
+/* the jump links to the sections */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* sections: one per course, then standalone lectures and workshops, then the building blocks */
+.group {
+  margin-bottom: 3rem;
+  scroll-margin-top: 1rem;
+}
+
+.group-head {
+  margin-bottom: 1rem;
+}
+
+.group-head h2 {
+  font-size: 1.7rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.group-head h2 small {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-left: 0.6rem;
+}
+
+.group-head p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  max-width: 75ch;
+}
+
+.group-empty {
+  color: var(--muted);
+  border: 1.5px dashed var(--line);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  margin: 0;
 }
 
 .materials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 3rem;
+}
+
+/* the building blocks are smaller: they are parts to pick up, not courses to follow */
+.group-blocks .materials-grid {
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+}
+
+.group-blocks .material-card {
+  padding: 1.25rem;
+}
+
+.group-blocks .material-card h3 {
+  font-size: 1.1rem;
 }
 
 .material-card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: 1rem;
   padding: 1.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -140,20 +224,21 @@ header p {
 
 .material-card h3 .card-title-link:hover,
 .material-card h3 .card-title-link:focus-visible {
-  color: var(--blueberry);
+  color: var(--ink);
   text-decoration: underline;
 }
 
 .material-card h3 {
   margin: 0;
   font-size: 1.3rem;
+  line-height: 1.2;
 }
 
 .topic-type {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(28, 28, 28, 0.6);
+  color: var(--muted);
   margin-bottom: 0.35rem;
 }
 
@@ -164,8 +249,8 @@ header p {
 }
 
 .topic-tags span {
-  background: rgba(58, 95, 199, 0.1);
-  color: var(--blueberry);
+  background: color-mix(in srgb, var(--ink) 10%, transparent);
+  color: var(--ink);
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
   font-size: 0.8rem;
@@ -183,7 +268,7 @@ header p {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(28, 28, 28, 0.5);
+  color: var(--muted);
 }
 
 .flag-icon {
@@ -205,35 +290,34 @@ header p {
 }
 
 .material-meta span {
-  background: var(--light-grey);
+  background: var(--bg);
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   font-size: 0.85rem;
 }
 
 .material-meta .status {
-  background: rgba(255, 200, 87, 0.15);
-  color: #996b00;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 details {
   margin-top: 1rem;
-  border: 1px dashed rgba(0, 0, 0, 0.1);
+  border: 1px dashed var(--line);
   border-radius: 0.8rem;
-  background: var(--light-grey);
+  background: var(--bg);
   padding: 0.75rem 1rem;
 }
 
 details summary {
   cursor: pointer;
   font-weight: 600;
-  color: var(--anthracite);
-  outline: none;
+  color: var(--fg);
 }
 
 details[open] {
-  background: rgba(255, 200, 87, 0.15);
-  border-color: rgba(255, 200, 87, 0.4);
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .material-links {
@@ -245,14 +329,15 @@ details[open] {
 }
 
 .material-links a[aria-disabled="true"] {
-  color: rgba(28, 28, 28, 0.4);
+  color: var(--muted);
+  opacity: 0.6;
   pointer-events: none;
 }
 
 .loading-copy,
 .empty-state {
   font-size: 1rem;
-  color: rgba(28, 28, 28, 0.6);
+  color: var(--muted);
 }
 
 .material-actions {
@@ -266,34 +351,25 @@ details[open] {
   flex: 1 1 45%;
   text-align: center;
   padding: 0.65rem;
-  border-radius: 0.6rem;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  background: var(--blueberry);
-  color: var(--white);
-  transition: transform 150ms ease, box-shadow 150ms ease;
-  box-shadow: 0 10px 20px rgba(58, 95, 199, 0.2);
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .material-actions a.secondary {
-  background: rgba(255, 200, 87, 0.3);
-  color: var(--anthracite);
-  box-shadow: none;
-}
-
-.material-actions a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 25px rgba(58, 95, 199, 0.25);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .future-block {
-  background: var(--white);
-  color: var(--anthracite);
+  background: var(--surface);
+  color: var(--fg);
   padding: 2rem;
   border-radius: 1.25rem;
   margin-bottom: 3rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--line);
 }
 
 .future-block h2 {
@@ -307,15 +383,15 @@ details[open] {
 }
 
 .pipeline-card {
-  background: var(--light-grey);
+  background: var(--bg);
   padding: 1rem;
   border-radius: 0.8rem;
-  border: 1px dashed rgba(0, 0, 0, 0.08);
+  border: 1px dashed var(--line);
 }
 
 footer {
   text-align: center;
   padding: 2rem 0;
   font-size: 0.9rem;
-  color: rgba(28, 28, 28, 0.7);
+  color: var(--muted);
 }

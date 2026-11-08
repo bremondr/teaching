@@ -19,3 +19,8 @@
 :root[data-event="sample"][data-theme="dark"] {
   --bg: #17140f; --surface: #221e17; --line: #3a3326; --ink: #8cc79a; --accent: #e8935a; --accent-soft: #3b2417; --stage: #0f1f15;
 }
+
+/* The sample's own light slides. Last in the file and more specific than the blocks above, so it wins in light and dark. */
+:root[data-event="sample"][data-slides="light"] {
+  --stage: #fffdf8; --stage-fg: #26301f; --stage-dim: #5f6b57; --stage-hi: #b4531a;
+}

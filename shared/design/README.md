@@ -1,20 +1,30 @@
 # Design tokens
 
-The one place to change the look of the shared pieces of the site: the deck engine and every page built
-with it (lectures, workshops, exercises and the start pages). Colours and fonts are CSS variables in
-`tokens.css`. Components never use a literal colour, so changing a value here changes every page.
+The one place to change the look of the whole site: the homepage, the README viewer, the deck engine and every
+page built with it (lectures, workshops, exercises and start pages). Colours and fonts are CSS variables in
+`tokens.css`. Components never use a literal colour, so changing a value here changes every page. The palette is the
+ink-teal and magenta one of `workshops/cook-a-game`.
 
 | File | What it is |
 | --- | --- |
 | `tokens.css` | The tokens, with a light theme (the default) and a dark theme, and the fonts |
 | `events.css` | Optional third look for a particular event. Not used unless asked for |
+| `theme.js` | Applies the saved light or dark choice on the pages that are not decks (homepage, README viewer) and fills their "Page" button |
 | `fonts/` | Bricolage Grotesque (headings) and Source Sans 3 (text) |
 
-## Light and dark
+## Light and dark, for the page and for the slides separately
 
-Light is the default. Dark follows the visitor's system setting. To force one, put `data-theme="light"` or
-`data-theme="dark"` on `<html>`; a deck does this from its address: `?theme=dark`. The slides themselves are always
-dark teal (the `--stage` tokens); the theme changes the page around them.
+There are two separate choices, and a visitor can combine them freely:
+
+- **The page** (`data-theme` on `<html>`): light is the default, dark follows the visitor's system setting. Every page has a
+  "Page: light / dark" button (in a deck it is in the controls row), and the choice is saved in the browser under `deck-theme`,
+  so it follows you across the homepage, the README viewer and all decks. `?theme=dark` in the address wins over the saved choice.
+- **The slides** (`data-slides` on `<html>`): dark teal is the default, `light` gives light slides. A deck has a
+  "Slides: dark / light" button next to the page button; it is saved under `deck-slides` and `?slides=light` in the address wins.
+  The presenter's choice is sent to the projector window as well. On light slides the yellow highlight is replaced by the magenta,
+  because yellow cannot be read on white (`--stage-hi`), and `--stage-bad` turns darker red.
+
+The light-slide values are the last block of `tokens.css`. It has to stay last, so it wins over the dark blocks above it.
 
 ## Changing a colour or a font
 
@@ -44,6 +54,6 @@ An event theme works in light and dark: the first block of a pair is its light l
 
 ## Who uses it
 
-The deck engine (`shared/deck/`) and everything built on it. The hub (`index.html`, `styles.css`), the README viewer
-and `workshops/cook-a-game/` still have their own colours: cook-a-game's tokens carry the same values as the defaults here,
-so the two look alike. Moving them onto these tokens is a separate step.
+The homepage (`index.html`, `styles.css`), the README viewer (`readme.html`, `assets/readme.css`), the deck engine
+(`shared/deck/`) and everything built on it. `workshops/cook-a-game/` still has its own copy of the same tokens, with the same
+values, so it looks the same; it moves onto this file after its first run.
