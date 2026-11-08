@@ -56,7 +56,20 @@
     { en: "A nose", cs: "Nos", ref: 59 }
   ];
 
-  Deck.module({
+  // Pictures of the original Aalto slides, placed as there (see shared/deck/README.md, "Pictures"); the same in both languages.
+  var PICS = {
+   "intro": "<div class=\"dk-canvas\"><figure class=\"dk-pic dk-paper\" style=\"left:2%;top:91%;width:8%;height:4.4%\"><img src=\"assets/cc-by-nc.webp\" alt=\"Creative Commons BY-NC licence badge\"></figure><p class=\"dk-credit\">Slides adapted from the Aalto Ventures Program deck, CC BY-NC 4.0</p></div>",
+   "compare": "<div class=\"dk-canvas\" data-pad=\"58 500 56 64\"><figure class=\"dk-pic dk-paper\" style=\"left:61.81%;top:42.97%;width:24.54%;height:29.3%\"><img src=\"assets/typical-aliens.webp\" alt=\"Two typical alien drawings: a winged creature with horns and a figure with one big eye\"></figure><p class=\"dk-credit\">Slides adapted from the Aalto Ventures Program deck, CC BY-NC 4.0</p></div>"
+  };
+  function withPictures(def) {
+    def.slides.forEach(function (s) {
+      var h = PICS[s.id];
+      if (h && s.body && typeof s.body === "object") s.body = { en: s.body.en + h, cs: s.body.cs + h };
+    });
+    return def;
+  }
+
+  Deck.module(withPictures({
     id: "draw-alien",
     title: T("Draw an alien", "Nakresli vetřelce"),
     slides: [
@@ -124,5 +137,5 @@
         notes: T("<p>Reflection questions: What would an alien without eyes look like? What would it need instead? Where do your own project ideas copy what already exists?</p>",
                  "<p>Reflexní otázky: Jak by vypadal vetřelec bez očí? Co by místo nich potřeboval? Kde vaše vlastní nápady kopírují to, co už existuje?</p>") }
     ]
-  });
+  }));
 })();
