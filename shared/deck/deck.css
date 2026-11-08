@@ -1,0 +1,86 @@
+/* Shared deck engine styles. Everything is prefixed dk-. Colours come from the hub palette
+   (anthracite, blueberry, cloudberry) and can be overridden on :root or on #deck. */
+.dk-root {
+  --dk-bg: #1c1c1c;
+  --dk-panel: #262626;
+  --dk-line: #3a3a3a;
+  --dk-fg: #f2f2f2;
+  --dk-muted: #b4b4b4;
+  --dk-accent: #ffc857;
+  --dk-blue: #3a5fc7;
+  --dk-link: #9db3f2;
+  --dk-ok: #7fd18b;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--dk-bg);
+  color: var(--dk-fg);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.dk-root * { box-sizing: border-box; }
+.dk-root button {
+  font: inherit; color: var(--dk-fg); background: var(--dk-panel); border: 1px solid var(--dk-line);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.dk-root button:hover:not(:disabled) { border-color: var(--dk-accent); }
+.dk-root button:disabled { opacity: 0.4; cursor: default; }
+.dk-root button[aria-pressed="true"] { background: var(--dk-blue); border-color: var(--dk-blue); }
+.dk-root button:focus-visible, .dk-root a:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 2px; }
+.dk-root a { color: var(--dk-link); }
+
+/* stage: a fixed 1280x720 slide scaled to fit its container */
+.dk-stage { display: grid; place-items: center; overflow: hidden; min-width: 0; min-height: 0; flex: 1 1 auto; }
+.dk-frame { position: relative; overflow: hidden; background: var(--dk-bg); }
+.dk-slide { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; overflow: hidden; }
+.dk-inner { width: 100%; height: 100%; padding: 56px 80px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+
+/* slide typography, in design pixels (the whole slide is scaled) */
+.dk-inner h1 { font-size: 68px; line-height: 1.1; margin: 0; color: var(--dk-accent); text-wrap: balance; }
+.dk-inner h2 { font-size: 50px; line-height: 1.15; margin: 0; color: var(--dk-accent); text-wrap: balance; }
+.dk-inner h3 { font-size: 38px; margin: 0; }
+.dk-inner p, .dk-inner li { font-size: 36px; line-height: 1.35; margin: 0; }
+.dk-inner ul, .dk-inner ol { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; }
+.dk-inner blockquote { margin: 0; padding-left: 24px; border-left: 6px solid var(--dk-accent); font-size: 40px; }
+.dk-inner code { font-family: Consolas, monospace; background: #333; padding: 2px 8px; border-radius: 4px; }
+.dk-inner pre { background: #111; padding: 18px; border-radius: 8px; font-size: 26px; overflow: auto; margin: 0; }
+.dk-inner pre code { background: none; padding: 0; }
+.dk-inner table { border-collapse: collapse; font-size: 28px; }
+.dk-inner th, .dk-inner td { border: 1px solid var(--dk-line); padding: 8px 14px; text-align: left; }
+.dk-inner img { max-width: 100%; max-height: 440px; object-fit: contain; align-self: center; }
+.dk-inner a { color: var(--dk-link); }
+.dk-inner .dk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.dk-inner .dk-center { text-align: center; align-items: center; }
+.dk-inner .dk-big { font-size: 64px; line-height: 1.15; font-weight: 700; }
+.dk-inner .dk-small { font-size: 24px; color: var(--dk-muted); }
+
+/* view mode and embed mode */
+.dk-bar { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; padding: 8px 12px; background: var(--dk-panel); border-top: 1px solid var(--dk-line); }
+.dk-bar .dk-grow { flex: 1 1 auto; }
+.dk-count { color: var(--dk-muted); font-variant-numeric: tabular-nums; min-width: 8ch; }
+.dk-title { color: var(--dk-muted); }
+.dk-root.dk-embed .dk-bar { display: none; }
+.dk-root.dk-embed.dk-hover:hover .dk-bar { display: flex; position: absolute; left: 0; right: 0; bottom: 0; }
+
+/* presenter mode */
+.dk-pgrid { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr); gap: 12px; padding: 12px; }
+@media (max-width: 900px) { .dk-pgrid { grid-template-columns: minmax(0, 1fr); overflow: auto; } }
+.dk-pleft, .dk-pright { display: flex; flex-direction: column; gap: 10px; min-width: 0; min-height: 0; }
+.dk-pleft .dk-stage { border: 1px solid var(--dk-line); }
+.dk-pright .dk-stage { flex: 0 0 auto; aspect-ratio: 16 / 9; width: 100%; border: 1px solid var(--dk-line); }
+.dk-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.dk-clock { font: 600 28px Consolas, monospace; font-variant-numeric: tabular-nums; }
+.dk-late { font-weight: 600; }
+.dk-late.dk-behind { color: var(--dk-accent); }
+.dk-late.dk-ahead { color: var(--dk-ok); }
+.dk-notes { flex: 1 1 auto; min-height: 120px; overflow: auto; background: var(--dk-panel); border: 1px solid var(--dk-line); border-radius: 6px; padding: 10px 14px; font-size: 17px; line-height: 1.5; }
+.dk-notes:empty::before { content: "No notes for this slide."; color: var(--dk-muted); }
+.dk-outline { max-height: 28vh; overflow: auto; display: flex; flex-direction: column; gap: 2px; }
+.dk-outline button { text-align: left; border-color: transparent; background: transparent; padding: 3px 8px; }
+.dk-outline button[aria-current="true"] { background: var(--dk-blue); }
+.dk-status { color: var(--dk-muted); font-size: 13px; }
+.dk-status.dk-ok { color: var(--dk-ok); }
+.dk-loading { margin: auto; color: var(--dk-muted); font-size: 18px; }
+@media (prefers-reduced-motion: reduce) { .dk-root * { transition: none !important; animation: none !important; } }
