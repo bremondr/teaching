@@ -9,8 +9,10 @@ Course opening. Title slide of the first lecture of NI-PSD.
 
 # Who are we?
 
+<div class="dk-canvas" data-pad="58 910 56 64"><figure class="dk-pic" style="left:29.97%;top:22.38%;width:31.07%;height:55.24%"><img src="assets/teacher-portrait-1.webp" alt="Portrait of one of the course teachers"></figure><figure class="dk-pic" style="left:66.09%;top:22.38%;width:31.07%;height:55.24%"><img src="assets/teacher-portrait-2.webp" alt="Portrait of one of the course teachers"></figure></div>
+
 ::: notes
-Image slide in the original (introduction of the teaching team). Image not available here.
+The two teachers of the course introduce themselves.
 :::
 
 ---
@@ -18,7 +20,7 @@ Image slide in the original (introduction of the teaching team). Image not avail
 # Who are you?
 
 ::: notes
-Image slide in the original (a prompt for students to introduce themselves). Image not available here.
+Short round: each student says their name, programme and background.
 :::
 
 ---
@@ -36,7 +38,7 @@ Short round of answers, about 5 minutes. The original shows this slide twice (a 
 ## [5 min]
 
 ::: notes
-Repeat of the previous slide in the original (animation step).
+In the original this step shows a photo of the students' answers from an earlier run. The photo is not published here because it shows student work.
 :::
 
 ---
@@ -54,7 +56,7 @@ Short round of answers, about 5 minutes. The original shows this slide twice.
 ## [5 min]
 
 ::: notes
-Repeat of the previous slide in the original (animation step).
+In the original this step shows a photo of the students' answers from an earlier run. The photo is not published here because it shows student work.
 :::
 
 ---
@@ -76,7 +78,7 @@ The topic of the exercise was shown as an image or was said aloud; it is not in 
 ## [20 min]
 
 ::: notes
-Repeat of the previous slide without the list in the original (a timer or working view).
+In the original this step shows four photos of the teams' whiteboards from an earlier run (why public service, nice public service, design, public service). They are not published here because they show student work.
 :::
 
 ---
@@ -89,21 +91,26 @@ Opens a short sequence of image slides on why public services should be designed
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:12.46%;top:0%;width:29.89%;height:100%"><img src="assets/ticket-app-hsl-journey.webp" alt="Ticket app dialog in the middle of a journey: buy a new ticket or close"></figure><figure class="dk-pic" style="left:55.91%;top:0%;width:31.96%;height:100%"><img src="assets/ticket-app-litacka.webp" alt="Prague public transport app listing activated and purchased tickets, with a green Buy ticket button"></figure><p class="dk-credit">Screenshots: HSL app (left), PID Lítačka (right)</p></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Two ticket apps side by side. What does each ask of the traveller, and when?
 :::
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:13.34%;top:0%;width:29.93%;height:100%"><img src="assets/ticket-app-hsl-zones.webp" alt="Ticket app showing a map of fare zones with a short explanation"></figure><figure class="dk-pic" style="left:55.24%;top:0%;width:29.86%;height:100%"><img src="assets/ticket-app-pid-zones.webp" alt="Ticket purchase screen with a long list of fare zones to tick"></figure><p class="dk-credit">Screenshots: HSL app (left), PID app (right)</p></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Buying a ticket by zones in two apps: a map with an explanation, or a long list to tick.
 :::
 
 ---
 
-::: notes
-Image slide in the original (no text). Image not available here.
-:::
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:-10.73%;width:100%;height:118.49%"><img src="assets/kayak-on-mountain-lake.webp" alt="A person relaxing in a kayak on a turquoise mountain lake"></figure></div>
 
 ---
 
@@ -169,6 +176,8 @@ Image slide in the original: the semester schedule as a table or picture. Not av
 - Submissions to the submission channel
 - Questions in General
 
+<div class="dk-canvas" data-pad="58 830 56 64"><figure class="dk-pic" style="left:35.93%;top:34.98%;width:55.08%;height:61.14%"><img src="assets/ms-teams-course-channels.webp" alt="The course team in MS Teams: General, Submissions and a private channel for each project team"></figure></div>
+
 ---
 
 # Courses
@@ -179,15 +188,12 @@ IN PROGRESS
 
 # Tangram
 
-::: notes
-Only the word "Tangram" is in the text of the original; any picture is missing.
-:::
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100.16%"><img src="assets/tangram.webp" alt="Hands laying out tangram pieces into the shape of a cat"></figure></div>
 
 ---
 
-::: notes
-Image slide in the original (no text). Image not available here.
-:::
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:-1.61%;top:-0%;width:103.21%;height:100%"><img src="assets/meme-ask-the-teacher.webp" alt="Meme of two toy characters: Don&#x27;t be afraid to ask questions, ask the teacher"></figure><p class="dk-credit">Meme made with makeameme.org</p></div>
 
 ---
 

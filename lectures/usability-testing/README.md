@@ -24,6 +24,7 @@ Language of the materials: English.
 | --- | --- |
 | `README.md` | This page |
 | `index.html` | Starts the deck on the shared engine |
+| `assets/` | The pictures of the slides (WebP, web size), placed as on the original slides |
 | `deck.md` | The slides, one Markdown file; speaker notes in `::: notes` |
 
 ## Using it
@@ -36,6 +37,9 @@ All content is in `deck.md`. Slides are separated by a line with only `---`; spe
 
 ## Known limits
 
-- Images are missing. The original slides rely on pictures and diagrams that could not be exported as text. Each such slide is kept in place with a short description in its speaker notes, so the order matches the original. Add the images to an `img/` folder (web size) and link them from `deck.md`.
+- Pictures are taken over from the original deck and placed as there; the three hidden build steps of
+  the original are kept. Not published: slide 4, a screenshot of a private person's social-media post.
+- Picture credits: Starship photo by SpaceX; video stills link to the videos on YouTube; the dialog,
+  mug and footpath pictures come from the original deck without a recorded source.
 - Some slides are repeats from animation steps in the original and are kept for fidelity.
 - Third-party material was paraphrased or left out; check the notes before publishing a new version.
