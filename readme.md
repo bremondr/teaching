@@ -42,6 +42,12 @@ Deploy the root directory via GitHub Pages to expose the landing page. Future
 Markdown sources and build scripts can live inside each track folder and publish
 their outputs back to the same repo.
 
+## Slides must fit
+
+Every slide of a deck has to stay inside its margins. The deck engine shrinks a slide that holds a little too much; a slide
+that needs more than that must be split. Run `node scripts/audit_slides.js` after adding or changing a deck (it needs Playwright;
+see `shared/deck/README.md`). It must report no slide that does not fit, and slides shrunk below 80% should be split.
+
 ## How the homepage is organised
 
 The homepage lists the items in sections, built from `topics/topics.json`:

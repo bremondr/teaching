@@ -14,7 +14,7 @@ open_label: Open the slides
 
 # NI-PSD: Human-centred design and design thinking
 
-A Markdown slide deck, 17 slides, converted from the older Google Slides lecture: the lecture that introduces human-centred design (HCD) in NI-PSD (Public Service Design, FIT ČVUT): the students' experience with UX, the design sprint, the phases of design thinking (empathize, define, ideate, prototype, validate), team forming and homework.
+A Markdown slide deck, 18 slides, converted from the older Google Slides lecture: the lecture that introduces human-centred design (HCD) in NI-PSD (Public Service Design, FIT ČVUT): the students' experience with UX, the design sprint, the phases of design thinking (empathize, define, ideate, prototype, validate), team forming and homework.
 
 Language of the materials: English.
 

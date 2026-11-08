@@ -140,6 +140,34 @@
     return stage;
   }
 
+  // ---------- keeping a slide inside its margins ----------
+  // Migrated slides often hold more than fits (long lists, tables, big headings). After a slide is drawn, its content box
+  // (.dk-fit, the padded area of the slide) is measured; if the content is taller or wider than the box, the content is scaled
+  // down in 5% steps, with the width widened to match so the text reflows, until it fits. Below MIN_FIT it is not made smaller:
+  // the slide is flagged (data-overflow on .dk-inner, and a console warning) because it should be split in two.
+  var MIN_FIT = 0.55;
+  function fitContent(inner, box, id) {
+    var jc = box.style.justifyContent;
+    box.style.transform = box.style.width = box.style.height = ""; box.style.transformOrigin = "0 0";
+    box.style.justifyContent = "flex-start";          // so scrollHeight is the whole content height, not half of it
+    function over() { return box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1; }
+    var k = 1, flagged = false;
+    if (over()) {
+      for (k = 0.95; k >= MIN_FIT - 1e-9; k = Math.round((k - 0.05) * 100) / 100) {
+        box.style.transform = "scale(" + k + ")"; box.style.width = box.style.height = 100 / k + "%";
+        if (!over()) break;
+      }
+      if (k < MIN_FIT - 1e-9) { k = MIN_FIT; box.style.transform = "scale(" + k + ")"; box.style.width = box.style.height = 100 / k + "%"; flagged = true; }
+    }
+    box.style.justifyContent = jc;
+    inner.dataset.fit = String(k);
+    if (flagged) {
+      inner.dataset.overflow = "1";
+      try { console.warn('Deck: slide "' + id + '" does not fit even at ' + MIN_FIT + ". Split it in two."); } catch (e) {}
+    } else delete inner.dataset.overflow;
+    return k;
+  }
+
   // ---------- the app ----------
   function start(cfg) {
     cfg = Object.assign({ root: "#deck", title: document.title, channel: "deck", langs: ["en"], lang: null }, cfg);
@@ -198,18 +226,24 @@
       var box = stage.slideEl; box.textContent = ""; box.lang = lang;
       var inner = el("div", "dk-inner"); box.appendChild(inner);
       if (!s) return;
+      var content = el("div", "dk-fit"); inner.appendChild(content);   // everything of the slide, kept inside the margins
       var kick = loc(s.kicker, lang, cfg.langs);
-      if (kick) inner.appendChild(el("div", "dk-kick", kick));
+      if (kick) content.appendChild(el("div", "dk-kick", kick));
       if (typeof s.render === "function") {
-        var r = s.render(inner, { lang: lang, slide: s, deck: api, mode: mode, preview: !!preview });
+        var r = s.render(content, { lang: lang, slide: s, deck: api, mode: mode, preview: !!preview });
         if (typeof r === "function") stage.cleanup = r;
       } else {
-        inner.insertAdjacentHTML("beforeend", loc(s.body, lang, cfg.langs));
-        inner.querySelectorAll("img,source,video,audio").forEach(function (n) {
+        content.insertAdjacentHTML("beforeend", loc(s.body, lang, cfg.langs));
+        content.querySelectorAll("img,source,video,audio").forEach(function (n) {
           var v = n.getAttribute("src");
           if (v && !/^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) n.setAttribute("src", new URL(v, s.base || location.href).href);
         });
       }
+      var refit = function () { if (content.isConnected) fitContent(inner, content, s.id); };
+      refit();
+      // measure again when late things arrive: the web fonts, and pictures
+      if (document.fonts && document.fonts.status !== "loaded" && document.fonts.ready) document.fonts.ready.then(refit);
+      content.addEventListener("load", refit, true);
       stage.fit();
     }
     function planStart(i) { var t = 0; for (var k = 0; k < i; k++) t += (S.seq[k].min || 0) * 60; return t; }
