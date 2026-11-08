@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "Everyone can sketch",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "sketching"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A 15-minute warm-up that takes the pressure off drawing: simple shapes become houses, boats, cars and people. Timed slides with shape illustrations.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/everyone-can-sketch/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/everyone-can-sketch/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Draw an alien",
       "type": "template",
       "category": "Ideation exercise",
