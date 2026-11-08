@@ -45,7 +45,7 @@
    "id": "video",
    "min": 1,
    "title": "Sprint in 90 seconds",
-   "body": "<div class=\"dk-canvas\"><figure class=\"dk-pic\" style=\"left:12.5%;top:0%;width:75%;height:100%\"><a href=\"https://www.youtube.com/watch?v=K2vSQPh6MCE\" target=\"_blank\" rel=\"noopener\" style=\"pointer-events:auto\"><img src=\"{A}video-gv-sprint-90-seconds.webp\" alt=\"Video still: GV&#x27;s sprint process in 90 seconds\"></a></figure><p class=\"dk-credit\">Video: GV (click to open)</p></div>",
+   "body": "<div class=\"dk-canvas\"><figure class=\"dk-pic\" style=\"left:12.5%;top:0%;width:75%;height:100%\"><a href=\"https://www.youtube.com/watch?v=K2vSQPh6MCE\" target=\"_blank\" rel=\"noopener\" style=\"pointer-events:auto\"><img src=\"{A}video-gv-sprint-90-seconds.webp\" alt=\"Video still: GV&#x27;s sprint process in 90 seconds\"></a></figure><p class=\"dk-credit\">Video: GV (click to play)</p></div>",
    "notes": "<p>GV's 90-second explainer: click the picture to play it here.</p>"
   },
   {
@@ -131,7 +131,7 @@
    "id": "video-interview",
    "min": 1,
    "title": "Video",
-   "body": "<div class=\"dk-canvas\"><figure class=\"dk-pic\" style=\"left:0%;top:0%;width:100.52%;height:100.52%\"><a href=\"https://www.youtube.com/watch?v=qvy78uDvYfU\" target=\"_blank\" rel=\"noopener\" style=\"pointer-events:auto\"><img src=\"{A}video-musk-interview.webp\" alt=\"Video still: an interview, with a photo of two people toasting in a green frame\"></a></figure><p class=\"dk-credit\">Video on YouTube (click to open)</p></div>",
+   "body": "<div class=\"dk-canvas\"><figure class=\"dk-pic\" style=\"left:0%;top:0%;width:100.52%;height:100.52%\"><a href=\"https://www.youtube.com/watch?v=qvy78uDvYfU\" target=\"_blank\" rel=\"noopener\" style=\"pointer-events:auto\"><img src=\"{A}video-musk-interview.webp\" alt=\"Video still: an interview, with a photo of two people toasting in a green frame\"></a></figure><p class=\"dk-credit\">Video on YouTube (click to play)</p></div>",
    "notes": "<p>Click the picture to play the video here.</p>"
   }
  ],
