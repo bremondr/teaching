@@ -89,6 +89,23 @@
       ]
     },
     {
+      "title": "Design Sprint method sheets",
+      "type": "template",
+      "category": "Design process",
+      "tags": ["ni-dsw", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, Nov 2026",
+      "description": "Adapted from the Design Sprint method of Jake Knapp, John Zeratsky and Braden Kowitz. Printable method sheets for a facilitator running a five-day sprint: map, goal, questions, sketching, storyboard and the five-act interview. Own adaptation for teaching; the original materials are not included.",
+      "resources": [
+        {
+          "label": "README",
+          "href": "./templates/design-sprint-method-sheets/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
