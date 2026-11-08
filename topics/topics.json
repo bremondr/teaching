@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "Formgiving",
+      "type": "lecture",
+      "category": "Design",
+      "tags": ["design", "ux", "human-centered-design", "design-sprint", "prototyping"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Introductory lecture on design as giving form to the future, user-centred design, the human-centred design process with its techniques, and the design sprint.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/formgiving/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/formgiving/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
