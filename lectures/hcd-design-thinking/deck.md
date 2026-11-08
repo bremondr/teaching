@@ -18,72 +18,61 @@ Short discussion with the students. The original has no more text on this slide.
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:12.5%;top:0%;width:75%;height:100%"><a href="https://www.youtube.com/watch?v=K2vSQPh6MCE" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-sprint-90-second-intro.webp" alt="Video still: Sprint, 90 second intro, a facilitator in front of a wall of sketches"></a></figure><p class="dk-credit">Video: GV, Sprint 90 second intro (click to play)</p></div>
+
 ::: notes
-Image slide in the original (no text). Probably a visual for the discussion or for the process overview. Image not available here.
+Play the 90-second video by GV: click the picture to open it on YouTube.
 :::
 
 ---
 
 # Design sprint
 
+<div class="dk-canvas" data-pad="58 852 56 64"><figure class="dk-pic" style="left:34.86%;top:2.66%;width:55.96%;height:94.67%"><img src="assets/design-sprint-week-cs.webp" alt="The sprint week in Czech, Monday to Friday: discover, sketch, decide, prototype, test, each with a short description"></figure></div>
+
 ::: notes
-Image slide in the original (a diagram of the design sprint days). Only the title is text. Image not available here.
+The sprint week as the course runs it: discover, sketch, decide, prototype, test.
 :::
 
 ---
 
 # Design thinking
 
+<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:29.3%;top:16.3%;width:65.7%;height:67.4%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure></div>
+
 ::: notes
-Image slide in the original (the design thinking process). The next five slides walk through its phases. Image not available here.
+The design thinking process. The next five slides take its phases one by one.
 :::
 
 ---
 
 # Empathize
 
-::: notes
-Image slide in the original: a picture for the phase. Not available here.
-:::
-
 ---
 
 # Define
-
-::: notes
-Image slide in the original: a picture for the phase. Not available here.
-:::
 
 ---
 
 # Ideate
 
-::: notes
-Image slide in the original: a picture for the phase. Not available here.
-:::
-
 ---
 
 # Prototype
-
-::: notes
-Image slide in the original: a picture for the phase. Not available here.
-:::
 
 ---
 
 # Validate
 
-::: notes
-Image slide in the original: a picture for the phase. Not available here.
-:::
-
 ---
 
 # Design thinking
 
+<div class="dk-canvas" data-pad="58 950 56 64"><figure class="dk-pic" style="left:29.3%;top:16.3%;width:65.7%;height:67.4%"><img src="assets/design-thinking-five-phases.webp" alt="Design thinking as five overlapping circles: empathize, define, ideate, prototype, test"></figure><figure class="dk-pic" style="left:30.2%;top:17.6%;width:64.8%;height:64.8%"><img src="assets/design-squiggle-phases.webp" alt="Phases discover, define, ideate, prototype, test, refine above a squiggle that goes from tangled to a straight line"></figure><p class="dk-credit">Squiggle after The Design Squiggle by Damien Newman</p></div>
+
 ::: notes
-Closing overview of the process with all phases, image slide in the original. Image not available here.
+Closing overview: the five phases again, then the design squiggle, which shows how messy the start of the process is.
 :::
 
 ---
@@ -103,9 +92,8 @@ In the original this list is a screenshot of a social-media post by a well-known
 
 ---
 
-::: notes
-Image slide in the original (no text). Image not available here.
-:::
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:-1.61%;top:-0%;width:103.21%;height:100%"><img src="assets/meme-ask-the-teacher.webp" alt="Meme of two toy characters: Don&#x27;t be afraid to ask questions, ask the teacher"></figure><p class="dk-credit">Meme made with makeameme.org</p></div>
 
 ---
 

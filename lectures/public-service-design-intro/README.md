@@ -24,6 +24,7 @@ Language of the materials: English.
 | --- | --- |
 | `README.md` | This page |
 | `index.html` | Starts the deck on the shared engine |
+| `assets/` | The pictures of the slides (WebP, web size), placed as on the original slides |
 | `deck.md` | The slides, one Markdown file; speaker notes in `::: notes` |
 
 ## Using it
@@ -36,6 +37,10 @@ All content is in `deck.md`. Slides are separated by a line with only `---`; spe
 
 ## Known limits
 
-- Images are missing. The original slides rely on pictures and diagrams that could not be exported as text. Each such slide is kept in place with a short description in its speaker notes, so the order matches the original. Add the images to an `img/` folder (web size) and link them from `deck.md`.
+- Pictures are taken over from the original deck and placed as there. Not published: the photos of
+  students' answers and whiteboards from an earlier run (slides 5, 7 and 9), because they show student work.
+- Picture credits: screenshots of the HSL and PID ticket apps; meme made with makeameme.org; the
+  teacher portraits, the kayak photo and the tangram picture come from the original deck without a
+  recorded source.
 - Some slides are repeats from animation steps in the original and are kept for fidelity.
 - Third-party material was paraphrased or left out; check the notes before publishing a new version.

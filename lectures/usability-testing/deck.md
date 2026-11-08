@@ -3,38 +3,54 @@
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100%;height:100%"><a href="https://www.youtube.com/watch?v=bvim4rsNHkQ" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-rocket-landing-fail.webp" alt="Video still: a rocket stage burning on a landing platform at sea"></a></figure><p class="dk-credit">Video on YouTube (click to play)</p></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Opening video: click the picture to open it on YouTube.
 :::
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:62.5%;height:62.41%"><img src="assets/dialog-cancel-reservation.webp" alt="App dialog over a map: Do you really want to cancel the reservation? Cancel or Yes"></figure></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+A dialog to discuss: which button cancels the reservation?
 :::
 
 ---
 
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+In the original this slide is a screenshot of a social-media post by a private person (a street photo with a comment about where to walk). It is not published here.
 :::
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:62.5%;height:62.41%"><img src="assets/dialog-cancel-reservation.webp" alt="App dialog over a map: Do you really want to cancel the reservation? Cancel or Yes"></figure><figure class="dk-pic" style="left:7.98%;top:13.17%;width:39.77%;height:67.96%"><img src="assets/unusable-mug.webp" alt="A mug with a face whose nose is the handle, and a man drinking from it with the nose pressed into his face" style="left:-0%;top:-0%;width:196.46%;height:100%"></figure></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Hidden in the original deck: the next step of the build.
 :::
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:62.5%;height:62.41%"><img src="assets/dialog-cancel-reservation.webp" alt="App dialog over a map: Do you really want to cancel the reservation? Cancel or Yes"></figure><figure class="dk-pic" style="left:7.98%;top:13.17%;width:39.77%;height:67.96%"><img src="assets/unusable-mug.webp" alt="A mug with a face whose nose is the handle, and a man drinking from it with the nose pressed into his face" style="left:-0%;top:-0%;width:196.46%;height:100%"></figure><figure class="dk-pic" style="left:7.98%;top:13.17%;width:78.13%;height:67.96%"><img src="assets/unusable-mug.webp" alt="A mug with a face whose nose is the handle, and a man drinking from it with the nose pressed into his face"></figure></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Hidden in the original deck: the next step of the build.
 :::
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:62.5%;height:62.41%"><img src="assets/dialog-cancel-reservation.webp" alt="App dialog over a map: Do you really want to cancel the reservation? Cancel or Yes"></figure><figure class="dk-pic" style="left:7.98%;top:13.17%;width:39.77%;height:67.96%"><img src="assets/unusable-mug.webp" alt="A mug with a face whose nose is the handle, and a man drinking from it with the nose pressed into his face" style="left:-0%;top:-0%;width:196.46%;height:100%"></figure><figure class="dk-pic" style="left:7.98%;top:13.17%;width:78.13%;height:67.96%"><img src="assets/unusable-mug.webp" alt="A mug with a face whose nose is the handle, and a man drinking from it with the nose pressed into his face"></figure><figure class="dk-pic" style="left:5.51%;top:9.12%;width:88.97%;height:88.84%"><img src="assets/path-beside-stairs.webp" alt="A worn footpath in the grass next to a staircase, made by people who skip the stairs"></figure></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Hidden in the original deck: the last step, a path worn beside the stairs.
 :::
 
 ---
@@ -61,9 +77,7 @@ Image slide in the original (no text). Image not available here.
 
 </div></div>
 
-::: notes
-Words in the original were laid out around a photo (credited there to a space company). The photo is left out.
-:::
+<div class="dk-canvas" data-pad="58 64 56 440"><figure class="dk-pic" style="left:0%;top:0%;width:32.33%;height:100%"><img src="assets/starship-in-flight.webp" alt="A Starship rocket flying through clouds" style="left:-74.35%;top:-0%;width:309.33%;height:100%"></figure><p class="dk-credit">Photo by SpaceX</p></div>
 
 ---
 
@@ -85,8 +99,12 @@ Short team work, 15 minutes: each team prepares the story that frames the test f
 
 ---
 
+## Prepare your stories
+
+<div class="dk-timer" data-seconds="900"></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+15 minutes for the teams to prepare the story that frames the test. In the original deck this was a timer video.
 :::
 
 ---
@@ -116,8 +134,11 @@ Image slide in the original (no text). Image not available here.
 
 ---
 
+
+<div class="dk-canvas"><figure class="dk-pic" style="left:0%;top:0%;width:100.52%;height:100.52%"><a href="https://www.youtube.com/watch?v=qvy78uDvYfU" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-musk-interview.webp" alt="Video still: an interview, with a photo of two people toasting in a green frame"></a></figure><p class="dk-credit">Video on YouTube (click to play)</p></div>
+
 ::: notes
-Image slide in the original (no text). Image not available here.
+Video: click the picture to open it on YouTube.
 :::
 
 ---
@@ -152,7 +173,7 @@ Watch the interviews as a team. It is faster, because everyone absorbs the resul
 A whiteboard grid: columns are the interviewed people, rows are the parts of the prototype (marketing page, sign up, first experience) and the sprint question (successfully set up a new account). Notes are marked as positive (+), neutral (~) or negative (-).
 
 ::: notes
-The original is a picture of such a board with example notes (including invented first names and sample quotes). The picture and the names are left out. Draw the example board here as an image later.
+In the original this board is drawn with shapes and sticky notes, with invented first names and sample quotes. It is not redrawn here; draw it on the whiteboard.
 :::
 
 ---
@@ -166,8 +187,9 @@ The original is a picture of such a board with example notes (including invented
 - At the end of each interview, collect the notes and stick them to the whiteboard
 - Mark notes as positive (+), neutral (~) or negative (-)
 
+
 ::: notes
-Overview slide of the testing day, with the same example board as the previous slide (picture not available here).
+Overview of the testing day, with the same example board as the previous slide.
 :::
 
 ---

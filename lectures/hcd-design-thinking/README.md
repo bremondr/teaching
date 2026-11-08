@@ -24,6 +24,7 @@ Language of the materials: English.
 | --- | --- |
 | `README.md` | This page |
 | `index.html` | Starts the deck on the shared engine |
+| `assets/` | The pictures of the slides (WebP, web size), placed as on the original slides |
 | `deck.md` | The slides, one Markdown file; speaker notes in `::: notes` |
 
 ## Using it
@@ -36,6 +37,10 @@ All content is in `deck.md`. Slides are separated by a line with only `---`; spe
 
 ## Known limits
 
-- Images are missing. The original slides rely on pictures and diagrams that could not be exported as text. Each such slide is kept in place with a short description in its speaker notes, so the order matches the original. Add the images to an `img/` folder (web size) and link them from `deck.md`.
+- Pictures are taken over from the original deck and placed as there. The phase slides (Empathize to
+  Validate) have no picture in the original either.
+- Picture credits: GV's "Sprint: 90 second intro" (plays inside the slide); the squiggle follows The
+  Design Squiggle by Damien Newman; meme made with makeameme.org; the design thinking circles come from
+  the original deck without a recorded source.
 - Some slides are repeats from animation steps in the original and are kept for fidelity.
 - Third-party material was paraphrased or left out; check the notes before publishing a new version.
