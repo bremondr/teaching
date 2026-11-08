@@ -53,7 +53,8 @@ All content is in `deck.md`: slides are separated by a line with `---`, speaker 
 ## Known limits
 
 - The deck follows the 66 slides of the original in order, with its pictures placed as there. Left
-  out: the empty slides and the live polls (the poll slides keep their question).
+  out: the empty slides. The three live Slido polls are callout questions to the room; a live word cloud filled in on
+  phones is planned (issue #27).
   Videos are shown as their still picture with a link.
 - The phase diagram (drawn with shapes in the original) is replaced by a simple table.
 - The quote attribution and some external links were left out on purpose.

@@ -3,13 +3,12 @@
 
 
 ---
-# What is design?
+
+<div class="dk-callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><p class="dk-big">What is design?</p></div>
 
 ::: notes
-Opening poll: "What is design?" (a live word-cloud poll in the original deck; collect answers aloud or in any poll tool).
+Question to the room: collect answers aloud or on sticky notes. In the original deck this was a live Slido poll; a live word cloud that students fill in on their phones is planned (teaching repo, issue #27).
 :::
-
-<div class="dk-canvas" data-pad="270 71 270 363"><figure class="dk-pic" style="left:5.56%;top:32.22%;width:20%;height:35.56%"><a href="https://www.sli.do/features-google-slides?interaction-type=V29yZENsb3Vk" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-poll-icon.webp" alt="Slido poll icon"></a></figure><figure class="dk-pic" style="left:28.57%;top:9.88%;width:9.56%;height:7.44%"><a href="https://www.sli.do/features-google-slides?payload=eyJwb2xsVXVpZCI6IjQ5NTQxY2IyLTI5MjItNGI4Mi05Yzc5LWFjNjA3ZWQ3MTc1YyIsInByZXNlbnRhdGlvbklkIjoiMVJSaWFaVXFjUGZCUXNlV0lHY2ZLX185djZuSklFUXZNU1VlSjU5ZXJtc1EiLCJzbGlkZUlkIjoiU0xJREVTX0FQSTE3ODA2NTYwMDRfMCIsInRpbWVsaW5lIjpbeyJwb2xsUXVlc3Rpb25VdWlkIjoiNjI0MTAwNDQtYTU3Mi00ZjdmLWFmNmUtZDk3ZGIwYjllODJjIiwic2hvd1Jlc3VsdHMiOnRydWV9XSwidHlwZSI6IlNsaWRvUG9sbCJ9" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-logo.webp" alt="Slido logo"></a></figure></div>
 
 ---
 
@@ -126,13 +125,11 @@ The next eight slides show each form with pictures.
 
 ---
 
-## Why do we design? What for?
+<div class="dk-callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><p class="dk-big">Why do we design? What for?</p></div>
 
 ::: notes
-Poll: "Why do we create design? What for do we design?" Collect answers from the room before moving on.
+Question to the room: collect answers aloud or on sticky notes. In the original deck this was a live Slido poll; a live word cloud that students fill in on their phones is planned (teaching repo, issue #27).
 :::
-
-<div class="dk-canvas" data-pad="270 71 270 363"><figure class="dk-pic" style="left:28.57%;top:9.88%;width:9.56%;height:7.44%"><a href="https://www.sli.do/features-google-slides?payload=eyJwb2xsVXVpZCI6IjE5OTY3ZTJkLTcxZmYtNDc4MS1iZjUzLWZmOWE3NTg4NmM4NyIsInByZXNlbnRhdGlvbklkIjoiMVJSaWFaVXFjUGZCUXNlV0lHY2ZLX185djZuSklFUXZNU1VlSjU5ZXJtc1EiLCJzbGlkZUlkIjoiU0xJREVTX0FQSTQyOTU4MjMwXzAiLCJ0aW1lbGluZSI6W3sic2hvd1Jlc3VsdHMiOmZhbHNlLCJwb2xsUXVlc3Rpb25VdWlkIjoiMTBlNmY3MmYtZDFjZS00NDdhLWE4ODUtOWRjNzhhYTE5ZTZkIn0seyJzaG93UmVzdWx0cyI6dHJ1ZSwicG9sbFF1ZXN0aW9uVXVpZCI6IjEwZTZmNzJmLWQxY2UtNDQ3YS1hODg1LTlkYzc4YWExOWU2ZCJ9XSwidHlwZSI6IlNsaWRvUG9sbCJ9" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-logo.webp" alt="Slido logo"></a></figure><figure class="dk-pic" style="left:5.56%;top:32.22%;width:20%;height:35.56%"><a href="https://www.sli.do/features-google-slides?interaction-type=V29yZENsb3Vk" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-poll-icon.webp" alt="Slido poll icon"></a></figure></div>
 
 ---
 
@@ -192,15 +189,11 @@ The point of the sequence: a good design makes the right action obvious without 
 
 ---
 
-## Design fails
-
-Give examples of design fails you have personally experienced.
+<div class="dk-callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><p class="dk-small">Design fails</p><p class="dk-big">Give examples of design fails you have personally experienced.</p></div>
 
 ::: notes
-Poll: collect examples from the room.
+Question to the room: collect answers aloud or on sticky notes. In the original deck this was a live Slido poll; a live word cloud that students fill in on their phones is planned (teaching repo, issue #27).
 :::
-
-<div class="dk-canvas" data-pad="270 71 270 363"><figure class="dk-pic" style="left:5.56%;top:32.22%;width:20%;height:35.56%"><a href="https://www.sli.do/features-google-slides?interaction-type=T3BlblRleHQ%3D" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-chat-icon.webp" alt="Slido chat icon"></a></figure><figure class="dk-pic" style="left:28.57%;top:9.88%;width:9.56%;height:7.44%"><a href="https://www.sli.do/features-google-slides?payload=eyJwb2xsVXVpZCI6Ijc4NzVjNjc3LWJjODUtNDY2MS1hZTM3LWM3MDYzMDNhMjk5NyIsInByZXNlbnRhdGlvbklkIjoiMVJSaWFaVXFjUGZCUXNlV0lHY2ZLX185djZuSklFUXZNU1VlSjU5ZXJtc1EiLCJzbGlkZUlkIjoiU0xJREVTX0FQSTExMjM3ODI3N18wIiwidGltZWxpbmUiOlt7InBvbGxRdWVzdGlvblV1aWQiOiIwNmMxNTNkZi0zYzQ4LTQ0ZjgtOTIxNi02NWZiZDMwZGJhNmIiLCJzaG93UmVzdWx0cyI6dHJ1ZX1dLCJ0eXBlIjoiU2xpZG9Qb2xsIn0%3D" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/slido-logo.webp" alt="Slido logo"></a></figure></div>
 
 ---
 
@@ -274,7 +267,7 @@ A case study of iterative design and prototyping by Nielsen Norman Group: the sa
 
 # Why products fail?
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:86.23%;top:1.71%;width:13.07%;height:13.02%;transform:rotate(-0.000166667deg)"><img src="assets/ai-candy.webp" alt="A wrapped striped candy"></figure><p class="dk-credit">Image: Midjourney</p></div>
+<div class="dk-canvas"><figure class="dk-pic" style="left:82%;top:8%;width:13%;height:13%"><img src="assets/ai-candy.webp" alt="A wrapped striped candy"></figure><p class="dk-credit">Image: Midjourney</p></div>
 
 ---
 
@@ -507,7 +500,7 @@ The last two slides repeat the "forms of interface design" topics (cars, public 
 
 ---
 
-<div class="dk-canvas"><figure class="dk-pic" style="left:1.67%;top:2.96%;width:32.18%;height:76.32%"><img src="assets/shibuya-station-guide.webp" alt="The Shibuya station guide: a map board in the street"></figure></div>
+<div class="dk-canvas"><figure class="dk-pic" style="left:31.5%;top:6%;width:37%;height:88%"><img src="assets/shibuya-station-guide.webp" alt="The Shibuya station guide: a map board in the street"></figure></div>
 
 ::: notes
 A station map board in Tokyo: public space as an interface.
