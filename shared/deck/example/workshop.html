@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deck example: JS workshop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../deck.css">
+</head>
+<body style="margin:0">
+<div id="deck"></div>
+<script src="../deck.js"></script>
+<script>
+  // A workshop: slides are JS objects, so a slide can be interactive. min feeds the plan clock in the presenter view.
+  Deck.start({ title: "Workshop example", channel: "deck-example-workshop", langs: ["en"], slides: [
+    { id: "welcome", min: 4, title: "Welcome", body: "<h1>Workshop example</h1><p>Slides as JS objects, with minutes.</p>", notes: "<p>Say hello.</p>" },
+    { id: "pick", min: 6, title: "Pick a team", render: function (box) {
+        var b = document.createElement("button"), out = document.createElement("div");
+        b.id = "pick-btn"; b.textContent = "Pick a team"; b.style.cssText = "font-size:28px;padding:10px 20px;align-self:flex-start";
+        out.className = "dk-big"; out.id = "pick-out";
+        b.addEventListener("click", function () { out.textContent = ["Apple", "Pear", "Plum"][Math.floor(Math.random() * 3)]; });
+        box.appendChild(b); box.appendChild(out);
+      } },
+    { id: "end", min: 2, title: "Wrap-up", body: "<h2>Wrap-up</h2><p>What did we learn?</p>" }
+  ] });
+</script>
+</body>
+</html>

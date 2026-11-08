@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deck example: Markdown lecture</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../deck.css">
+</head>
+<body style="margin:0">
+<div id="deck"></div>
+<script src="../../../assets/vendor/marked.min.js"></script>
+<script src="../../../assets/vendor/purify.min.js"></script>
+<script src="../deck.js"></script>
+<script>
+  // A lecture: the slides are Markdown, in two languages. Open with #presenter for the presenter view.
+  // The Markdown file is the lecture; an include adds an exercise module after it.
+  fetch("lecture.md").then(r => r.text()).then(function (md) {
+    var slides = Deck.parseMarkdown(md, ["en", "cs"], new URL("lecture.md", location.href).href);
+    slides.push({ id: "exercise", include: "exercise.js" });
+    Deck.start({ title: "Deck example", channel: "deck-example-lecture", langs: ["en", "cs"], slides: slides });
+  });
+</script>
+</body>
+</html>
