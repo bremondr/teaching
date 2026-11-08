@@ -14,7 +14,7 @@
       { id: "round", include: S + "kickoff.js" },
       { id: "what", min: 3, title: "What is a Design Sprint?", body: "<h2>What is a Design Sprint?</h2><p>A short, structured process for answering an important question by building a prototype and testing it with real users.</p><p class='dk-small'>The method was described by Jake Knapp, John Zeratsky and Braden Kowitz (Google Ventures).</p>" },
       { id: "week", min: 3, title: "The week at a glance", body: DS.week(4),
-        notes: "<p>Image placeholder: the original day slides each carry a stock photo.</p>" },
+        notes: "<p>The original day slides each carry a stock photo; the photos are on the day slides of the fall and spring versions.</p>" },
       { id: "outcome", min: 1, title: "What we will have", body: "<h2>At the end we know what to do next</h2><p>Clarity about the challenge, and solutions that real users have reacted to.</p>" },
       { id: "day1", include: S + "day1-open.js" },
       { id: "goalmap", include: S + "goal-map.js" },

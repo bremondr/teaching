@@ -1,7 +1,7 @@
 // Day 1 block: lightning talks, long-term goal, sprint questions, map of the challenge.
 Deck.module({ id: "goalmap", title: "Goal, questions and map", slides: [
   { id: "talks", min: 15, title: "Lightning talks",
-    body: "<h2>Lightning talks</h2><p>One minute each: share the vision, context and background of the project.</p><p>Everyone else takes notes under three headings:</p><ul><li>promising</li><li>positive</li><li>negative</li></ul>",
+    body: "<h2>Lightning talks</h2><p>One minute each: share the vision, context and background of the project.</p><p>Everyone else takes notes under three headings:</p><ul><li>promising</li><li>positive</li><li>negative</li></ul><div class='dk-timer' data-seconds='480' data-size='small'></div>",
     notes: DS.n("Fifteen minutes is a guess for a team of up to ten; scale it by one minute per speaker plus a little slack.",
       "The three headings are a quick way to listen with a purpose: what has potential, what is good, what worries you.") },
   { id: "goal-why", min: 2, title: "Long-term goal",
@@ -16,7 +16,7 @@ Deck.module({ id: "goalmap", title: "Goal, questions and map", slides: [
     notes: DS.n("One or two questions are fine, so are a dozen. Stick them next to the long-term goal.") }),
   { id: "map-how", min: 4, title: "Map the challenge",
     body: "<h2>Map the challenge</h2><ol><li>Actors on the left (users, stakeholders)</li><li>The end goal on the right</li><li>Journey stages along the top</li><li>Fill the space between with a few words and arrows</li></ol><p class='dk-small'>Five to fifteen steps is enough. It can be corrected all day.</p>",
-    notes: DS.n("Image placeholder: the original slides show a diagram of a map with numbered steps and a worked example from another domain. Draw one live on the board, using the team's own topic.") },
+    notes: DS.n("In the original deck the map is a diagram drawn with shapes, with numbered steps and a worked example from another domain. Draw one live on the board, using the team's own topic.") },
   DS.timer({ id: "map-clock", min: 45, title: "Draw the map", text: "Keep it simple. Between 30 and 60 minutes, then stop.",
     notes: DS.n("Facilitator: keep people from perfecting it. The map is a thinking tool, not a deliverable.") }),
   { id: "milestone", min: 3, title: "Milestone",

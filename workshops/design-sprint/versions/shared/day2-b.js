@@ -24,7 +24,7 @@ Deck.module({ id: "day2b", title: "Day 2: decide and plan", slides: [
   DS.timer({ id: "super-clock", min: 2, title: "Supervote", text: "Reread the goal and the sprint questions, then place the dots." }),
   { id: "story-how", min: 3, title: "Storyboard",
     body: "<h2>Make a plan for the prototype</h2><ol><li>Draw a grid of about fifteen boxes on a whiteboard</li><li>Start with an opening scene: how does the user first meet the product?</li><li>Fill in with notes from the winning sketches</li><li>Fill gaps from 'maybe later' sketches or the existing product, not new inventions</li></ol>",
-    notes: DS.n("Image placeholder: the original shows a grid of empty boxes with a sticky note in each. Draw the grid live.") },
+    notes: DS.n("The next slides show storyboards from an earlier sprint. Draw the grid live on the whiteboard.") },
   { id: "story-rules", min: 2, title: "Storyboard guidelines",
     body: "<h2>Storyboard guidelines</h2><ul><li>Do not invent new ideas, use what you have</li><li>Do not write together; keep rough headlines only</li><li>Enough detail that nobody must ask 'what is next?'</li><li>The Decider decides</li><li>When in doubt, take the risk</li><li>The story is fifteen minutes or less</li></ul>" },
   DS.timer({ id: "story-clock", min: 120, title: "Draw the storyboard", text: "This takes the whole afternoon. Take breaks." }),

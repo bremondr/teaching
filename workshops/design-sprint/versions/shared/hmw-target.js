@@ -2,7 +2,7 @@
 Deck.module({ id: "target", title: "Organise, vote, choose the target", slides: [
   { id: "organise", min: 3, title: "Organise the notes",
     body: "<h2>Too many notes to use</h2><p>The interviews produce thirty to a hundred notes. We have to sort them before we can use them.</p><ol><li>Stick them up with no order</li><li>Spot themes and name them</li><li>Group the notes under their theme</li></ol>",
-    notes: DS.n("Image placeholder: the original shows notes grouped under theme labels. Do it live on the wall.",
+    notes: DS.n("In the original deck this is drawn with shapes: notes grouped under theme labels. Do it live on the wall.",
       "Expect a leftover group of oddments. Keep it, those notes are sometimes the most interesting.") },
   DS.timer({ id: "organise-clock", min: 5, title: "Group the HMW notes", text: "Stick up, name the themes, move notes under them." }),
   { id: "vote", min: 2, title: "Vote on the notes",

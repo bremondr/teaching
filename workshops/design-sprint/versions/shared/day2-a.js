@@ -9,7 +9,7 @@ Deck.module({ id: "day2a", title: "Day 2: sketching", slides: [
   DS.timer({ id: "demo-clock", min: 3, title: "Tour: three minutes", text: "What is the big idea? How does it relate to our goal?",
     notes: DS.n("Reset the clock for every person. After all the tours the board should hold ten to twenty ideas.") }),
   { id: "divide", min: 30, title: "Divide or swarm",
-    body: "<h2>Divide or swarm?</h2><p>With a small, focused target everybody can work on the same part. With several parts, each person puts their name next to the part they care about.</p><p>Make sure every important part gets at least a couple of solutions.</p>",
+    body: "<h2>Divide or swarm?</h2><p>With a small, focused target everybody can work on the same part. With several parts, each person puts their name next to the part they care about.</p><p>Make sure every important part gets at least a couple of solutions.</p><div class='dk-timer' data-seconds='1800' data-size='small'></div>",
     notes: DS.n("About thirty minutes including the discussion. After this: lunch.") },
   { id: "sketch-intro", min: 3, title: "Sketching is not drawing",
     body: "<h2>Sketching is not an art contest</h2><p>Ugly is fine. A four-step routine makes the blank sheet less scary.</p><ol><li>Take notes</li><li>Doodle ideas</li><li>Crazy 8s</li><li>Solution sketch</li></ol>",
