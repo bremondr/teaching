@@ -116,8 +116,7 @@ facilitator app works out the same list for the real numbers (bottom of the scri
 
 | Item | Quantity |
 | --- | --- |
-| Flipchart stand with a paper pad, for the facilitator: the language rule, the time plan, a parking lot for questions | 1 |
-| Flipchart paper sheets, for each team to show its game or keep its rules visible, taped to the wall if there are no stands | 1 or 2 per team, 5 to 10 in all |
+| Flipchart paper sheets, taped to the wall (no stands needed): 1 for the facilitator with the language rule, the time plan and a parking lot for questions; 1 or 2 per team to show its game or keep its rules visible | 6 to 11 in all |
 | Flipchart markers, thick, at least 4 colours (the marker count above is for the tables) | 1 set for the facilitator, 1 per team if the sheets are used |
 
 **Room and equipment**
