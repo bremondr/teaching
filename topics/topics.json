@@ -1,23 +1,67 @@
 {
   "topics": [
     {
-      "title": "Introduction to UX",
+      "title": "NI-PSD: Usability testing",
       "type": "lecture",
-      "category": "UX",
-      "tags": ["ux", "research", "prototyping", "design-process", "usability"],
-      "languages": ["en", "cs"],
+      "category": "Research and validation",
+      "tags": ["ni-psd", "usability-testing", "user-interviews", "validation"],
+      "languages": ["en"],
       "level": "Intro",
       "status": "Draft, November 2026",
-      "description": "Introductory lecture on what UX is, how designers work (understand, define, sketch, decide, prototype, validate), a worst-UI challenge and an air-conditioning prototype exercise. One bilingual deck.",
+      "description": "Lecture on testing prototypes with users in NI-PSD: ways to test, preparing a test, dos and don'ts, the five-act interview, group note-taking and debrief.",
       "resources": [
         {
           "label": "Open the slides",
-          "href": "./lectures/intro-to-ux/",
+          "href": "./lectures/usability-testing/",
           "available": true
         },
         {
           "label": "README",
-          "href": "./lectures/intro-to-ux/README.md",
+          "href": "./lectures/usability-testing/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "NI-PSD: Human-centred design and design thinking",
+      "type": "lecture",
+      "category": "Design process",
+      "tags": ["ni-psd", "human-centred-design", "design-thinking", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Second lecture of NI-PSD: a short intro to human-centred design, the design sprint and the five phases of design thinking, plus team forming and homework.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/hcd-design-thinking/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/hcd-design-thinking/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "NI-PSD: Introduction to public service design",
+      "type": "lecture",
+      "category": "Course introduction",
+      "tags": ["ni-psd", "public-services", "course-intro", "teamwork"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Opening lecture of NI-PSD (Public Service Design, FIT CTU): motivation and expectations, team exercise, organisation of the course, grading and team forming.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/public-service-design-intro/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/public-service-design-intro/README.md",
           "available": true
         }
       ]
@@ -85,6 +129,28 @@
         {
           "label": "Print kit sources and how to rebuild",
           "href": "./workshops/cook-a-game/print-src/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Introduction to UX",
+      "type": "lecture",
+      "category": "UX",
+      "tags": ["ux", "research", "prototyping", "design-process", "usability"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Introductory lecture on what UX is, how designers work (understand, define, sketch, decide, prototype, validate), a worst-UI challenge and an air-conditioning prototype exercise. One bilingual deck.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/intro-to-ux/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/intro-to-ux/README.md",
           "available": true
         }
       ]
