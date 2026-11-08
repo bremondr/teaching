@@ -438,7 +438,7 @@ In the original a video (a tour of a rocket factory, part 1) is shown here to il
 In the original an explainer video of a venture firm's sprint process is shown. Not in this repo.
 :::
 
-<div class="dk-canvas" data-pad="600 64 56 64" data-onpic><figure class="dk-pic" style="left:12.5%;top:0%;width:75%;height:100%"><a href="https://www.youtube.com/watch?v=K2vSQPh6MCE" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-gv-sprint-90-seconds.webp" alt="Video still: GV&#x27;s sprint process in 90 seconds"></a></figure><p class="dk-credit">Video: GV (click to open)</p></div>
+<div class="dk-canvas" data-pad="600 64 56 64" data-onpic><figure class="dk-pic" style="left:12.5%;top:0%;width:75%;height:100%"><a href="https://www.youtube.com/watch?v=K2vSQPh6MCE" target="_blank" rel="noopener" style="pointer-events:auto"><img src="assets/video-gv-sprint-90-seconds.webp" alt="Video still: GV&#x27;s sprint process in 90 seconds"></a></figure><p class="dk-credit">Video: GV (click to play)</p></div>
 
 ---
 
