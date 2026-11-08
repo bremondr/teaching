@@ -27,6 +27,7 @@ Language of the materials: English.
 | `README.md` | This page |
 | `index.html` | Opens the deck with the shared slide engine |
 | `deck.md` | The slides, in Markdown, with speaker notes |
+| `assets/` | The pictures of the slides (WebP, web size), placed as on the original slides |
 | `versions/2022-v1.md` | Outline of the first, shorter version from 2022 |
 
 ## Using it
@@ -51,10 +52,18 @@ All content is in `deck.md`: slides are separated by a line with `---`, speaker 
 
 ## Known limits
 
-- The deck is built from the text of the old slides only. Pictures, videos and polls were not
-  carried over; each such slide has a placeholder and a note saying what it showed.
-- The phase diagram and the sprint diagram are replaced by simple tables.
-- Photo credits, a quote attribution and some external links were left out on purpose.
-- Several slides are only a heading (they were picture slides). The last slides of the original
-  are bare themes for the build exercise.
+- The deck follows the 66 slides of the original in order, with its pictures placed as there. Left
+  out: the hidden-from-view empty slides, and the live polls (the poll slides keep their question).
+  Videos are shown as their still picture with a link.
+- The phase diagram (drawn with shapes in the original) is replaced by a simple table.
+- The quote attribution and some external links were left out on purpose.
 - English only.
+
+## Picture credits
+
+Credits are on the slides. Many pictures in the original deck are by others: product and press
+photos, UI shots from design portfolios, AI images made with Midjourney, Unsplash photos (N.,
+Artturi Jalli, Patrick Tomasso, Nicolas Hoizey, My Life Through A Lens), SpaceX photos, a rendering by
+BIG, a photo from prazsketramvaje.cz, an image by The Mobile Spoon, screenshots of nngroup.com,
+Google Maps and the HSL app, and a post on X by @ajtourville. Pictures without a credit on the slide
+come from the original deck without a recorded source.
