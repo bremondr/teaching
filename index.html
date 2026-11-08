@@ -105,40 +105,6 @@
           </details>
         </article>
       </template>
-
-      <!-- Block describes the forthcoming Markdown builder and deployment story -->
-      <section class="future-block">
-        <h2>Upcoming Markdown → Slides workflow</h2>
-        <p>
-          I plan to keep all lectures as Markdown sources located next to their
-          assets. A tiny script (Marp, Slidev, or custom Eleventy pipeline) will
-          compile MD to standalone HTML slides for live presenting and to PDFs for
-          distribution. This section tracks that integration.
-        </p>
-        <div class="future-pipeline">
-          <div class="pipeline-card">
-            <h3>Builder</h3>
-            <p>
-              Evaluate Reveal.js vs Marp CLI for GitHub Pages friendly builds.
-              Target: Q1.
-            </p>
-          </div>
-          <div class="pipeline-card">
-            <h3>Metadata</h3>
-            <p>
-              Each folder ships a <code>meta.json</code> storing speakers, length,
-              prerequisites for richer filters.
-            </p>
-          </div>
-          <div class="pipeline-card">
-            <h3>Automation</h3>
-            <p>
-              GitHub Actions job will convert Markdown on push and publish slide +
-              PDF artifacts.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
 
     <footer>
