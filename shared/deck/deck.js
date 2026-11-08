@@ -242,6 +242,7 @@
         content.querySelectorAll(".dk-canvas").forEach(function (c) {
           inner.insertBefore(c, content);
           // data-pad="top right bottom left" (slide pixels) moves the text area away from the pictures
+          if (c.hasAttribute("data-onpic")) inner.classList.add("dk-onpic");
           if (c.dataset.pad) inner.style.padding = c.dataset.pad.trim().split(/\s+/).map(function (v) { return v + "px"; }).join(" ");
         });
       }

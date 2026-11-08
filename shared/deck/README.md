@@ -92,6 +92,8 @@ figure: `<figure class="dk-fig"><img src="assets/x.webp" alt="â€¦"><figcaption>â
   above the text.
 - `<div class="dk-shade" style="left:%;top:%;width:%;height:%"></div>` inside the layer, after the pictures, lays a
   half-transparent panel in the slide colour under text that sits on a photo, so the text stays readable in both looks.
+- `data-onpic` on the layer gives each text block of the slide its own half-transparent backing, for a title that sits on
+  a picture. `dk-paper` on a figure puts a white sheet behind a picture with a transparent background and dark lines.
 - `p.dk-credit` puts a small credit in the bottom right corner. A link around the `img` (for a video that the
   original linked) stays clickable.
 - Keep the layer on one line in Markdown (a blank line ends an HTML block), inside the `::: en` or `::: cs` block
