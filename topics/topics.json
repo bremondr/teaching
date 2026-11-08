@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "Devil's 8s",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "brainstorming"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "Eight anti-solutions in eight minutes on a folded sheet of paper, to lose the fear of bad ideas. Challenge input, fold guide and timer.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/devils-8s/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/devils-8s/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Drawing instructor",
       "type": "template",
       "category": "Ideation exercise",
