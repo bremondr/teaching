@@ -450,7 +450,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fit(
 document.addEventListener("keydown", e => { if ($("presentView").hidden) return; if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return; if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(1); } if (e.key === "ArrowLeft") go(-1); });
 function route() {
   const h = location.hash;
-  mode = h === "#slide" ? "slide" : (h === "#presenter" || h === "#present") ? "presenter" : "plan";
+  mode = h === "#slide" ? "slide" : h === "#plan" ? "plan" : "presenter";
   const hc = document.documentElement.classList; hc.remove("mode-plan", "mode-presenter", "mode-slide"); hc.add("mode-" + mode);
   const pr = mode !== "plan";
   $("planView").hidden = pr; $("presentView").hidden = !pr; $("planBar").hidden = pr;
