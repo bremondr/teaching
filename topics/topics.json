@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "NI-PSD: Introduction to public service design",
+      "type": "lecture",
+      "category": "Course introduction",
+      "tags": ["ni-psd", "public-services", "course-intro", "teamwork"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Opening lecture of NI-PSD (Public Service Design, FIT CTU): motivation and expectations, team exercise, organisation of the course, grading and team forming.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/public-service-design-intro/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/public-service-design-intro/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Cook a game: game design workshop",
       "type": "workshop",
       "category": "Game design",
