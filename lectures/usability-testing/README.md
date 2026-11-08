@@ -2,6 +2,7 @@
 title: NI-PSD: Usability testing
 type: lecture
 category: Research and validation
+course: NI-PSD
 tags: [ni-psd, usability-testing, user-interviews, validation]
 languages: [en]
 level: Intro

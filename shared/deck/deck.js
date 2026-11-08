@@ -16,12 +16,21 @@
 (function () {
   "use strict";
   var W = 1280, H = 720;
+  // The hub is two folders above this script (shared/deck/deck.js), so Exit works from any item.
+  var SELF = (document.currentScript && document.currentScript.src) || "";
+  var HUB = SELF ? new URL("../../", SELF).href : "../../";
   var api = { modules: {}, start: start, module: defineModule, parseMarkdown: parseMarkdown };
   window.Deck = api;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
-  function fmt(sec) { var s = Math.abs(Math.round(sec)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  // clock and differences: M:SS, or H:MM:SS from one hour on
+  function fmt(sec) {
+    var s = Math.abs(Math.round(sec)), h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60, r = String(s % 60).padStart(2, "0");
+    return h ? h + ":" + String(m).padStart(2, "0") + ":" + r : m + ":" + r;
+  }
+  // a planned length: "12 min" or "16 h 39 min"
+  function fmtPlan(sec) { var m = Math.round(sec / 60); return m >= 60 ? Math.floor(m / 60) + " h " + (m % 60) + " min" : m + " min"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   // a value that may be a string, a {lang: string} object or a function of the language
@@ -38,6 +47,7 @@
   // Slides are separated by a line with only ---.
   // "::: cs" ... ":::" is shown only in that language; text outside blocks is shown in every language.
   // "::: notes" ... ":::" (or "::: notes cs") are speaker notes, not shown on the slide.
+  // "::: kicker" ... ":::" is the small yellow label above the slide (a section name), optionally per language.
   function render(md, base) {
     var html;
     if (window.marked) html = window.marked.parse(md);
@@ -47,15 +57,16 @@
   }
   function parseMarkdown(text, langs, base) {
     var slides = [], cur = fresh();
-    function fresh() { var b = {}, n = {}; langs.forEach(function (l) { b[l] = []; n[l] = []; }); return { b: b, n: n }; }
+    function fresh() { var b = {}, n = {}, k = {}; langs.forEach(function (l) { b[l] = []; n[l] = []; k[l] = []; }); return { b: b, n: n, k: k }; }
     function flush() {
       var any = langs.some(function (l) { return cur.b[l].join("").trim() || cur.n[l].join("").trim(); });
       if (any) {
-        var s = { body: {}, notes: {}, title: {}, base: base };
+        var s = { body: {}, notes: {}, title: {}, kicker: {}, base: base };
         langs.forEach(function (l) {
           var md = cur.b[l].join("\n");
           s.body[l] = render(md, base);
           s.notes[l] = cur.n[l].join("").trim() ? render(cur.n[l].join("\n"), base) : "";
+          s.kicker[l] = cur.k[l].join(" ").replace(/\s+/g, " ").trim();
           var h = /^#{1,3}\s+(.+)$/m.exec(md);
           s.title[l] = h ? h[1].replace(/[*_`]/g, "").trim() : "";
         });
@@ -68,11 +79,11 @@
       var m;
       if (!block && /^---\s*$/.test(line)) { flush(); return; }
       if (!block && (m = /^:::\s*([\w-]+)(?:\s+([\w-]+))?\s*$/.exec(line))) {
-        block = m[1] === "notes" ? { notes: true, lang: m[2] || null } : { lang: m[1] };
+        block = m[1] === "notes" ? { notes: true, lang: m[2] || null } : (m[1] === "kicker" ? { kicker: true, lang: m[2] || null } : { lang: m[1] });
         return;
       }
       if (block && /^:::\s*$/.test(line)) { block = null; return; }
-      var target = block && block.notes ? cur.n : cur.b;
+      var target = block && block.notes ? cur.n : (block && block.kicker ? cur.k : cur.b);
       var ls = block && block.lang ? (langs.indexOf(block.lang) >= 0 ? [block.lang] : []) : langs;
       ls.forEach(function (l) { target[l].push(line); });
     });
@@ -139,6 +150,10 @@
     var q = new URLSearchParams(location.search);
     var hash = location.hash;
     var mode = hash === "#slide" ? "slide" : (hash === "#presenter" ? "presenter" : "view");
+    // The look: ?theme=light|dark forces one, ?event=name switches on an event theme (see shared/design/).
+    var themeQ = q.get("theme"), eventQ = q.get("event");
+    if (themeQ === "light" || themeQ === "dark") document.documentElement.setAttribute("data-theme", themeQ);
+    if (eventQ && /^[a-z0-9-]+$/.test(eventQ)) document.documentElement.setAttribute("data-event", eventQ);
     var embed = q.get("embed") === "1";
     if (embed) root.classList.add("dk-embed", "dk-hover");
     var stored = null; try { stored = localStorage.getItem("deck-lang:" + cfg.channel); } catch (e) {}
@@ -177,11 +192,13 @@
       var box = stage.slideEl; box.textContent = ""; box.lang = lang;
       var inner = el("div", "dk-inner"); box.appendChild(inner);
       if (!s) return;
+      var kick = loc(s.kicker, lang, cfg.langs);
+      if (kick) inner.appendChild(el("div", "dk-kick", kick));
       if (typeof s.render === "function") {
         var r = s.render(inner, { lang: lang, slide: s, deck: api, mode: mode, preview: !!preview });
         if (typeof r === "function") stage.cleanup = r;
       } else {
-        inner.innerHTML = loc(s.body, lang, cfg.langs);
+        inner.insertAdjacentHTML("beforeend", loc(s.body, lang, cfg.langs));
         inner.querySelectorAll("img,source,video,audio").forEach(function (n) {
           var v = n.getAttribute("src");
           if (v && !/^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) n.setAttribute("src", new URL(v, s.base || location.href).href);
@@ -194,10 +211,17 @@
     function elapsed() { return tm.acc + (tm.at ? (Date.now() - tm.at) / 1000 : 0); }
 
     // ----- build the DOM for the current mode -----
+    function pill(tag, text, label) { var b = el(tag, "dk-btn", text); if (label) b.setAttribute("aria-label", label); return b; }
+    function exitLink() {
+      if (embed || cfg.exit === false) return null;
+      var a = pill("a", "Exit"); a.href = cfg.exit ? new URL(cfg.exit, location.href).href : HUB; a.title = "Leave the slides";
+      return a;
+    }
     function build() {
       root.textContent = "";
       var multi = cfg.langs.length > 1;
       if (mode === "slide") {
+        root.classList.add("dk-slidewin");
         ui.stage = makeStage(); root.appendChild(ui.stage);
         return;
       }
@@ -205,39 +229,50 @@
         var grid = el("div", "dk-pgrid"), left = el("div", "dk-pleft"), right = el("div", "dk-pright");
         ui.stage = makeStage(); left.appendChild(ui.stage);
         var r1 = el("div", "dk-row");
-        ui.prev = el("button", "", "◀ Back"); ui.next = el("button", "", "Next ▶");
+        ui.prev = pill("button", "◀ Back"); ui.next = pill("button", "Next ▶");
+        ui.open = pill("button", "Open slide window"); ui.fs = pill("button", "Fullscreen preview");
+        ui.exit = exitLink();
         ui.count = el("span", "dk-count"); ui.count.setAttribute("aria-live", "polite");
-        ui.open = el("button", "", "Open slide window"); ui.fs = el("button", "", "Fullscreen preview");
-        [ui.prev, ui.next, ui.count, ui.open, ui.fs].forEach(function (n) { r1.appendChild(n); });
-        var r2 = el("div", "dk-row");
-        ui.clock = el("span", "dk-clock", "0:00"); ui.go = el("button", "", "Start"); ui.reset = el("button", "", "Reset");
-        ui.late = el("span", "dk-late");
-        [ui.clock, ui.go, ui.reset, ui.late].forEach(function (n) { r2.appendChild(n); });
-        left.appendChild(r1); left.appendChild(r2);
+        [ui.prev, ui.next, ui.open, ui.fs, ui.exit, ui.count].forEach(function (n) { if (n) r1.appendChild(n); });
+        left.appendChild(r1);
         if (multi) { ui.langs = langButtons(); left.appendChild(ui.langs); }
         ui.status = el("div", "dk-status"); left.appendChild(ui.status);
-        ui.next2 = makeStage(); right.appendChild(el("div", "dk-status", "Next slide")); right.appendChild(ui.next2);
-        ui.notes = el("div", "dk-notes"); right.appendChild(ui.notes);
-        ui.outline = el("div", "dk-outline"); right.appendChild(ui.outline);
+        var clock = el("div", "dk-card"), crow = el("div", "dk-row");
+        ui.clock = el("div", "dk-clock", "0:00"); ui.go = pill("button", "Start"); ui.reset = el("button", "dk-mini", "Reset");
+        ui.late = el("div", "dk-late"); ui.meter = el("div", "dk-meter"); ui.meter.appendChild(el("i"));
+        clock.appendChild(el("div", "dk-label", "Clock"));
+        clock.appendChild(ui.clock);
+        crow.appendChild(ui.go); crow.appendChild(ui.reset); clock.appendChild(crow);
+        clock.appendChild(ui.late); clock.appendChild(ui.meter);
+        right.appendChild(clock);
+        ui.nextLabel = el("div", "dk-label"); right.appendChild(ui.nextLabel);
+        ui.next2 = makeStage(); right.appendChild(ui.next2);
+        var nc = el("div", "dk-card");
+        nc.appendChild(el("div", "dk-label", "Notes are for your own screen. Do not project them."));
+        ui.notes = el("div", "dk-notes"); nc.appendChild(ui.notes); right.appendChild(nc);
+        var oc = el("div", "dk-card"); oc.appendChild(el("h3", "dk-h", "Slides"));
+        ui.outline = el("div", "dk-outline"); oc.appendChild(ui.outline); right.appendChild(oc);
         grid.appendChild(left); grid.appendChild(right); root.appendChild(grid);
         return;
       }
-      ui.stage = makeStage(); root.appendChild(ui.stage);
+      var view = el("div", "dk-view");
+      ui.stage = makeStage(); view.appendChild(ui.stage);
       var bar = el("div", "dk-bar");
-      ui.prev = el("button", "", "◀"); ui.prev.setAttribute("aria-label", "Previous slide");
-      ui.next = el("button", "", "▶"); ui.next.setAttribute("aria-label", "Next slide");
-      ui.count = el("span", "dk-count"); ui.count.setAttribute("aria-live", "polite");
-      ui.ttl = el("span", "dk-title dk-grow");
-      bar.appendChild(ui.prev); bar.appendChild(ui.next); bar.appendChild(ui.count); bar.appendChild(ui.ttl);
+      ui.prev = pill("button", "◀", "Previous slide"); ui.next = pill("button", "▶", "Next slide");
+      bar.appendChild(ui.prev); bar.appendChild(ui.next);
       if (multi) { ui.langs = langButtons(); bar.appendChild(ui.langs); }
-      ui.fs = el("button", "", "Fullscreen"); bar.appendChild(ui.fs);
-      if (!embed) { ui.pres = el("a", "", "Presenter view"); ui.pres.href = "#presenter"; ui.pres.target = "_blank"; ui.pres.rel = "noopener"; bar.appendChild(ui.pres); }
-      root.appendChild(bar);
+      ui.fs = pill("button", "Fullscreen"); bar.appendChild(ui.fs);
+      if (!embed) { ui.pres = pill("a", "Presenter view"); ui.pres.href = "#presenter"; ui.pres.target = "_blank"; ui.pres.rel = "noopener"; bar.appendChild(ui.pres); }
+      ui.exit = exitLink(); if (ui.exit) bar.appendChild(ui.exit);
+      ui.ttl = el("span", "dk-title dk-grow");
+      ui.count = el("span", "dk-count"); ui.count.setAttribute("aria-live", "polite");
+      bar.appendChild(ui.ttl); bar.appendChild(ui.count);
+      view.appendChild(bar); root.appendChild(view);
     }
     function langButtons() {
       var box = el("div", "dk-row");
       cfg.langs.forEach(function (l) {
-        var b = el("button", "", l.toUpperCase()); b.dataset.lang = l; b.setAttribute("aria-label", "Language " + l);
+        var b = el("button", "dk-btn", l.toUpperCase()); b.dataset.lang = l; b.setAttribute("aria-label", "Language " + l);
         b.addEventListener("click", function () { setLang(l); });
         box.appendChild(b);
       });
@@ -255,6 +290,7 @@
       if (ui.langs) ui.langs.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
       if (mode === "presenter") {
         show(ui.next2, S.seq[S.si + 1] || null, true);
+        ui.nextLabel.textContent = S.seq[S.si + 1] ? "Next: " + title(S.seq[S.si + 1], S.si + 1) : "Last slide";
         ui.notes.innerHTML = loc(s.notes, lang, cfg.langs);
         ui.outline.textContent = "";
         S.seq.forEach(function (x, i) {
@@ -283,10 +319,11 @@
       var e = elapsed(); ui.clock.textContent = fmt(e); ui.go.textContent = tm.at ? "Pause" : "Start";
       var tot = planTotal();
       if (tot > 0) {
-        var diff = e - planStart(S.si), behind = diff > 0;
-        ui.late.className = "dk-late " + (behind ? "dk-behind" : "dk-ahead");
-        ui.late.textContent = (S.seq[S.si].min ? S.seq[S.si].min + " min planned · " : "") + (e === 0 ? "" : fmt(diff) + (behind ? " behind" : " ahead") + " · ") + "plan " + fmt(tot) + " in total";
-      } else ui.late.textContent = "";
+        var diff = e - planStart(S.si), behind = diff > 0, min = S.seq[S.si].min;
+        ui.late.className = "dk-late" + (e === 0 ? "" : (behind ? " dk-behind" : " dk-ahead"));
+        ui.late.textContent = (min ? min + " min planned · " : "") + (e === 0 ? "not started, " + fmtPlan(tot) + " planned" : fmt(diff) + (behind ? " behind" : " ahead") + " · plan " + fmtPlan(tot));
+        ui.meter.hidden = false; ui.meter.firstChild.style.width = Math.min(100, 100 * e / tot) + "%"; ui.meter.classList.toggle("dk-over", e > tot);
+      } else { ui.late.className = "dk-late"; ui.late.textContent = ""; ui.meter.hidden = true; }
     }
 
     // ----- presenter and slide window sync -----

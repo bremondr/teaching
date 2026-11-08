@@ -21,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TYPE_DIRS = {"lectures": "lecture", "workshops": "workshop", "templates": "template"}
-FIELDS = ["title", "type", "category", "tags", "languages", "level", "status", "description"]
+FIELDS = ["title", "type", "category", "course", "tags", "languages", "level", "status", "description"]
 LIST_FIELDS = {"tags", "languages"}
 
 

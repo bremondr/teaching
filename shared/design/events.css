@@ -1,0 +1,21 @@
+/* Optional event themes. One block per event; switch one on with data-event="name" on <html>
+   (the deck engine does this from the address: ?event=name). A theme overrides only the tokens it changes,
+   and it works in light and in dark: put dark-only values in the second block of the pair.
+
+   To add an event: copy the "sample" pair, rename it, change the colours, and open any deck with ?event=your-name.
+   To remove one: delete its two blocks. Nothing else refers to it. */
+
+/* sample: an example to copy. Warm paper and a deep green stage. Not used by any item. */
+:root[data-event="sample"] {
+  --bg: #f7f3ec; --surface: #fffdf8; --line: #ddd3c2;
+  --ink: #2f5d3a; --accent: #b4531a; --accent-soft: #f6e1d2;
+  --stage: #17301f; --stage-dim: #a9c4ae; --stage-hi: #f2c14e;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-event="sample"]:not([data-theme="light"]) {
+    --bg: #17140f; --surface: #221e17; --line: #3a3326; --ink: #8cc79a; --accent: #e8935a; --accent-soft: #3b2417; --stage: #0f1f15;
+  }
+}
+:root[data-event="sample"][data-theme="dark"] {
+  --bg: #17140f; --surface: #221e17; --line: #3a3326; --ink: #8cc79a; --accent: #e8935a; --accent-soft: #3b2417; --stage: #0f1f15;
+}

@@ -2,6 +2,7 @@
 title: Title of the item
 type: workshop
 category: Short category name
+# course: NI-PSD   (optional: the course this belongs to; the hub gets a filter entry for it)
 tags: [lowercase-tag, another-tag]
 languages: [en]
 level: Intro

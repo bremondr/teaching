@@ -22,7 +22,7 @@
         </p>
       </header>
 
-      <!-- Filters now focus on search, type, and topic tags -->
+      <!-- Filters: search, type, course (the course option list is built from topics.json), and topic tags -->
       <section class="filters" aria-label="Filters">
         <label>
           Search
@@ -40,6 +40,12 @@
             <option value="lecture">Lecture</option>
             <option value="workshop">Workshop</option>
             <option value="template">Template</option>
+          </select>
+        </label>
+        <label>
+          Course
+          <select id="courseFilter" aria-label="Filter by course">
+            <option value="all" selected>All courses</option>
           </select>
         </label>
         <label>

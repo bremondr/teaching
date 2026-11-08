@@ -2,6 +2,7 @@
 title: NI-PSD: Human-centred design and design thinking
 type: lecture
 category: Design process
+course: NI-PSD
 tags: [ni-psd, human-centred-design, design-thinking, design-sprint]
 languages: [en]
 level: Intro

@@ -68,7 +68,8 @@ The README is the description of an item. Write it, run one script, and the hub 
 a nicely rendered page follow.
 
 1. Copy `_template/README.md` to `<type>s/<slug>/README.md`. Fill in the front matter at
-   the top (title, type, category, tags, languages, level, status, description; `open`
+   the top (title, type, category, tags, languages, level, status, description; optional `course`, the
+   course the item belongs to, which adds it to the hub's Course filter; `open`
    and `open_label` for a button to the app or slides, delete them if there is none).
 2. Put the material in the same folder. Typical sub-folders: `slides/`, `print/` (PDFs,
    A4), `img/` (web-size images), `fonts/`. Say in the README how generated files were made.

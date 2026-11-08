@@ -2,6 +2,7 @@
 title: Design Sprint method sheets
 type: template
 category: Design process
+course: NI-DSW
 tags: [ni-dsw, design-sprint]
 languages: [en]
 level: Intro

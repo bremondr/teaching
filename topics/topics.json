@@ -20,7 +20,8 @@
           "href": "./lectures/usability-testing/README.md",
           "available": true
         }
-      ]
+      ],
+      "course": "NI-PSD"
     },
     {
       "title": "NI-PSD: Human-centred design and design thinking",
@@ -42,7 +43,8 @@
           "href": "./lectures/hcd-design-thinking/README.md",
           "available": true
         }
-      ]
+      ],
+      "course": "NI-PSD"
     },
     {
       "title": "NI-PSD: Introduction to public service design",
@@ -64,7 +66,8 @@
           "href": "./lectures/public-service-design-intro/README.md",
           "available": true
         }
-      ]
+      ],
+      "course": "NI-PSD"
     },
     {
       "title": "Design Sprint: interactive facilitation deck",
@@ -86,7 +89,8 @@
           "href": "./workshops/design-sprint/README.md",
           "available": true
         }
-      ]
+      ],
+      "course": "NI-DSW"
     },
     {
       "title": "Design Sprint method sheets",
@@ -103,7 +107,8 @@
           "href": "./templates/design-sprint-method-sheets/README.md",
           "available": true
         }
-      ]
+      ],
+      "course": "NI-DSW"
     },
     {
       "title": "Devil's 8s",

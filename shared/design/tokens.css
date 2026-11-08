@@ -1,0 +1,41 @@
+/* The design tokens: the ONE place to change the look of the teaching site's shared pieces
+   (the deck engine and the pages built with it). Colours and fonts are CSS variables.
+
+   Three layers:
+   1. light (the default) and dark, which follows the visitor's system setting;
+      add data-theme="light" or data-theme="dark" on <html> to force one;
+   2. optional event themes (events.css): add data-event="name" on <html> to switch one on;
+   3. components (deck.css and others) only ever use these variables, never a literal colour.
+
+   Rules for editing: change a value here and every page that uses the design follows. A new token
+   goes into all three blocks (light, dark, forced dark) so light and dark never drift apart. */
+
+/* Optional event themes live in their own file (an @import has to come first). A theme overrides only the
+   tokens it changes, and its selectors are more specific than the base blocks below, so order does not matter. */
+@import url("events.css");
+
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(fonts/bricolage-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Bricolage Grotesque'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(fonts/bricolage-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/sourcesans3-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/sourcesans3-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+html { color-scheme: light; }
+:root {
+  --bg: #f3f6f7; --surface: #ffffff; --fg: #14282e; --muted: #5b6e74; --line: #d3dde0;
+  --accent: #c2185b; --accent-fg: #ffffff; --accent-soft: #fbe3ec; --ink: #0e5a63; --ok: #1b7a4b; --warn: #b3261e;
+  --stage: #0b2a30; --stage-fg: #f2f8f9; --stage-dim: #9fc2c8; --stage-hi: #ffd166;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1b1f; --surface: #172a30; --fg: #e6f0f2; --muted: #93a9b0; --line: #2a4249;
+    --accent: #f06292; --accent-fg: #1a0610; --accent-soft: #3a1626; --ink: #6cc7d1; --ok: #6fd3a1; --warn: #ff8a80;
+    --stage: #061a1e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1b1f; --surface: #172a30; --fg: #e6f0f2; --muted: #93a9b0; --line: #2a4249;
+  --accent: #f06292; --accent-fg: #1a0610; --accent-soft: #3a1626; --ink: #6cc7d1; --ok: #6fd3a1; --warn: #ff8a80;
+  --stage: #061a1e; color-scheme: dark;
+}

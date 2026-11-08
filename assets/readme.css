@@ -41,7 +41,9 @@
 .doc-actions a { background: var(--blueberry); color: var(--white); text-decoration: none; padding: 0.55rem 1.1rem; border-radius: 0.6rem; font-weight: 600; }
 .doc-actions a:hover { filter: brightness(1.1); }
 
-.doc-body { overflow-wrap: anywhere; max-width: 78ch; }
+.doc-body { overflow-wrap: break-word; max-width: 78ch; }
+/* Table cells keep whole words: "anywhere" would let a narrow column shrink to one letter and split "Opening" as "Openi / ng". */
+.doc-body th, .doc-body td { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .doc-body > :first-child { margin-top: 0; }
 .doc-body h2 { font-size: 1.6rem; margin: 2.2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
 .doc-body h3 { font-size: 1.25rem; margin: 1.8rem 0 0.5rem; }
