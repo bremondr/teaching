@@ -42,7 +42,7 @@ The controls row has an **Exit** button. By default it leads to the hub; `exit: 
 
 One file, slides separated by a line with only `---`. A block `::: cs` … `:::` appears only in that
 language, text outside a block appears in every language. Speaker notes go in `::: notes`
-(or `::: notes cs`). A block `::: kicker` … `:::` is the small yellow label above the slide, usually the section name. Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers.
+(or `::: notes cs`). A block `::: kicker` … `:::` is the small yellow label above the slide, usually the section name. Raw HTML works, with `dk-cols`, `dk-big`, `dk-center` and `dk-small` as helpers. A question to the room is a callout: `<div class="dk-callout">` with an inline SVG icon and a `<p class="dk-big">`.
 
 ### Workshops and exercises: JS slides
 

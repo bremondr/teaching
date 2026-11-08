@@ -81,6 +81,9 @@ html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: va
 .dk-inner .dk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .dk-inner .dk-center { text-align: center; align-items: center; }
 .dk-inner .dk-big { font-family: var(--font-display); font-size: 64px; line-height: 1.1; font-weight: 700; }
+.dk-inner .dk-callout { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; text-align: center; }
+.dk-inner .dk-callout svg { width: 120px; height: 120px; color: var(--stage-hi); }
+.dk-inner .dk-callout .dk-big { max-width: 22ch; }
 .dk-inner .dk-small { font-size: 26px; color: var(--stage-dim); }
 
 /* pictures. A figure in the text flow: <figure class="dk-fig"><img alt="…"><figcaption>…</figcaption></figure>.
