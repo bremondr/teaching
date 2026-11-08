@@ -137,26 +137,21 @@
       "title": "Introduction to UX",
       "type": "lecture",
       "category": "UX",
-      "tags": ["ux", "research", "prototyping"],
-      "languages": ["en"],
+      "tags": ["ux", "research", "prototyping", "design-process", "usability"],
+      "languages": ["en", "cs"],
       "level": "Intro",
-      "status": "Updated Dec 2025",
-      "description": "Introductory lecture into what UX is and why it matters. Covers basic principles of user research, wireframing, and prototyping.",
+      "status": "Draft, November 2026",
+      "description": "Introductory lecture on what UX is, how designers work (understand, define, sketch, decide, prototype, validate), a worst-UI challenge and an air-conditioning prototype exercise. One bilingual deck.",
       "resources": [
         {
-          "label": "Web slides",
-          "href": "./ux",
+          "label": "Open the slides",
+          "href": "./lectures/intro-to-ux/",
           "available": true
         },
         {
-          "label": "PDF export",
-          "href": "./ux",
+          "label": "README",
+          "href": "./lectures/intro-to-ux/README.md",
           "available": true
-        },
-        {
-          "label": "Markdown source (soon)",
-          "href": "#",
-          "available": false
         }
       ]
     },
