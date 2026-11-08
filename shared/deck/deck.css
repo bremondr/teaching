@@ -106,6 +106,7 @@ html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: va
 .dk-inner .dk-timer { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .dk-inner .dk-clock-big { font-family: var(--font-display); font-weight: 700; font-size: 150px; line-height: 1; font-variant-numeric: tabular-nums; color: var(--stage-fg); }
 .dk-inner .dk-clock-big.dk-done { color: var(--stage-hi); }
+.dk-inner .dk-timer[data-size="small"] .dk-clock-big { font-size: 96px; }
 .dk-inner .dk-timer-row { display: flex; gap: 14px; }
 .dk-canvas .dk-credit { position: absolute; right: 14px; bottom: 8px; max-width: 70%; font-size: 15px; line-height: 1.2; text-align: right; color: var(--stage-dim); text-shadow: 0 0 4px var(--stage); }
 

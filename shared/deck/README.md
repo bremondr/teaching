@@ -108,7 +108,7 @@ figure: `<figure class="dk-fig"><img src="assets/x.webp" alt="â€¦"><figcaption>â
 
 `<div class="dk-timer" data-seconds="900"></div>` in a Markdown or body slide becomes a large clock with Start, Reset and
 +1 min. The presenter view and the projector window of the same deck follow each other (a BroadcastChannel named after
-the deck's `channel`). Two timers on one slide need `data-id` to tell them apart. Workshops with their own timer helper
+the deck's `channel`). Two timers on one slide need `data-id` to tell them apart; `data-size="small"` makes the clock smaller. Workshops with their own timer helper
 (such as `DS.timer` in the Design Sprint workshop) can keep it.
 
 ## Slides that hold too much
