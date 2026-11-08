@@ -1,6 +1,28 @@
 {
   "topics": [
     {
+      "title": "Drawing instructor",
+      "type": "template",
+      "category": "Ideation exercise",
+      "tags": ["exercise", "ideation", "communication"],
+      "languages": ["en", "cs"],
+      "level": "Intro",
+      "status": "First version, Nov 2026",
+      "description": "A 15-minute ice breaker: one person describes a picture using only geometric shapes and the others draw it. Shows the value of feedback and shared terms.",
+      "resources": [
+        {
+          "label": "Open the exercise",
+          "href": "./templates/drawing-instructor/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./templates/drawing-instructor/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Everyone can sketch",
       "type": "template",
       "category": "Ideation exercise",
