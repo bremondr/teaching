@@ -1,0 +1,25 @@
+// Day 1 block: lightning talks, long-term goal, sprint questions, map of the challenge.
+Deck.module({ id: "goalmap", title: "Goal, questions and map", slides: [
+  { id: "talks", min: 15, title: "Lightning talks",
+    body: "<h2>Lightning talks</h2><p>One minute each: share the vision, context and background of the project.</p><p>Everyone else takes notes under three headings:</p><ul><li>promising</li><li>positive</li><li>negative</li></ul>",
+    notes: DS.n("Fifteen minutes is a guess for a team of up to ten; scale it by one minute per speaker plus a little slack.",
+      "The three headings are a quick way to listen with a purpose: what has potential, what is good, what worries you.") },
+  { id: "goal-why", min: 2, title: "Long-term goal",
+    body: "<h2>Long-term goal</h2><p>It helps us look ahead and share one direction.</p><p>Where do we want to be in six months, a year, five years? Why are we doing this at all?</p>",
+    notes: DS.n("Ask the team to pick the time frame first, then discuss.") },
+  DS.timer({ id: "goal-clock", min: 30, title: "Write the long-term goal", text: "Be optimistic. Complete the sentence: in [time], our ideal world looks like ...",
+    notes: DS.n("Collect statements on sticky notes while people talk, then converge on one sentence before the clock ends. Put it where everyone can see it for the whole sprint.") }),
+  { id: "questions-why", min: 3, title: "Sprint questions",
+    body: "<h2>Sprint questions</h2><p>Now be a little pessimistic. Imagine a year has passed and the project failed. What went wrong?</p><p>Turn each risk into a question. A question is easier to track than a worry.</p>",
+    notes: DS.n("Example in our own words: goal is to reach new schools; assumption is that teachers must trust the tool; question becomes: will teachers trust it enough to try it?") },
+  DS.timer({ id: "questions-clock", min: 5, title: "Write the sprint questions", text: "What has to be true for the goal to happen? What could make us fail?",
+    notes: DS.n("One or two questions are fine, so are a dozen. Stick them next to the long-term goal.") }),
+  { id: "map-how", min: 4, title: "Map the challenge",
+    body: "<h2>Map the challenge</h2><ol><li>Actors on the left (users, stakeholders)</li><li>The end goal on the right</li><li>Journey stages along the top</li><li>Fill the space between with a few words and arrows</li></ol><p class='dk-small'>Five to fifteen steps is enough. It can be corrected all day.</p>",
+    notes: DS.n("Image placeholder: the original slides show a diagram of a map with numbered steps and a worked example from another domain. Draw one live on the board, using the team's own topic.") },
+  DS.timer({ id: "map-clock", min: 45, title: "Draw the map", text: "Keep it simple. Between 30 and 60 minutes, then stop.",
+    notes: DS.n("Facilitator: keep people from perfecting it. The map is a thinking tool, not a deliverable.") }),
+  { id: "milestone", min: 3, title: "Milestone",
+    body: "<h2>A rough draft of everything so far</h2><p>Goal, sprint questions and a map. We will keep improving them as we learn. Break time.</p>",
+    notes: DS.n("Take a real break here, lunch if it is the middle of the day.") }
+] });

@@ -1,6 +1,111 @@
 {
   "topics": [
     {
+      "title": "NI-PSD: Usability testing",
+      "type": "lecture",
+      "category": "Research and validation",
+      "tags": ["ni-psd", "usability-testing", "user-interviews", "validation"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Lecture on testing prototypes with users in NI-PSD: ways to test, preparing a test, dos and don'ts, the five-act interview, group note-taking and debrief.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/usability-testing/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/usability-testing/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "NI-PSD: Human-centred design and design thinking",
+      "type": "lecture",
+      "category": "Design process",
+      "tags": ["ni-psd", "human-centred-design", "design-thinking", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Second lecture of NI-PSD: a short intro to human-centred design, the design sprint and the five phases of design thinking, plus team forming and homework.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/hcd-design-thinking/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/hcd-design-thinking/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "NI-PSD: Introduction to public service design",
+      "type": "lecture",
+      "category": "Course introduction",
+      "tags": ["ni-psd", "public-services", "course-intro", "teamwork"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, November 2026",
+      "description": "Opening lecture of NI-PSD (Public Service Design, FIT CTU): motivation and expectations, team exercise, organisation of the course, grading and team forming.",
+      "resources": [
+        {
+          "label": "Open the slides",
+          "href": "./lectures/public-service-design-intro/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./lectures/public-service-design-intro/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Design Sprint: interactive facilitation deck",
+      "type": "workshop",
+      "category": "Design and UX",
+      "tags": ["ni-dsw", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intermediate",
+      "status": "Draft, Nov 2026",
+      "description": "Facilitation slides for a four-session Design Sprint, as an interactive web deck with presenter view, plan clock, countdown timers and a team picker. Three versions are included: fall 2025 (the current one), spring 2025 and the 4 day variant.",
+      "resources": [
+        {
+          "label": "Open the Design Sprint deck",
+          "href": "./workshops/design-sprint/",
+          "available": true
+        },
+        {
+          "label": "README",
+          "href": "./workshops/design-sprint/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
+      "title": "Design Sprint method sheets",
+      "type": "template",
+      "category": "Design process",
+      "tags": ["ni-dsw", "design-sprint"],
+      "languages": ["en"],
+      "level": "Intro",
+      "status": "Draft, Nov 2026",
+      "description": "Adapted from the Design Sprint method of Jake Knapp, John Zeratsky and Braden Kowitz. Printable method sheets for a facilitator running a five-day sprint: map, goal, questions, sketching, storyboard and the five-act interview. Own adaptation for teaching; the original materials are not included.",
+      "resources": [
+        {
+          "label": "README",
+          "href": "./templates/design-sprint-method-sheets/README.md",
+          "available": true
+        }
+      ]
+    },
+    {
       "title": "Devil's 8s",
       "type": "template",
       "category": "Ideation exercise",
@@ -181,26 +286,21 @@
       "title": "Introduction to UX",
       "type": "lecture",
       "category": "UX",
-      "tags": ["ux", "research", "prototyping"],
-      "languages": ["en"],
+      "tags": ["ux", "research", "prototyping", "design-process", "usability"],
+      "languages": ["en", "cs"],
       "level": "Intro",
-      "status": "Updated Dec 2025",
-      "description": "Introductory lecture into what UX is and why it matters. Covers basic principles of user research, wireframing, and prototyping.",
+      "status": "Draft, November 2026",
+      "description": "Introductory lecture on what UX is, how designers work (understand, define, sketch, decide, prototype, validate), a worst-UI challenge and an air-conditioning prototype exercise. One bilingual deck.",
       "resources": [
         {
-          "label": "Web slides",
-          "href": "./ux",
+          "label": "Open the slides",
+          "href": "./lectures/intro-to-ux/",
           "available": true
         },
         {
-          "label": "PDF export",
-          "href": "./ux",
+          "label": "README",
+          "href": "./lectures/intro-to-ux/README.md",
           "available": true
-        },
-        {
-          "label": "Markdown source (soon)",
-          "href": "#",
-          "available": false
         }
       ]
     },
