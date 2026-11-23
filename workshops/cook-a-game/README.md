@@ -100,7 +100,7 @@ facilitator app works out the same list for the real numbers (bottom of the scri
 
 | Item | Quantity (20 students, 5 teams) |
 | --- | --- |
-| Sticky notes, 3 colours: yellow (setting), green (thing), pink (audience) | 30 of each, one note per student per colour plus spares |
+| Sticky notes, 3 colours: yellow (setting), green (thing), pink (audience) | 30 of each, one note per student per colour plus spares, and 20 more of any colour for the feedback at the end |
 | Index cards | about 200 (40 per team) |
 | Pens or pencils | 20, one each |
 | Markers, different colours | 22 (4 per team and 2 for the facilitator) |
@@ -116,7 +116,7 @@ facilitator app works out the same list for the real numbers (bottom of the scri
 
 | Item | Quantity |
 | --- | --- |
-| Flipchart paper sheets, taped to the wall (no stands needed): 1 for the facilitator with the language rule, the time plan and a parking lot for questions; 1 or 2 per team to show its game or keep its rules visible | 6 to 11 in all |
+| Flipchart paper sheets, taped to the wall (no stands needed): 1 for the facilitator with the language rule, the time plan and a parking lot for questions; 1 by the door for the feedback notes at the end; 1 or 2 per team to show its game or keep its rules visible | 7 to 12 in all |
 | Flipchart markers, thick, at least 4 colours (the marker count above is for the tables) | 1 set for the facilitator, 1 per team if the sheets are used |
 
 **Room and equipment**

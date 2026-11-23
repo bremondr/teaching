@@ -125,7 +125,7 @@ function renderSupplies() {
   const u = el("ul");
   const items = [
     ["Index cards", 40 * T + " (about 40 per team)"],
-    ["Sticky notes", "3 colours: yellow (setting), green (thing), pink (audience), " + (N + 10) + " of each, one note per student per colour plus spares"],
+    ["Sticky notes", "3 colours: yellow (setting), green (thing), pink (audience), " + (N + 10) + " of each, one note per student per colour plus spares, and " + N + " more of any colour for the feedback at the end"],
     ["Team slips", "the printed sheets team-slips.pdf, 72 slips with fruit and vegetable pictures, cut out (" + N + " are used, the rest are spares for late students)"],
     ["Markers", 4 * T + 2 + " (4 per team and 2 for you), in different colours"],
     ["Pens or pencils", N + " (one each)"],
@@ -133,7 +133,7 @@ function renderSupplies() {
     ["Blank A4 paper", 10 * T + " sheets, for boards and notes"],
     ["Scissors", T + " (one per team)"],
     ["Tape", T + " rolls, plus masking tape for the walls"],
-    ["Flipchart paper sheets", T + 1 + " to " + (2 * T + 1) + " taped to the wall, no stands needed: 1 for you (the language rule, the time plan, a parking lot for questions), 1 or 2 per team"],
+    ["Flipchart paper sheets", T + 2 + " to " + (2 * T + 2) + " taped to the wall, no stands needed: 1 for you (the language rule, the time plan, a parking lot for questions), 1 by the door for the feedback notes, 1 or 2 per team"],
     ["Flipchart markers, thick", "1 set of at least 4 colours for you, plus 1 per team if the sheets are used"],
     ["Paper cups or envelopes", 2 * T + " (for hiding things)"],
     ["Paper clips or rubber bands", "a small handful per team"],

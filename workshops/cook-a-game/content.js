@@ -68,9 +68,14 @@ const B = [
  { id:"pitch", title:"One-minute pitches", m:7, m90:5, off:true,
    say:["“Name, one sentence, what changed after the twist, what you learned.”"],
    do:["One minute per team, a short changeover. Photograph each prototype and its rules card.","Use the pick-a-team tool and the clock reset for each team."] },
+ { id:"collect", title:"Collect the games and the feedback", m:5, m90:3,
+   say:["“Before you go: hand in your cards, and leave one note for me.”"],
+   es:"“Antes de irse: entreguen sus cartas y dejen una nota para mí.”",
+   do:["Teams hand in the idea card and the A6 and A5 rules cards. Photograph every game together with its rules card.","Feedback: each student writes on one sticky note one thing that worked and one thing to change, in English so that you can read it, and sticks it on the flipchart sheet by the door.","Teams may keep their prototypes after the photo."],
+   tips:["The cards and photos are the only record of the students' game ideas, and the notes are the only feedback. Do not skip this block, even when the clock is late."] },
  { id:"wrap", title:"Reflection and wrap-up", m:5, m90:2,
    say:["“What did watching other people play your game teach you?”"],
-   do:["Take three answers from the room. Thank the students and the hosts.","Collect the rules cards and ask teams to keep their games."] }
+   do:["Take three answers from the room. Thank the students and the hosts."] }
 ];
 
 // Slides. Each block gives one or more slides. Fields: h headline, es Spanish line, lines [[en, es?]], chips, sentence, w = widget name.
@@ -98,6 +103,7 @@ const SL = {
  play2: [{ h:"Silent playtest, round 2", es:"Prueba en silencio, ronda 2", w:"rot2", lines:[["Swap roles. Same rule: hosts stay silent.","Cambien de papel. Misma regla: los anfitriones en silencio."]] }],
  fix: [{ lang:true, h:"I like · I wish · What if", es:"Me gusta · Desearía · Y si", chips:["I like","I wish","What if"], lines:[["Use what you saw while others played your game","Usen lo que vieron mientras otros jugaban su juego"],["Write them on the back of the rules card","Escríbanlas en el reverso de la carta de reglas"]] }],
  pitch: [{ h:"One minute each", es:"Un minuto cada equipo", lines:[["Name of the game","Nombre del juego"],["Your one sentence","Su frase"],["What changed after the twist","Qué cambió después del giro"],["What you learned","Qué aprendieron"]] }],
+ collect: [{ lang:true, h:"Before you go", es:"Antes de irse", lines:[["Hand in your idea card and your rules cards","Entreguen su carta de idea y sus cartas de reglas"],["A photo of your game with its rules card","Una foto de su juego con su carta de reglas"],["One sticky note: one thing that worked, one thing to change","Una nota adhesiva: algo que funcionó, algo que cambiar"],["Stick it on the flipchart sheet by the door","Péguenla en la hoja de rotafolio junto a la puerta"]] }],
  wrap: [
   { key:"wrap:0", t:false, h:"What did watching others play your game teach you?", es:"¿Qué les enseñó ver a otros jugar su juego?", lines:[] },
   { key:"wrap:thanks", t:false, h:"Thank you", es:"Gracias", lines:[] }]
